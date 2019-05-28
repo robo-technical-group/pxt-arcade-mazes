@@ -1,4 +1,4 @@
-# robo-technical-group-pxt-arcade-mazes
+# pxt-arcade-mazes
 
 
 
