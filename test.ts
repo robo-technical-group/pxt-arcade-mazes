@@ -29,7 +29,7 @@ const METHOD: MazeType = MazeType.RecursiveBacktracker
 const PATH_WIDTH: number = 2 // width of maze path in number of tiles
 
 let gameMode: GameMode = GameMode.NotReady
-let maze: DistanceGrid = new DistanceGrid(GRID_SIZE, GRID_SIZE)
+let maze: Grid = new Grid(GRID_SIZE, GRID_SIZE)
 maze.setSolutionCells(0, 0, GRID_SIZE - 1, GRID_SIZE - 1)
 let mazeSprite: Sprite = sprites.create(img`.`)
 let player: Sprite = sprites.create(sprites.duck.duck1, 0)

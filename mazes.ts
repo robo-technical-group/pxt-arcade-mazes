@@ -8,6 +8,7 @@
  * Enumerations
  */
 enum MazeType {
+    None,
     AldousBroder,
     BinaryTree,
     HuntAndKill,
@@ -380,10 +381,13 @@ class Distances {
  */
 //% blockNamespace="mazes"
 class Grid {
-    protected _colors: GridColors
-    protected _cols: number
-    protected _grid: Cell[][]
-    protected _rows: number
+    private _colors: GridColors
+    private _cols: number
+    private _distances: Distances
+    private _font: image.Font
+    private _grid: Cell[][]
+    private _path: GridPath
+    private _rows: number
 
     /**
      * Default constructor.
@@ -392,19 +396,28 @@ class Grid {
      */
     constructor(rows: number, columns: number) {
         this._colors = {
+            font: DEFAULT_COLOR_FONT,
             imageBackground: DEFAULT_COLOR_IMAGE_BG,
             imageWall: DEFAULT_COLOR_IMAGE_WALL,
+            tileBegin: DEFAULT_COLOR_MAP_BEGIN,
+            tileEnd: DEFAULT_COLOR_MAP_END,
             tilePath: DEFAULT_COLOR_MAP_PATH,
+            tileSolution: DEFAULT_COLOR_MAP_SOLUTION,
             tileWall: DEFAULT_COLOR_MAP_WALL
         }
         this._cols = columns
+        this._font = DEFAULT_FONT
+        this._path = {
+            begin: this.getCell(0, 0),
+            end: this.getCell(rows - 1, 0)
+        }
         this._rows = rows
         this.initGrid()
         this.configure()
     }   // constructor()
 
     /**
-     * Public methods
+     * Getters and setters
      */
     /**
      * @return {GridColors} The color settings for this object.
@@ -431,6 +444,36 @@ class Grid {
     public get columns(): number {
         return this._cols
     }   // get columns()
+
+    /**
+     * @return {Distances} The current Distances object.
+     */
+    //% callInDebugger
+    public get distances(): Distances {
+        return this._distances
+    }   // get distances()
+
+    /**
+     * @param {Distances} value - The current Distances object for this grid.
+     */
+    public set distances(value: Distances) {
+        this._distances = value
+    }   // set distances()
+
+    /**
+     * @return {image.Font} Font used when printing distances in the image.
+     */
+    //% callInDebugger
+    public get font(): image.Font {
+        return this._font
+    }   // get font()
+
+    /**
+     * @param {image.Font} value - Font used when printing distances in the image.
+     */
+    public set font(value: image.Font) {
+        this._font = value
+    }   // set font()
 
     /**
      * @return {Cell} Cell chosen at random from grid.
@@ -460,6 +503,16 @@ class Grid {
         return this._rows * this._cols
     }   // get size()
 
+    /**
+     * @return {GridPath} Begin and end cells for solution.
+     */
+    public get solutionPath(): GridPath {
+        return this._path
+    }   // get solutionPath()
+
+    /**
+     * Public methods
+     */
     /**
      * Create a maze in this grid.
      * @param {MazeType} method - Algorithm to use to build maze.
@@ -522,8 +575,51 @@ class Grid {
      * @param {number} pathWidth - Width in tiles of the path.
      * @return {Image} Tile map of this maze.
      */
+    //% blockId="mazes_DistancesGrid_buildTileMap"
+    //% block="%myMaze|create tile map || with path width %pathWidth tiles"
+    //% pathWidth.defl=1
+    //% expandableArgumentMode="toggle"
+    //% group="Images"
     public buildTileMap(pathWidth: number = 1): Image {
-        return this.draw(pathWidth + 1, 1, this._colors.tilePath, this._colors.tileWall)
+        // Hide solution for now so that the distances are not printed in the image.
+        let solution: Distances = this.distances
+        this.distances = null
+        let toReturn = this.draw(pathWidth + 1, 1, this._colors.tilePath, this._colors.tileWall)
+        this.distances = solution
+
+        if (this._colors.tileBegin == null) {
+            this._colors.tileBegin = DEFAULT_COLOR_MAP_BEGIN
+        }   // if (! beginColor)
+        if (this._colors.tileEnd == null) {
+            this._colors.tileEnd = DEFAULT_COLOR_MAP_END
+        }   // if (! endColor)
+        if (this._colors.tileSolution == null) {
+            this._colors.tileSolution = DEFAULT_COLOR_MAP_SOLUTION
+        }   // if (! solutionColor)
+        if (this._path.begin == null) {
+            this._path.begin = new Cell(0, 0)
+        }   // if (! this._path.begin)
+        if (this._path.end == null) {
+            this._path.end = new Cell(this._rows - 1, 0)
+        }   // if (! this._path.end)
+
+        // Draw solution
+        if (solution) {
+            for (let row: number = 0; row < this._rows; row++) {
+                for (let col: number = 0; col < this._cols; col++) {
+                    let cell: Cell = this.getCell(row, col)
+                    if (solution.getDistance(cell) > -1) {
+                        toReturn.setPixel(col * (pathWidth + 1) + 1, row * (pathWidth + 1) + 1,
+                            this._colors.tileSolution)
+                    }   // if (solution.getDistance(cell) > -1)
+                }   // for (col)
+            }   // for (row)
+            toReturn.setPixel(this._path.begin.column * (pathWidth + 1) + 1,
+                this._path.begin.row * (pathWidth + 1) + 1, this._colors.tileBegin)
+            toReturn.setPixel(this._path.end.column * (pathWidth + 1) + 1,
+                this._path.end.row * (pathWidth + 1) + 1, this._colors.tileEnd)
+        }   // if (solution)
+        return toReturn
     }   // buildTileMap
 
     /**
@@ -540,19 +636,33 @@ class Grid {
     }   // getCell
 
     /**
-     * Protected methods
+     * Set the begin and end cells for the solution path.
+     * @param {number} beginRow - Row of beginning cell for solution.
+     * @param {number} beginColumn - Column of beginning cell for solution.
+     * @param {number} endRow - Row of ending cell for solution.
+     * @param {number} endColumn - Column of ending cell for solution.
      */
-    /**
-     * Draw something in the cell when buliding images. Override in child classes.
-     * @param {Image} img - Canvas for drawing the maze.
-     * @param {Cell} cell - Cell being drawn.
-     * @param {number} x - Horizontal coordinate of upper-left corner of cell.
-     * @param {number} y - Vertical coordinate of upper-left corner of cell.
-     * @param {number} cellSize - Size of cell in pixels.
-     */
-    protected drawContents(img: Image, cell: Cell, x: number, y: number, cellSize: number): void {
+    //% blockId="mazes_DistancesGrid_setSolutionCells"
+    //% block="%myMaze|set solution path to start at row %beginRow column %beginColumn and end at row %endRow column %endColumn"
+    //% beginRow.defl=0 beginColumn.defl=0 endRow.defl=9 endColumn.defl=0
+    //% group="Mazes"
+    public setSolutionCells(beginRow: number = 0, beginColumn = 0, endRow: number = 9, endColumn: number = 0): void {
+        this._path = {
+            begin: this.getCell(beginRow, beginColumn),
+            end: this.getCell(endRow, endColumn)
+        }
+    }   // setSolutionCells()
 
-    }   // drawContents()
+    /**
+     * Find a solution for the maze. Set the beginning and ending cells with setSolutionCells().
+     * @see setSolutionCells
+     */
+    //% blockId="mazes_DistancesGrid_solve"
+    //% block="%myMaze|solve"
+    //% group="Mazes"
+    public solve(): void {
+        this._distances = this._path.begin.distances.getPath(this._path.end)
+    }   // solve()
 
     /**
      * Private methods  
@@ -812,6 +922,27 @@ class Grid {
     }   // draw()
 
     /**
+     * Draw something in the cell when buliding images.
+     * @param {Image} img - Canvas for drawing the maze.
+     * @param {Cell} cell - Cell being drawn.
+     * @param {number} x - Horizontal coordinate of upper-left corner of cell.
+     * @param {number} y - Vertical coordinate of upper-left corner of cell.
+     * @param {number} cellSize - Size of cell in pixels.
+     */
+    private drawContents(img: Image, cell: Cell, x: number, y: number, cellSize: number): void {
+        if (this._distances && this._distances.getDistance(cell) > -1 && this._font) {
+            let x2: number = x + cellSize
+            let y2: number = y + cellSize
+            let distance: number = this._distances.getDistance(cell)
+            let char: string = distance >= BASE_36.length
+                ? BASE_36_OVERFLOW
+                : BASE_36[distance]
+            img.print(char, x + Math.floor(cellSize / 2), y + Math.floor(cellSize / 2),
+                this._colors.font, this._font)
+        }   // if (this._distances ...)
+    }   // drawContents()
+
+    /**
      * Initialize the grid array.
      */
     private initGrid(): void {
@@ -838,179 +969,6 @@ class Grid {
     }   // resetLinks()
 }   // class Grid
 
-/**
- * Grid with a Distances object for finding and measuring paths.
- */
-//% blockNamespace="mazes"
-class DistanceGrid extends Grid {
-    private _distances: Distances
-    private _font: image.Font
-    private _path: GridPath
-
-    constructor(rows: number, columns: number) {
-        super(rows, columns)
-        this._colors = {
-            font: DEFAULT_COLOR_FONT,
-            imageBackground: DEFAULT_COLOR_IMAGE_BG,
-            imageWall: DEFAULT_COLOR_IMAGE_WALL,
-            tileBegin: DEFAULT_COLOR_MAP_BEGIN,
-            tileEnd: DEFAULT_COLOR_MAP_END,
-            tilePath: DEFAULT_COLOR_MAP_PATH,
-            tileSolution: DEFAULT_COLOR_MAP_SOLUTION,
-            tileWall: DEFAULT_COLOR_MAP_WALL
-        }
-        this._font = DEFAULT_FONT
-        this._path = {
-            begin: this.getCell(0, 0),
-            end: this.getCell(rows - 1, 0)
-        }
-    }   // constructor()
-
-    /**
-     * Getters and setters
-     */
-
-    /**
-     * @return {Distances} The current Distances object.
-     */
-    //% callInDebugger
-    public get distances(): Distances {
-        return this._distances
-    }   // get distances()
-
-    /**
-     * @param {Distances} value - The current Distances object for this grid.
-     */
-    public set distances(value: Distances) {
-        this._distances = value
-    }   // set distances()
-
-    /**
-     * @return {image.Font} Font used when printing distances in the image.
-     */
-    //% callInDebugger
-    public get font(): image.Font {
-        return this._font
-    }   // get font()
-
-    /**
-     * @param {image.Font} value - Font used when printing distances in the image.
-     */
-    public set font(value: image.Font) {
-        this._font = value
-    }   // set font()
-
-    /**
-     * @return {GridPath} Begin and end cells for solution.
-     */
-    public get solutionPath(): GridPath {
-        return this._path
-    }   // get solutionPath()
-
-    /**
-     * Public methods
-     */
-    /**
-     * @see Grid#buildTileMap
-     */
-    //% blockId="mazes_DistancesGrid_buildTileMap"
-    //% block="%myMaze|create tile map || with path width %pathWidth tiles"
-    //% pathWidth.defl=1
-    //% expandableArgumentMode="toggle"
-    //% group="Images"
-    public buildTileMap(pathWidth: number = 1): Image {
-        // Hide solution for now so that the distances are not printed in the image.
-        let solution: Distances = this.distances
-        this.distances = null
-        let toReturn = super.buildTileMap(pathWidth)
-        this.distances = solution
-
-        if (this._colors.tileBegin == null) {
-            this._colors.tileBegin = DEFAULT_COLOR_MAP_BEGIN
-        }   // if (! beginColor)
-        if (this._colors.tileEnd == null) {
-            this._colors.tileEnd = DEFAULT_COLOR_MAP_END
-        }   // if (! endColor)
-        if (this._colors.tileSolution == null) {
-            this._colors.tileSolution = DEFAULT_COLOR_MAP_SOLUTION
-        }   // if (! solutionColor)
-        if (this._path.begin == null) {
-            this._path.begin = new Cell(0, 0)
-        }   // if (! this._path.begin)
-        if (this._path.end == null) {
-            this._path.end = new Cell(this._rows - 1, 0)
-        }   // if (! this._path.end)
-
-        // Draw solution
-        if (solution) {
-            for (let row: number = 0; row < this._rows; row++) {
-                for (let col: number = 0; col < this._cols; col++) {
-                    let cell: Cell = this.getCell(row, col)
-                    if (solution.getDistance(cell) > -1) {
-                        toReturn.setPixel(col * (pathWidth + 1) + 1, row * (pathWidth + 1) + 1,
-                            this._colors.tileSolution)
-                    }   // if (solution.getDistance(cell) > -1)
-                }   // for (col)
-            }   // for (row)
-            toReturn.setPixel(this._path.begin.column * (pathWidth + 1) + 1,
-                this._path.begin.row * (pathWidth + 1) + 1, this._colors.tileBegin)
-            toReturn.setPixel(this._path.end.column * (pathWidth + 1) + 1,
-                this._path.end.row * (pathWidth + 1) + 1, this._colors.tileEnd)
-        }   // if (solution)
-        return toReturn
-    }   // buildTileMap()
-
-    /**
-     * Set the begin and end cells for the solution path.
-     * @param {number} beginRow - Row of beginning cell for solution.
-     * @param {number} beginColumn - Column of beginning cell for solution.
-     * @param {number} endRow - Row of ending cell for solution.
-     * @param {number} endColumn - Column of ending cell for solution.
-     */
-    //% blockId="mazes_DistancesGrid_setSolutionCells"
-    //% block="%myMaze|set solution path to start at row %beginRow column %beginColumn and end at row %endRow column %endColumn"
-    //% beginRow.defl=0 beginColumn.defl=0 endRow.defl=9 endColumn.defl=0
-    //% group="Mazes"
-    public setSolutionCells(beginRow: number = 0, beginColumn = 0, endRow: number = 9, endColumn: number = 0): void {
-        this._path = {
-            begin: this.getCell(beginRow, beginColumn),
-            end: this.getCell(endRow, endColumn)
-        }
-    }   // setSolutionCells()
-
-    /**
-     * Find a solution for the maze. Set the beginning and ending cells with setSolutionCells().
-     * @see setSolutionCells
-     */
-    //% blockId="mazes_DistancesGrid_solve"
-    //% block="%myMaze|solve"
-    //% group="Mazes"
-    public solve(): void {
-        this._distances = this._path.begin.distances.getPath(this._path.end)
-    }   // solve()
-
-    /**
-     * Protected methods
-     */
-    /**
-     * Overrides Grid.drawContents()
-     */
-    protected drawContents(img: Image, cell: Cell, x: number, y: number, cellSize: number): void {
-        if (this._distances && this._distances.getDistance(cell) > -1 && this._font) {
-            let x2: number = x + cellSize
-            let y2: number = y + cellSize
-            let distance: number = this._distances.getDistance(cell)
-            let char: string = distance >= BASE_36.length
-                ? BASE_36_OVERFLOW
-                : BASE_36[distance]
-            img.print(char, x + Math.floor(cellSize / 2), y + Math.floor(cellSize / 2),
-                this._colors.font, this._font)
-        } else {
-            super.drawContents(img, cell, x, y, cellSize)
-        }   // if (this._distances ...)
-    }   // drawContents()
-}   // class DistanceGrid
-
 //% weight=0 color=#b8860b icon="\uf00a" block="Mazes"
 //% advanced=true
 //% groups=['others', 'Mazes', 'Images']
@@ -1021,12 +979,15 @@ namespace mazes {
     //% rows.defl=10 columns.defl=10 mazeType.defl=MazeType.SideWinder
     //% expandableArgumentMode="toggle"
     //% group="Mazes"
-    export function buildMaze(rows: number = 10, columns: number = 10, mazeType?: MazeType): DistanceGrid {
-        if (!mazeType) {
+    export function buildMaze(rows: number = 10, columns: number = 10, mazeType?: MazeType): Grid {
+        if (mazeType == null) {
             mazeType = DEFAULT_MAZE_TYPE
         }   // if (! mazeType)
 
-        let toReturn: DistanceGrid
+        let toReturn: Grid = new Grid(rows, columns)
+        if (mazeType !== MazeType.None) {
+            toReturn.build(mazeType)
+        }   // if (mazeType)
         return toReturn
     }   // buildMaze()
 }   // namespace mazes
