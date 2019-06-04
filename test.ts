@@ -31,7 +31,8 @@ const PATH_WIDTH: number = 2 // width of maze path in number of tiles
 let gameMode: GameMode = GameMode.NotReady
 let maze: Grid = new Grid(GRID_SIZE, GRID_SIZE)
 maze.setSolutionCells(0, 0, GRID_SIZE - 1, GRID_SIZE - 1)
-let mazeSprite: Sprite = sprites.create(img`.`)
+let mazeImage: Image = img`.`
+let mazeSprite: Sprite = sprites.create(mazeImage)
 let player: Sprite = sprites.create(sprites.duck.duck1, 0)
 let mazeBuilt: boolean = false
 let mazeSpriteBuilt: boolean = false
@@ -179,7 +180,8 @@ function showMazeSprite(): void {
     scene.setTileMap(null)
     scene.centerCameraAt(screen.width / 2, screen.height / 2)
     if (!mazeSpriteBuilt) {
-        mazeSprite.setImage(maze.buildImage())
+        mazeImage = maze.buildImage(10, 1, mazeImage)
+        mazeSprite.setImage(mazeImage)
         mazeSpriteBuilt = true
     }   // if (! mazeSpriteBuilt)
     mazeSprite.setPosition(screen.width / 2, screen.height / 2)

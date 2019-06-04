@@ -34,12 +34,19 @@ const DEFAULT_COLOR_MAP_END: number = 2 // Red
 const DEFAULT_COLOR_MAP_PATH: number = 13 // Bone
 const DEFAULT_COLOR_MAP_SOLUTION: number = 9 // Light blue
 const DEFAULT_COLOR_MAP_WALL: number = 14 // Brown
+const DEFAULT_GRID_SIZE: number = 10
 const DEFAULT_MAZE_TYPE: MazeType = MazeType.Sidewinder
 const DEFAULT_FONT: image.Font = image.font5
+const MAX_GRID_SIZE: number = 100
 
 /**
  * Interfaces
  */
+interface CellDistances {
+    cellIds: number[]
+    distances: number[]
+}   // interface CellDistances
+
 interface GridColors {
     imageBackground: number
     imageWall: number
@@ -77,7 +84,7 @@ class Cell {
      * @param {number} column - Column number of cell.
      */
     constructor(row: number, column: number) {
-        this._id = row * 1000 + column
+        this._id = row * MAX_GRID_SIZE + column
         this._row = row
         this._col = column
         this._north = null
@@ -121,7 +128,8 @@ class Cell {
                 }   // for (linked)
             }   // for (cell)
 
-            frontier = newFrontier.slice(0)
+            // frontier = newFrontier.slice(0)
+            frontier = newFrontier
             frontierLength = frontier.length
             rounds++
         }   // while (frontier.length)
@@ -308,7 +316,8 @@ class Cell {
 //% blockNamespace="mazes"
 class Distances {
     private _root: Cell
-    private _cells: number[]
+    private _cellIds: number[]
+    private _distances: number[]
 
     /**
      * Default constructor
@@ -316,8 +325,10 @@ class Distances {
      */
     constructor(root: Cell) {
         this._root = root
-        this._cells = []
-        this._cells[root.id] = 0
+        this._cellIds = []
+        this._cellIds.push(root.id)
+        this._distances = []
+        this._distances.push(0)
     }   // constructor
 
     /**
@@ -328,8 +339,11 @@ class Distances {
      *                    indexed by cell ID.
      */
     //% callInDebugger
-    public get cells(): number[] {
-        return this._cells
+    public get cells(): CellDistances {
+        return {
+            cellIds: this._cellIds.slice(0),
+            distances: this._distances.slice(0)
+        }
     }   // get cells()
 
     /**
@@ -340,9 +354,12 @@ class Distances {
      * @return {number} Distance from root to cell; -1 if not known.
      */
     public getDistance(cell: Cell): number {
-        return this._cells[cell.id] == null
-            ? -1
-            : this._cells[cell.id]
+        let index = this._cellIds.indexOf(cell.id)
+        if (index === -1) {
+            return -1
+        } else {
+            return this._distances[index]
+        }   // if (! index)
     }   // getDistance()
 
     /**
@@ -372,7 +389,8 @@ class Distances {
      * @param {number} distance - Distance from root to cell.
      */
     public setDistance(cell: Cell, distance: number) {
-        this._cells[cell.id] = distance
+        this._cellIds.push(cell.id)
+        this._distances.push(distance)
     }   // setDistance()
 }   // class Distances
 
@@ -381,6 +399,8 @@ class Distances {
  */
 //% blockNamespace="mazes"
 class Grid {
+    private static _img: Image
+
     private _colors: GridColors
     private _cols: number
     private _distances: Distances
@@ -395,6 +415,19 @@ class Grid {
      * @param {number} columns - Number of columns in grid.
      */
     constructor(rows: number, columns: number) {
+        if (rows <= 0) {
+            rows = DEFAULT_GRID_SIZE
+        }   // if (rows <= 0)
+        if (rows > MAX_GRID_SIZE) {
+            rows = MAX_GRID_SIZE
+        }   // if (rows > MAX_GRID_SIZE)
+        if (columns <= 0) {
+            columns = DEFAULT_GRID_SIZE
+        }   // if (columns <= 0)
+        if (columns > MAX_GRID_SIZE) {
+            columns = MAX_GRID_SIZE
+        }   // if (columns > MAX_GRID_SIZE)
+
         this._colors = {
             font: DEFAULT_COLOR_FONT,
             imageBackground: DEFAULT_COLOR_IMAGE_BG,
@@ -559,32 +592,47 @@ class Grid {
      * Return an image of the maze in this grid.
      * @param {number} cellSize - Width and height in pixels of each cell in the grid.
      * @param {number} wallThickness - Thickness in pixels of the walls for the maze.
+     * @param {Image} img - Canvas to use for image, null = use common canvas.
      * @return {Image} Image of the maze in this grid.
      */
-    //% blockId="mazes_Grid_buildImage"
+    public buildImage(cellSize: number = 10, wallThickness: number = 1, img: Image = null): Image {
+        if (!img) {
+            img = Grid._img
+        }   // if (! img)
+        img = this.draw(cellSize, wallThickness, this._colors.imageBackground, this._colors.imageWall, img)
+        return img
+    }   // buildImage()
+
+    /**
+     * Return an image of the maze in this grid.
+     * @param {number} cellSize - Width and height in pixels of each cell in the grid.
+     * @param {number} wallThickness - Thickness in pixels of the walls for the maze.
+     * @return {Image} Image of the maze in this grid.
+     */
+    //% blockId="mazes_Grid_buildImageBlocks"
     //% block="%myMaze|create image || with cell size %cellSize and wall thickness %wallThickness"
     //% cellSize.defl=10 wallThickness.defl=10
     //% expandableArgumentMode="toggle"
     //% group="Images"
-    public buildImage(cellSize: number = 10, wallThickness: number = 1): Image {
-        return this.draw(cellSize, wallThickness, this._colors.imageBackground, this._colors.imageWall)
-    }   // buildImage()
+    //% hidden
+    public buildImageBlocks(cellSize: number = 10, wallThickness: number = 1): Image {
+        return this.buildImage(cellSize, wallThickness, Grid._img)
+    }   // buildImageBlocks()
 
     /**
      * Return a tile map with the maze in this grid.
      * @param {number} pathWidth - Width in tiles of the path.
+     * @param {Image} img - Canvas to use for image, null = use common canvas.
      * @return {Image} Tile map of this maze.
      */
-    //% blockId="mazes_DistancesGrid_buildTileMap"
-    //% block="%myMaze|create tile map || with path width %pathWidth tiles"
-    //% pathWidth.defl=1
-    //% expandableArgumentMode="toggle"
-    //% group="Images"
-    public buildTileMap(pathWidth: number = 1): Image {
+    public buildTileMap(pathWidth: number = 1, img: Image = null): Image {
+        if (!img) {
+            img = Grid._img
+        }   // if (! img)
         // Hide solution for now so that the distances are not printed in the image.
         let solution: Distances = this.distances
         this.distances = null
-        let toReturn = this.draw(pathWidth + 1, 1, this._colors.tilePath, this._colors.tileWall)
+        img = this.draw(pathWidth + 1, 1, this._colors.tilePath, this._colors.tileWall, img)
         this.distances = solution
 
         if (this._colors.tileBegin == null) {
@@ -609,18 +657,33 @@ class Grid {
                 for (let col: number = 0; col < this._cols; col++) {
                     let cell: Cell = this.getCell(row, col)
                     if (solution.getDistance(cell) > -1) {
-                        toReturn.setPixel(col * (pathWidth + 1) + 1, row * (pathWidth + 1) + 1,
+                        img.setPixel(col * (pathWidth + 1) + 1, row * (pathWidth + 1) + 1,
                             this._colors.tileSolution)
                     }   // if (solution.getDistance(cell) > -1)
                 }   // for (col)
             }   // for (row)
-            toReturn.setPixel(this._path.begin.column * (pathWidth + 1) + 1,
+            img.setPixel(this._path.begin.column * (pathWidth + 1) + 1,
                 this._path.begin.row * (pathWidth + 1) + 1, this._colors.tileBegin)
-            toReturn.setPixel(this._path.end.column * (pathWidth + 1) + 1,
+            img.setPixel(this._path.end.column * (pathWidth + 1) + 1,
                 this._path.end.row * (pathWidth + 1) + 1, this._colors.tileEnd)
         }   // if (solution)
-        return toReturn
-    }   // buildTileMap
+        return img
+    }   // buildTileMapBlocks()
+
+    /**
+     * Return a tile map with the maze in this grid.
+     * @param {number} pathWidth - Width in tiles of the path.
+     * @return {Image} Tile map of this maze.
+     */
+    //% blockId="mazes_DistancesGrid_buildTileMapBlocks"
+    //% block="%myMaze|create tile map || with path width %pathWidth tiles"
+    //% pathWidth.defl=1
+    //% expandableArgumentMode="toggle"
+    //% group="Images"
+    //% hidden
+    public buildTileMapBlocks(pathWidth: number = 1): Image {
+        return this.buildTileMap(pathWidth, Grid._img)
+    }   // buildTileMapBlocks()
 
     /**
      * @param {number} row - Row of requested cell.
@@ -633,7 +696,18 @@ class Grid {
         } else {
             return null
         }   // if (row >= 0 ...)
-    }   // getCell
+    }   // getCell()
+
+    /**
+     * @param {number} id - ID of requested cell.
+     * @return {Cell} Cell from the grid.
+     */
+    public getCellById(id: number): Cell {
+        return this.getCell(
+            Math.floor(id / MAX_GRID_SIZE),
+            id % MAX_GRID_SIZE
+        )
+    }   // getCellById()
 
     /**
      * Set the begin and end cells for the solution path.
@@ -673,7 +747,7 @@ class Grid {
     private buildAldousBroder(): void {
         let cell: Cell = this.randomCell
         let unvisited: number = this._rows * this._cols - 1
-        let passes: number = 1
+        let passes: number = 1  // For debugging
 
         while (unvisited > 0) {
             let neighbor: Cell = Math.pickRandom(cell.neighbors)
@@ -685,7 +759,6 @@ class Grid {
             cell = neighbor
             passes++
         }   // while (unvisited)
-        // game.splash('Passes: ' + passes)
     }   // buildAldousBroder()
 
     /**
@@ -716,7 +789,7 @@ class Grid {
      */
     private buildHuntAndKill(): void {
         let current: Cell = this.randomCell
-        let passes: number = 1
+        let passes: number = 1  // For debugging
 
         while (current) {
             let unvisitedNeighbors: Cell[] = []
@@ -759,7 +832,6 @@ class Grid {
             }   // if (unvisitedNeighbors)
             passes++
         }   // while (current)
-        // game.splash('Passes: ' + passes)
     }   // buildHuntAndKill()
 
     /**
@@ -768,7 +840,7 @@ class Grid {
     private buildRecursiveBacktracker(): void {
         let start: Cell = this.randomCell
         let stack: Cell[] = [start]
-        let passes: number = 1
+        let passes: number = 1  // For debugging
 
         while (stack.length > 0) {
             let current: Cell = stack[stack.length - 1]
@@ -789,7 +861,6 @@ class Grid {
 
             passes++
         }   // while (stack)
-        // game.splash('Passes: ' + passes)
     }   // buildRecursiveBacktracker
 
     /**
@@ -836,14 +907,13 @@ class Grid {
 
         let first: number = Math.pickRandom(unvisited)
         unvisited.removeElement(first)
-
-        let passes: number = 1
+        let passes: number = 1 // For debugging
         while (unvisited.length > 0) {
             let cellId: number = Math.pickRandom(unvisited)
             let path: number[] = [cellId]
 
             while (unvisited.indexOf(cellId) > -1) {
-                let cell: Cell = this.getCell(Math.floor(cellId / 1000), cellId % 1000)
+                let cell: Cell = this.getCellById(cellId)
                 cell = Math.pickRandom(cell.neighbors)
                 let position: number = path.indexOf(cell.id)
                 if (position > -1) {
@@ -856,15 +926,14 @@ class Grid {
 
             for (let index: number = 0; index < path.length - 1; index++) {
                 cellId = path[index]
-                let cell: Cell = this.getCell(Math.floor(cellId / 1000), cellId % 1000)
+                let cell: Cell = this.getCellById(cellId)
                 let nextCellId: number = path[index + 1]
-                let nextCell: Cell = this.getCell(Math.floor(nextCellId / 1000), nextCellId % 1000)
+                let nextCell: Cell = this.getCellById(cellId)
                 cell.link(nextCell)
                 unvisited.removeElement(cellId)
             }   // for (index)
             passes++
         }   // while (unvisited)
-        // game.splash('Passes: ' + passes)
     }   // buildWilson()
 
     /**
@@ -883,13 +952,15 @@ class Grid {
     }   // configure()
 
     /**
-     * Draw an image of the maze.
+     * Draw an image of the maze on the given image.
      */
-    private draw(cellSize: number, wallThickness: number, backColor: number, wallColor: number = 1, img: Image = null): Image {
-        let toReturn: Image = img
-            ? img
-            : image.create(this._cols * cellSize + wallThickness, this._rows * cellSize + wallThickness)
-        toReturn.fill(backColor)
+    private draw(cellSize: number, wallThickness: number, backColor: number, wallColor: number = 1, img: Image): Image {
+        let width: number = this._cols * cellSize + wallThickness
+        let height: number = this._rows * cellSize + wallThickness
+        if (!img || img.width !== width || img.height !== height) {
+            img = image.create(width, height)
+        }   // if (! img ...)
+        img.fill(backColor)
         for (let row: number = 0; row < this._rows; row++) {
             for (let col: number = 0; col < this._cols; col++) {
                 let cell: Cell = this.getCell(row, col)
@@ -897,28 +968,29 @@ class Grid {
                 let y1: number = row * cellSize
                 let x2: number = (col + 1) * cellSize
                 let y2: number = (row + 1) * cellSize
-                this.drawContents(toReturn, cell, x1, y1, cellSize)
+                this.drawContents(img, cell, x1, y1, cellSize)
 
                 // Draw north wall for cells in the top row
                 if (cell.north == null) {
-                    toReturn.drawLine(x1, y1, x2, y1, wallColor)
+                    img.drawLine(x1, y1, x2, y1, wallColor)
                 }   // if (cell.north)
                 // Draw west wall for cells in the left column
                 if (cell.west == null) {
-                    toReturn.drawLine(x1, y1, x1, y2, wallColor)
+                    img.drawLine(x1, y1, x1, y2, wallColor)
                 }   // if (cell.west)
 
                 // Draw the east wall if not linked
                 if (!cell.isLinked(cell.east)) {
-                    toReturn.drawLine(x2, y1, x2, y2, wallColor)
+                    img.drawLine(x2, y1, x2, y2, wallColor)
                 }   // if (! cell.isLinked(cell.east))
                 // Draw the south wall if not linked
                 if (!cell.isLinked(cell.south)) {
-                    toReturn.drawLine(x1, y2, x2, y2, wallColor)
+                    img.drawLine(x1, y2, x2, y2, wallColor)
                 }   // if (! cell.isLinked(cell.south))
             }   // for (col)
         }   // for (row)
-        return toReturn
+
+        return img
     }   // draw()
 
     /**
