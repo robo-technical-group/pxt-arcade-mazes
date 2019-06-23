@@ -243,7 +243,7 @@ class Cell {
      * Public methods
      */
     /**
-     * Clears the list of linked cells.
+     * Clear the list of linked cells.
      */
     public clearLinks(): void {
         this._links = []
@@ -264,7 +264,7 @@ class Cell {
      * @param {Cell} cell - Cell to link to this one.
      * @param {boolean} reciprocal - Whether to also link the given cell to this one.
      */
-    public link(cell: Cell, reciprocal: boolean = true) {
+    public link(cell: Cell, reciprocal: boolean = true): void {
         if (cell != null) {
             this._links.push(cell)
             if (reciprocal) {
@@ -388,7 +388,7 @@ class Distances {
      * @param {Cell} cell
      * @param {number} distance - Distance from root to cell.
      */
-    public setDistance(cell: Cell, distance: number) {
+    public setDistance(cell: Cell, distance: number): void {
         this._cellIds.push(cell.id)
         this._distances.push(distance)
     }   // setDistance()
@@ -720,7 +720,7 @@ class Grid {
     //% block="%myMaze|set solution path to start at row %beginRow column %beginColumn and end at row %endRow column %endColumn"
     //% beginRow.defl=0 beginColumn.defl=0 endRow.defl=9 endColumn.defl=0
     //% group="Mazes"
-    public setSolutionCells(beginRow: number = 0, beginColumn = 0, endRow: number = 9, endColumn: number = 0): void {
+    public setSolutionCells(beginRow: number = 0, beginColumn: number = 0, endRow: number = 9, endColumn: number = 0): void {
         this._path = {
             begin: this.getCell(beginRow, beginColumn),
             end: this.getCell(endRow, endColumn)
