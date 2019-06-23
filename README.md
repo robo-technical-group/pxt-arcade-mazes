@@ -1,9 +1,9 @@
 # MakeCode Arcade Mazes
 
+[![Build Status](https://travis-ci.com/robo-technical-group/pxt-arcade-mazes.svg?branch=master)](https://travis-ci.com/robo-technical-group/pxt-arcade-mazes)
+
 MakeCode Arcade extension that implements algorithms from
 _Mazes for programmers_
-
-[![Build Status](https://travis-ci.com/robo-technical-group/pxt-arcade-mazes.svg?branch=master)](https://travis-ci.com/robo-technical-group/pxt-arcade-mazes)
 
 If you want to learn more about the algorithms used in this extension,
 pick up a copy of Jamis Buck's _Mazes for programmers: Code your own little passages_.
@@ -11,9 +11,11 @@ Learn more about the book here:
 
 https://pragprog.com/book/jbmaze/mazes-for-programmers
 
+[Link to API documentation](https://github.com/robo-technical-group/pxt-arcade-mazes/blob/master/api.md)
+
 ## TODO
 
-- [ ] Add a reference for your blocks here
+- [X] See it in action here: https://makecode.com/_9sj7DRThtgY2
 - [ ] Add "icon.png" image (300x200) in the root folder
 - [X] Add "- beta" to the GitHub project description if you are still iterating it.
 - [X] Turn on your automated build on https://travis-ci.org
