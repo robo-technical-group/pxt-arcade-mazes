@@ -24,10 +24,19 @@ enum GameMode {
     NotReady
 }   // GameModes
 
+const ALGORITHM_NAMES: string[] = [
+    'Aldous-Broder',
+    'Binary tree',
+    'Hunt and kill',
+    'Recursive backtracker',
+    'Sidewinder',
+    'Wilson'
+]
 const GRID_SIZE: number = 10
-const METHOD: MazeType = MazeType.RecursiveBacktracker
 const PATH_WIDTH: number = 2 // width of maze path in number of tiles
+const START_METHOD: MazeType = MazeType.RecursiveBacktracker
 
+let currAlgo: MazeType = START_METHOD
 let gameMode: GameMode = GameMode.NotReady
 let maze: Grid = new Grid(GRID_SIZE, GRID_SIZE)
 maze.setSolutionCells(0, 0, GRID_SIZE - 1, GRID_SIZE - 1)
@@ -130,7 +139,7 @@ showMainScreen()
 
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (gameMode !== GameMode.NotReady) {
-        maze.build(METHOD)
+        maze.build(currAlgo)
         maze.solve()
         mazeSpriteBuilt = false
         mazeBuilt = true
@@ -169,6 +178,7 @@ function showMainScreen(): void {
     }   // if (mazeBuilt)
     scene.cameraFollowSprite(player)
     controller.moveSprite(player)
+    player.say(ALGORITHM_NAMES[currAlgo])
     gameMode = GameMode.Main
 }   // showMainScreen()
 
