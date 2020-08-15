@@ -38,14 +38,14 @@ const START_METHOD: MazeType = MazeType.RecursiveBacktracker
 
 let currAlgo: MazeType = START_METHOD
 let gameMode: GameMode = GameMode.NotReady
-let maze: Grid = new Grid(GRID_SIZE, GRID_SIZE)
+let maze: mazes.Grid = new mazes.Grid(GRID_SIZE, GRID_SIZE)
 maze.setSolutionCells(0, 0, GRID_SIZE - 1, GRID_SIZE - 1)
 let mazeImage: Image = img`.`
 let mazeSprite: Sprite = sprites.create(mazeImage)
 let player: Sprite = sprites.create(sprites.duck.duck1, 0)
 let mazeBuilt: boolean = false
 let mazeSpriteBuilt: boolean = false
-scene.setTile(DEFAULT_COLOR_MAP_PATH, img`
+scene.setTile(mazes.DEFAULT_COLOR_MAP_PATH, img`
     d d d d d d d d d d d d d d d d
     d d d d d d d d d d d d d d d d
     d d d d d d d d d d d d d d d d
@@ -63,7 +63,7 @@ scene.setTile(DEFAULT_COLOR_MAP_PATH, img`
     d d d d d d d d d d d d d d d d
     d d d d d d d d d d d d d d d d
 `, false)
-scene.setTile(DEFAULT_COLOR_MAP_WALL, img`
+scene.setTile(mazes.DEFAULT_COLOR_MAP_WALL, img`
     e e e e e e e e e e e e e e e e
     e e e e e e e e e e e e e e e e
     e e e e e e e e e e e e e e e e
@@ -81,7 +81,7 @@ scene.setTile(DEFAULT_COLOR_MAP_WALL, img`
     e e e e e e e e e e e e e e e e
     e e e e e e e e e e e e e e e e
 `, true)
-scene.setTile(DEFAULT_COLOR_MAP_SOLUTION, img`
+scene.setTile(mazes.DEFAULT_COLOR_MAP_SOLUTION, img`
     9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
     9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
     9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
@@ -99,7 +99,7 @@ scene.setTile(DEFAULT_COLOR_MAP_SOLUTION, img`
     9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
     9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
 `, false)
-scene.setTile(DEFAULT_COLOR_MAP_BEGIN, img`
+scene.setTile(mazes.DEFAULT_COLOR_MAP_BEGIN, img`
     7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
     7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
     7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
@@ -117,7 +117,7 @@ scene.setTile(DEFAULT_COLOR_MAP_BEGIN, img`
     7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
     7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
 `, false)
-scene.setTile(DEFAULT_COLOR_MAP_END, img`
+scene.setTile(mazes.DEFAULT_COLOR_MAP_END, img`
     2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
     2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
     2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
@@ -172,7 +172,7 @@ function showMainScreen(): void {
     mazeSprite.setPosition(0 - mazeSprite.width, 0 - mazeSprite.height)
     scene.setTileMap(maze.buildTileMap(PATH_WIDTH))
     if (mazeBuilt) {
-        scene.getTilesByType(DEFAULT_COLOR_MAP_BEGIN)[0].place(player)
+        scene.getTilesByType(mazes.DEFAULT_COLOR_MAP_BEGIN)[0].place(player)
     } else {
         scene.getTile(1, 1).place(player)
     }   // if (mazeBuilt)
