@@ -16,14 +16,19 @@ https://pragprog.com/book/jbmaze/mazes-for-programmers
 ## TODO
 
 - [X] See it in action here
-  - [X] Blocks: https://makecode.com/_3tDK3ecavD2E
-  - [X] JavaScript: https://makecode.com/_E5r9CrgkJ8uR
-- [ ] Add "icon.png" image (300x200) in the root folder
+  * [X] Blocks
+   + [X] Playground https://makecode.com/_c2W0szf0m6kF
+   + [X] Sample game https://makecode.com/_gJ3dC0LaWE9g
+  * [X] JavaScript
+   + [X] Playground https://makecode.com/_53mUxx39eRoj
+   + [X] Sample game https://makecode.com/_4T54H0WhFhvW
+- [X] Add "icon.png" image (300x200) in the root folder
 - [X] Add "- beta" to the GitHub project description if you are still iterating it.
 - [X] Turn on your automated build on https://travis-ci.org
-- [ ] Use "pxt bump" to create a tagged release on GitHub
+- [X] Use "pxt bump" to create a tagged release on GitHub
 - [ ] Get your package reviewed and approved https://arcade.makecode.com/extensions/approval
 - [X] Change default tile colors for walls and paths (version 1.0.4).
+- [ ] Update engine for new tile map engine (version 3.0.0).
 
 Visit the following links to read more about building MakeCode custom blocks and extensions:
 
