@@ -21,12 +21,12 @@ enum MazeType {
 /**
  * Interfaces
  */
-interface CellDistances {
+interface MazeCellDistances {
     cellIds: number[]
     distances: number[]
-}   // interface CellDistances
+}   // interface MazeCellDistances
 
-interface GridColors {
+interface MazeGridColors {
     imageBackground: number
     imageWall: number
     tilePath: number
@@ -36,12 +36,12 @@ interface GridColors {
     tileBegin?: number
     tileEnd?: number
     tileSolution?: number
-}   // interface GridColors
+}   // interface MazeGridColors
 
-interface GridPath {
+interface MazeGridPath {
     begin: mazes.Cell
     end: mazes.Cell
-}   // GridPath
+}   // MazeGridPath
 
 //% weight=0 color=#b8860b icon="\uf00a" block="Mazes"
 //% advanced=true
@@ -346,7 +346,7 @@ namespace mazes {
          *                    indexed by cell ID.
          */
         //% callInDebugger
-        public get cells(): CellDistances {
+        public get cells(): MazeCellDistances {
             return {
                 cellIds: this._cellIds.slice(0),
                 distances: this._distances.slice(0)
@@ -408,12 +408,12 @@ namespace mazes {
     export class Grid {
         private static _img: Image
 
-        private _colors: GridColors
+        private _colors: MazeGridColors
         private _cols: number
         private _distances: Distances
         private _font: image.Font
         private _grid: Cell[][]
-        private _path: GridPath
+        private _path: MazeGridPath
         private _rows: number
 
         /**
@@ -462,14 +462,14 @@ namespace mazes {
         /**
          * @return {GridColors} The color settings for this object.
          */
-        public get colors(): GridColors {
+        public get colors(): MazeGridColors {
             return this._colors
         }   // get colors()
 
         /**
          * @param {GridColors} value - The color settings for this object.
          */
-        public set colors(value: GridColors) {
+        public set colors(value: MazeGridColors) {
             this._colors = value
         }   // set colors()
         /**
@@ -546,7 +546,7 @@ namespace mazes {
         /**
          * @return {GridPath} Begin and end cells for solution.
          */
-        public get solutionPath(): GridPath {
+        public get solutionPath(): MazeGridPath {
             return this._path
         }   // get solutionPath()
 
