@@ -3,12 +3,12 @@
 Get the distances between the root cell and the given cell.
 
 ```typescript
-Distances.getDistance(cell: Cell): number
+Distances.getDistance(cell: mazes.Cell): number
 ```
 
 ## Properties
 
-- `cell: Cell` Cell of interest.
+- `cell: mazes.Cell` Cell of interest.
 
 ## Return value
 

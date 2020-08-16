@@ -3,12 +3,12 @@
 Get a list of cells that form a path from the root to a given cell.
 
 ```typescript
-Distances.getPath(goal: Cell): Distances
+Distances.getPath(goal: mazes.Cell): Distances
 ```
 
 ## Parameters
 
-- `goal: Cell` Cell at the end of the requested path.
+- `goal: mazes.Cell` Cell at the end of the requested path.
 
 ## Return value
 

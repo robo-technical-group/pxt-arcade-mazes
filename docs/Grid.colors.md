@@ -3,9 +3,9 @@
 Get or set the colors used when drawing images.
 
 ```typescript
-Grid.colors: GridColors
+Grid.colors: MazeGridColors
 ```
 
 ## Parameter or return value
 
-A [`GridColors`](GridColors.md) object with the color configuration.
+A [`MazeGridColors`](GridColors.md) object with the color configuration.

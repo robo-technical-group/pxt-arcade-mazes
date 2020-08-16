@@ -6,11 +6,11 @@
 
 ## Interfaces
 
-- [`CellDistances`](CellDistances.md)
-- [`GridColors`](GridColors.md)
-- [`GridPath`](GridPath.md)
+- [`MazeCellDistances`](CellDistances.md)
+- [`MazeGridColors`](GridColors.md)
+- [`MazeGridPath`](GridPath.md)
 
-## `Cell` class
+## `mazes.Cell` class
 
 - [`constructor(number, number)`](Cell.constructor.md)
 - **Properties**
@@ -27,20 +27,20 @@
 - **Public methods**
   - [`clearLinks`](Cell.clearLinks.md)
   - [`isLinked`](Cell.isLinked.md)
-  - [`link(Cell, boolean)`](Cell.link.md)
-  - [`unlink(Cell, boolean)`](Cell.unlink.md)  
+  - [`link(mazes.Cell, boolean)`](Cell.link.md)
+  - [`unlink(mazes.Cell, boolean)`](Cell.unlink.md)  
 
-## `Distances` class
+## `mazes.Distances` class
 
-- [`constructor(Cell)`](Distances.constructor.md)
+- [`constructor(mazes.Cell)`](Distances.constructor.md)
 - **Properties**
   - [`cells`](Distances.cells.md)
 - **Public methods**
-  - [`getDistance(Cell)`](Distances.getDistance.md)
-  - [`getPath(Cell)`](Distances.getPath.md)
-  - [`setDistance(Cell, number)`](Distances.setDistance.md)
+  - [`getDistance(mazes.Cell)`](Distances.getDistance.md)
+  - [`getPath(mazes.Cell)`](Distances.getPath.md)
+  - [`setDistance(mazes.Cell, number)`](Distances.setDistance.md)
 
-## `Grid` class
+## `mazes.Grid` class
 
 A grid forms the basis of a maze.
 
@@ -63,7 +63,7 @@ A grid forms the basis of a maze.
   - [`setSolutionCells(number, number, number, number)`](Grid.setSolutionCells.md)
   - [`solve`](Grid.solve.md)
 
-## `mazes` namespace
+## Helper functions
 
-- [`buildMaze(number, number, mazeType)`](mazes.buildMaze.md)
+- [`mazes.buildMaze(number, number, MazeType)`](buildMaze.md)
  

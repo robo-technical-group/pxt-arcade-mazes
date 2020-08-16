@@ -3,7 +3,7 @@
 Get the cell in the grid at a particular row and column.
 
 ```typescript
-Grid.getCell(row: number, column: number): Cell
+Grid.getCell(row: number, column: number): mazes.Cell
 ```
 
 ## Parameters

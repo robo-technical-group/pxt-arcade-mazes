@@ -1,4 +1,4 @@
-# GridColors interface
+# MazeGridColors interface
 
 Collection of colors used when drawing mazes.
 

@@ -1,6 +1,6 @@
 # Grid.buildTileMap method
 
-Create a tile map representing the maze in this grid.
+Create a color-based tile map representing the maze in this grid.
 
 ```typescript
 Grid.buildTileMap(pathWidth: number = 1, img: Image = null): Image

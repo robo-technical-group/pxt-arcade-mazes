@@ -1,7 +1,7 @@
 # Grid.constructor
 
 ```typescript
-new Grid(rows: number, columns: number)
+new mazes.Grid(rows: number, columns: number)
 ```
 
 ## Parameters

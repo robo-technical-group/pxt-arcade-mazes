@@ -3,7 +3,7 @@
 Get a cell in the grid by ID number.
 
 ```typescript
-Grid.getCellById(id: number): Cell
+Grid.getCellById(id: number): mazes.Cell
 ```
 
 ## Parameters

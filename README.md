@@ -11,7 +11,7 @@ Learn more about the book here:
 
 https://pragprog.com/book/jbmaze/mazes-for-programmers
 
-[Link to API documentation](https://github.com/robo-technical-group/pxt-arcade-mazes/blob/master/api.md)
+[Link to API documentation](https://github.com/robo-technical-group/pxt-arcade-mazes/blob/master/docs/api.md)
 
 ## TODO
 

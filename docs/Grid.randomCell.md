@@ -3,5 +3,5 @@
 Get a random cell from the cells in the grid.
 
 ```typescript
-Grid.randomCell: Cell
+Grid.randomCell: mazes.Cell
 ```

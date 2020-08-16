@@ -3,7 +3,7 @@
 Link another Cell to this one.
 
 ```typescript
-Cell.link(cell: Cell, reciprocal: boolean = true): void
+Cell.link(cell: mazes.Cell, reciprocal: boolean = true): void
 ```
 
 ## Parameters

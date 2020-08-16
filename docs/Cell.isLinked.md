@@ -3,12 +3,12 @@
 Determine whether the given cell is linked to this one.
 
 ```typescript
-Cell.isLinked(cell: Cell): boolean
+Cell.isLinked(cell: mazes.Cell): boolean
 ```
 
 ## Properties
 
-- `cell: Cell` Cell of interest.
+- `cell: mazes.Cell` Cell of interest.
 
 ## Return value
 

@@ -3,5 +3,5 @@
 Get the cell to the south. Can be `null`.
 
 ```typescript
-Cell.south: Cell
+Cell.south: mazes.Cell
 ```

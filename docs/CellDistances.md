@@ -1,6 +1,6 @@
-# CellDistances interface
+# MazeCellDistances interface
 
-Collection of cells IDs and distances related to a `Distances` object.
+Collection of cells IDs and distances related to a `mazes.Distances` object.
 
 ## Fields
 
