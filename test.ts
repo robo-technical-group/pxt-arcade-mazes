@@ -1,9 +1,15 @@
+/**
+ * Enums
+ */
 enum GameMode {
     Main,
     MazeSprite,
     NotReady
 }   // GameModes
 
+/**
+ * Constants
+ */
 const ALGORITHM_NAMES: string[] = [
     'Aldous-Broder',
     'Binary tree',
@@ -12,17 +18,21 @@ const ALGORITHM_NAMES: string[] = [
     'Sidewinder',
     'Wilson'
 ]
-const GRID_SIZE: number = 10
+
+const GRID_HEIGHT: number = 10
+const GRID_WIDTH: number = 18
 const PATH_WIDTH: number = 2 // width of maze path in number of tiles
 const START_METHOD: MazeType = MazeType.RecursiveBacktracker
 
+/**
+ * Global variables
+ */
 let currAlgo: MazeType = START_METHOD
 let gameMode: GameMode = GameMode.NotReady
-let maze: mazes.Grid = new mazes.Grid(GRID_SIZE, GRID_SIZE)
-maze.setSolutionCells(0, 0, GRID_SIZE - 1, GRID_SIZE - 1)
-let mazeImage: Image = img`.`
-let mazeSprite: Sprite = sprites.create(mazeImage)
-let player: Sprite = sprites.create(sprites.duck.duck1, 0)
+let maze: mazes.Grid = null
+let mazeImage: Image = null
+let mazeSprite: Sprite = null
+let player: Sprite = null
 let mazeBuilt: boolean = false
 let mazeSpriteBuilt: boolean = false
 /*
@@ -118,6 +128,10 @@ scene.setTile(mazes.DEFAULT_COLOR_MAP_END, img`
 `, false)
 showMainScreen()
 */
+
+/**
+ * Event handlers
+ */
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (gameMode !== GameMode.NotReady) {
         maze.build(currAlgo)
@@ -148,6 +162,9 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
     }   // switch (gameMode)
 })
 
+/**
+ * Functions
+ */
 function showMainScreen(): void {
     gameMode = GameMode.NotReady
     mazeSprite.setPosition(0 - mazeSprite.width, 0 - mazeSprite.height)
@@ -173,10 +190,20 @@ function showMazeSprite(): void {
     // scene.setTileMap(null)
     scene.centerCameraAt(screen.width / 2, screen.height / 2)
     if (!mazeSpriteBuilt) {
-        mazeImage = maze.buildImage(10, 1, mazeImage)
+        mazeImage = maze.buildImage(8, 1, mazeImage)
         mazeSprite.setImage(mazeImage)
         mazeSpriteBuilt = true
     }   // if (! mazeSpriteBuilt)
     mazeSprite.setPosition(screen.width / 2, screen.height / 2)
     gameMode = GameMode.MazeSprite
 }   // showMazeSprite()
+
+/**
+ * Main
+ */
+maze = new mazes.Grid(GRID_HEIGHT, GRID_WIDTH)
+maze.setSolutionCells(0, 0, GRID_HEIGHT - 1, GRID_WIDTH - 1)
+mazeImage = img`.`
+mazeSprite = sprites.create(mazeImage)
+player = sprites.create(sprites.duck.duck1, 0)
+showMazeSprite()

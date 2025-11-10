@@ -58,7 +58,7 @@ namespace mazes {
     ]
     const BASE_36_OVERFLOW: string = '#'
     */
-    const PATH_CHARS: string = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    const PATH_CHARS: string = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
     const PATH_OVERFLOW: string = '#'
     export const DEFAULT_COLOR_FONT: number = 3 // Pink
     export const DEFAULT_COLOR_IMAGE_BG: number = 15 // Black
@@ -1033,7 +1033,9 @@ namespace mazes {
                 let char: string = distance >= PATH_CHARS.length
                     ? PATH_OVERFLOW
                     : PATH_CHARS[distance]
-                img.print(char, x + Math.floor(cellSize / 2), y + Math.floor(cellSize / 2),
+                img.print(char,
+                    x + (cellSize >> 1) - 2,
+                    y + (cellSize >> 1) - 2,
                     this._colors.font, this._font)
             }   // if (this._distances ...)
         }   // drawContents()
