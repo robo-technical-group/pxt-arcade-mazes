@@ -38,100 +38,6 @@ let mazeBuilt: boolean = false
 let mazeSpriteBuilt: boolean = false
 let tileMap: tiles.TileMapData = null
 
-/*
-scene.setTile(mazes.DEFAULT_COLOR_MAP_PATH, img`
-    d d d d d d d d d d d d d d d d
-    d d d d d d d d d d d d d d d d
-    d d d d d d d d d d d d d d d d
-    d d d d d d d d d d d d d d d d
-    d d d d d d d d d d d d d d d d
-    d d d d d d d d d d d d d d d d
-    d d d d d d d d d d d d d d d d
-    d d d d d d d d d d d d d d d d
-    d d d d d d d d d d d d d d d d
-    d d d d d d d d d d d d d d d d
-    d d d d d d d d d d d d d d d d
-    d d d d d d d d d d d d d d d d
-    d d d d d d d d d d d d d d d d
-    d d d d d d d d d d d d d d d d
-    d d d d d d d d d d d d d d d d
-    d d d d d d d d d d d d d d d d
-`, false)
-scene.setTile(mazes.DEFAULT_COLOR_MAP_WALL, img`
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-    e e e e e e e e e e e e e e e e
-`, true)
-scene.setTile(mazes.DEFAULT_COLOR_MAP_SOLUTION, img`
-    9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-    9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-    9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-    9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-    9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-    9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-    9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-    9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-    9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-    9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-    9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-    9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-    9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-    9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-    9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-    9 9 9 9 9 9 9 9 9 9 9 9 9 9 9 9
-`, false)
-scene.setTile(mazes.DEFAULT_COLOR_MAP_BEGIN, img`
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-    7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7
-`, false)
-scene.setTile(mazes.DEFAULT_COLOR_MAP_END, img`
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-    2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
-`, false)
-showMainScreen()
-*/
-
 /**
  * Event handlers
  */
@@ -179,14 +85,6 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 function showMainScreen(): void {
     gameMode = GameMode.NotReady
     mazeSprite.setPosition(0 - mazeSprite.width, 0 - mazeSprite.height)
-    /*
-    scene.setTileMap(maze.buildTileMap(PATH_WIDTH))
-    if (mazeBuilt) {
-        scene.getTilesByType(mazes.DEFAULT_COLOR_MAP_BEGIN)[0].place(player)
-    } else {
-        scene.getTile(1, 1).place(player)
-    }   // if (mazeBuilt)
-    */
     tiles.setCurrentTilemap(tileMap)
     if (mazeBuilt) {
         tiles.placeOnRandomTile(player, sprites.dungeon.floorDarkDiamond)
@@ -204,7 +102,6 @@ function showMazeSprite(): void {
     scene.cameraFollowSprite(null)
     player.setPosition(0 - player.width, 0 - player.height)
     controller.moveSprite(null)
-    // scene.setTileMap(null)
     tiles.setCurrentTilemap(null)
     scene.centerCameraAt(screen.width / 2, screen.height / 2)
     if (!mazeSpriteBuilt) {

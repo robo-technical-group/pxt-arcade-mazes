@@ -29,13 +29,7 @@ interface MazeCellDistances {
 interface MazeGridColors {
     imageBackground: number
     imageWall: number
-    // tilePath: number
-    // tileWall: number
-
     font?: number
-    // tileBegin?: number
-    // tileEnd?: number
-    // tileSolution?: number
 }   // interface MazeGridColors
 
 interface MazeGridPath {
@@ -50,26 +44,11 @@ namespace mazes {
     /**
      * Constants
      */
-    /*
-    const BASE_36: string[] = [
-        '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b',
-        'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
-        'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
-    ]
-    const BASE_36_OVERFLOW: string = '#'
-    */
     const PATH_CHARS: string = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
     const PATH_OVERFLOW: string = '#'
     export const DEFAULT_COLOR_FONT: number = 3 // Pink
     export const DEFAULT_COLOR_IMAGE_BG: number = 15 // Black
     export const DEFAULT_COLOR_IMAGE_WALL: number = 1 // White
-    // export const DEFAULT_COLOR_MAP_BEGIN: number = 7 // Bright green
-    // export const DEFAULT_COLOR_MAP_END: number = 2 // Red
-    // const DEFAULT_COLOR_MAP_PATH: number = 13 // Bone
-    // export const DEFAULT_COLOR_MAP_PATH: number = 15 // Black
-    // export const DEFAULT_COLOR_MAP_SOLUTION: number = 9 // Light blue
-    // const DEFAULT_COLOR_MAP_WALL: number = 14 // Brown
-    // export const DEFAULT_COLOR_MAP_WALL: number = 1 // White
     export const DEFAULT_GRID_SIZE: number = 10
     export const DEFAULT_MAZE_TYPE: MazeType = MazeType.Sidewinder
     export const DEFAULT_FONT: image.Font = image.font5
@@ -139,7 +118,6 @@ namespace mazes {
                     }   // for (linked)
                 }   // for (cell)
 
-                // frontier = newFrontier.slice(0)
                 frontier = newFrontier
                 frontierLength = frontier.length
                 rounds++
@@ -443,13 +421,6 @@ namespace mazes {
                 font: DEFAULT_COLOR_FONT,
                 imageBackground: DEFAULT_COLOR_IMAGE_BG,
                 imageWall: DEFAULT_COLOR_IMAGE_WALL,
-                /*
-                tileBegin: DEFAULT_COLOR_MAP_BEGIN,
-                tileEnd: DEFAULT_COLOR_MAP_END,
-                tilePath: DEFAULT_COLOR_MAP_PATH,
-                tileSolution: DEFAULT_COLOR_MAP_SOLUTION,
-                tileWall: DEFAULT_COLOR_MAP_WALL
-                */
             }
             this._cols = columns
             this._font = DEFAULT_FONT
@@ -734,53 +705,6 @@ namespace mazes {
 
             return toReturn
         }
-
-        /*
-        public buildTileMap(pathWidth: number = 1, img: Image = null): Image {
-            if (!img) {
-                img = Grid._img
-            }   // if (! img)
-            // Hide solution for now so that the distances are not printed in the image.
-            let solution: Distances = this.distances
-            this.distances = null
-            img = this.draw(pathWidth + 1, 1, this._colors.tilePath, this._colors.tileWall, img)
-            this.distances = solution
-
-            if (this._colors.tileBegin == null) {
-                this._colors.tileBegin = DEFAULT_COLOR_MAP_BEGIN
-            }   // if (! beginColor)
-            if (this._colors.tileEnd == null) {
-                this._colors.tileEnd = DEFAULT_COLOR_MAP_END
-            }   // if (! endColor)
-            if (this._colors.tileSolution == null) {
-                this._colors.tileSolution = DEFAULT_COLOR_MAP_SOLUTION
-            }   // if (! solutionColor)
-            if (this._path.begin == null) {
-                this._path.begin = new Cell(0, 0)
-            }   // if (! this._path.begin)
-            if (this._path.end == null) {
-                this._path.end = new Cell(this._rows - 1, 0)
-            }   // if (! this._path.end)
-
-            // Draw solution
-            if (solution) {
-                for (let row: number = 0; row < this._rows; row++) {
-                    for (let col: number = 0; col < this._cols; col++) {
-                        let cell: Cell = this.getCell(row, col)
-                        if (solution.getDistance(cell) > -1) {
-                            img.setPixel(col * (pathWidth + 1) + 1, row * (pathWidth + 1) + 1,
-                                this._colors.tileSolution)
-                        }   // if (solution.getDistance(cell) > -1)
-                    }   // for (col)
-                }   // for (row)
-                img.setPixel(this._path.begin.column * (pathWidth + 1) + 1,
-                    this._path.begin.row * (pathWidth + 1) + 1, this._colors.tileBegin)
-                img.setPixel(this._path.end.column * (pathWidth + 1) + 1,
-                    this._path.end.row * (pathWidth + 1) + 1, this._colors.tileEnd)
-            }   // if (solution)
-            return img
-        }   // buildTileMap()
-        */
 
         /**
          * Return a tile map with the maze in this grid.
