@@ -29,13 +29,13 @@ interface MazeCellDistances {
 interface MazeGridColors {
     imageBackground: number
     imageWall: number
-    tilePath: number
-    tileWall: number
+    // tilePath: number
+    // tileWall: number
 
     font?: number
-    tileBegin?: number
-    tileEnd?: number
-    tileSolution?: number
+    // tileBegin?: number
+    // tileEnd?: number
+    // tileSolution?: number
 }   // interface MazeGridColors
 
 interface MazeGridPath {
@@ -50,22 +50,26 @@ namespace mazes {
     /**
      * Constants
      */
+    /*
     const BASE_36: string[] = [
         '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'a', 'b',
         'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
         'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'
     ]
     const BASE_36_OVERFLOW: string = '#'
+    */
+    const PATH_CHARS: string = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    const PATH_OVERFLOW: string = '#'
     export const DEFAULT_COLOR_FONT: number = 3 // Pink
     export const DEFAULT_COLOR_IMAGE_BG: number = 15 // Black
     export const DEFAULT_COLOR_IMAGE_WALL: number = 1 // White
-    export const DEFAULT_COLOR_MAP_BEGIN: number = 7 // Bright green
-    export const DEFAULT_COLOR_MAP_END: number = 2 // Red
+    // export const DEFAULT_COLOR_MAP_BEGIN: number = 7 // Bright green
+    // export const DEFAULT_COLOR_MAP_END: number = 2 // Red
     // const DEFAULT_COLOR_MAP_PATH: number = 13 // Bone
-    export const DEFAULT_COLOR_MAP_PATH: number = 15 // Black
-    export const DEFAULT_COLOR_MAP_SOLUTION: number = 9 // Light blue
+    // export const DEFAULT_COLOR_MAP_PATH: number = 15 // Black
+    // export const DEFAULT_COLOR_MAP_SOLUTION: number = 9 // Light blue
     // const DEFAULT_COLOR_MAP_WALL: number = 14 // Brown
-    export const DEFAULT_COLOR_MAP_WALL: number = 1 // White
+    // export const DEFAULT_COLOR_MAP_WALL: number = 1 // White
     export const DEFAULT_GRID_SIZE: number = 10
     export const DEFAULT_MAZE_TYPE: MazeType = MazeType.Sidewinder
     export const DEFAULT_FONT: image.Font = image.font5
@@ -439,11 +443,13 @@ namespace mazes {
                 font: DEFAULT_COLOR_FONT,
                 imageBackground: DEFAULT_COLOR_IMAGE_BG,
                 imageWall: DEFAULT_COLOR_IMAGE_WALL,
+                /*
                 tileBegin: DEFAULT_COLOR_MAP_BEGIN,
                 tileEnd: DEFAULT_COLOR_MAP_END,
                 tilePath: DEFAULT_COLOR_MAP_PATH,
                 tileSolution: DEFAULT_COLOR_MAP_SOLUTION,
                 tileWall: DEFAULT_COLOR_MAP_WALL
+                */
             }
             this._cols = columns
             this._font = DEFAULT_FONT
@@ -472,6 +478,7 @@ namespace mazes {
         public set colors(value: MazeGridColors) {
             this._colors = value
         }   // set colors()
+
         /**
          * @return {number} Number of columns in grid.
          */
@@ -632,6 +639,7 @@ namespace mazes {
          * @param {Image} img - Canvas to use for image, null = use common canvas.
          * @return {Image} Tile map of this maze.
          */
+        /*
         public buildTileMap(pathWidth: number = 1, img: Image = null): Image {
             if (!img) {
                 img = Grid._img
@@ -676,6 +684,7 @@ namespace mazes {
             }   // if (solution)
             return img
         }   // buildTileMap()
+        */
 
         /**
          * Return a tile map with the maze in this grid.
@@ -688,9 +697,17 @@ namespace mazes {
         //% expandableArgumentMode="toggle"
         //% group="Images"
         //% hidden
+        /*
         public buildTileMapBlocks(pathWidth: number = 1): Image {
             return this.buildTileMap(pathWidth, Grid._img)
         }   // buildTileMapBlocks()
+        */
+
+        public buildTileMap(
+
+        ): tiles.TileMapData {
+            return null
+        }
 
         /**
          * @param {number} row - Row of requested cell.
@@ -1013,9 +1030,9 @@ namespace mazes {
                 let x2: number = x + cellSize
                 let y2: number = y + cellSize
                 let distance: number = this._distances.getDistance(cell)
-                let char: string = distance >= BASE_36.length
-                    ? BASE_36_OVERFLOW
-                    : BASE_36[distance]
+                let char: string = distance >= PATH_CHARS.length
+                    ? PATH_OVERFLOW
+                    : PATH_CHARS[distance]
                 img.print(char, x + Math.floor(cellSize / 2), y + Math.floor(cellSize / 2),
                     this._colors.font, this._font)
             }   // if (this._distances ...)
@@ -1067,18 +1084,30 @@ namespace mazes {
     }   // buildMaze()
 
     //% blockId="mazes_buildMazeTilemap"
-    //% block="create maze with path tile as %pathTile and wall tile as %wallTile || and solution tile as %solnTile || with %rows rows and %columns columns of type %mazeType"
+    //% block="create maze tilemap with path tile as %pathTile and wall tile as %wallTile || with rows %rows and columns %columns of type %mazeType | with begin tile as %beginTile endTile as %endTile solution path tile as %solnTile | begin at col %beginCol row %beginRow end at col %endCol row %endRow"
     //% blockSetVariable=mazeTileMap
-    //% rows.defl=10 columns.defl=10 mazeType.defl=MazeType.SideWinder
-    //% expandableArgumentMode="toggle"
+    //% rows.defl=10 rows.min=4 row.max=100
+    //% columns.defl=10 cols.min=4 cols.max=100
+    //% mazeType.defl=MazeType.SideWinder
+    //% beginCol.defl=0 beginRow.defl=0 endCol.defl=9 endRow.defl=9
+    //% expandableArgumentMode="enabled"
+    //% inlineInputMode=external
     //% group="Mazes"
     //% pathTile.shadow=tileset_tile_picker
     //% pathTile.decompileIndirectFixedInstances=true
     //% wallTile.shadow=tileset_tile_picker
     //% wallTile.decompileIndirectFixedInstances=true
-    export function buildMazeTilemap(pathTile: Image, wallTile: Image, solnTile: Image,
+    //% beginTile.shadow=tileset_tile_picker
+    //% beginTile.decompileIndirectFixedInstances=true
+    //% endTile.shadow=tileset_tile_picker
+    //% endTile.decompileIndirectFixedInstances=true
+    //% solnTile.shadow=tileset_tile_picker
+    //% solnTile.decompileIndirectFixedInstances=true
+    export function buildMazeTilemap(pathTile: Image, wallTile: Image,
         rows: number = 10, columns: number = 10,
-        mazeType?: MazeType
+        mazeType?: MazeType,
+        beginTile?: Image, endTile?: Image, solnTile?: Image,
+        beginCol: number = 0, beginRow: number = 0, endCol: number = 9, endRow: number = 9
     ): tiles.TileMapData {
         return null
     }

@@ -1,23 +1,3 @@
-// Standard palette
-enum Color {
-    Transparent, // 0
-    White, // 1 = RGB(255, 255, 255)
-    Red, // 2 = RGB(255, 33, 33)
-    Pink, // 3 = RGB(255, 147, 196)
-    Orange, // 4 = RGB(255, 129, 53)
-    Yellow, // 5 = RGB(255, 246, 9)
-    Aqua, // 6 = RGB(36, 156, 163)
-    BrightGreen, // 7 = RGB(120, 220, 82)
-    Blue, // 8 = RGB(0, 63, 173)
-    LightBlue, // 9 = RGB(135, 242, 255)
-    Purple, // 10 = RGB(142, 46, 196)
-    RoseBouquet, // 11 = RGB(164, 131, 159)
-    Wine, // 12 = RGB(92, 64, 108)
-    Bone, // 13 = RGB(229, 205, 196)
-    Brown, // 14 = RGB(145, 70, 61)
-    Black // 15 = RGB(0, 0, 0)
-}   // enum Color
-
 enum GameMode {
     Main,
     MazeSprite,
@@ -45,6 +25,7 @@ let mazeSprite: Sprite = sprites.create(mazeImage)
 let player: Sprite = sprites.create(sprites.duck.duck1, 0)
 let mazeBuilt: boolean = false
 let mazeSpriteBuilt: boolean = false
+/*
 scene.setTile(mazes.DEFAULT_COLOR_MAP_PATH, img`
     d d d d d d d d d d d d d d d d
     d d d d d d d d d d d d d d d d
@@ -136,7 +117,7 @@ scene.setTile(mazes.DEFAULT_COLOR_MAP_END, img`
     2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2
 `, false)
 showMainScreen()
-
+*/
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (gameMode !== GameMode.NotReady) {
         maze.build(currAlgo)
@@ -170,12 +151,14 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 function showMainScreen(): void {
     gameMode = GameMode.NotReady
     mazeSprite.setPosition(0 - mazeSprite.width, 0 - mazeSprite.height)
+    /*
     scene.setTileMap(maze.buildTileMap(PATH_WIDTH))
     if (mazeBuilt) {
         scene.getTilesByType(mazes.DEFAULT_COLOR_MAP_BEGIN)[0].place(player)
     } else {
         scene.getTile(1, 1).place(player)
     }   // if (mazeBuilt)
+    */
     scene.cameraFollowSprite(player)
     controller.moveSprite(player)
     player.say(ALGORITHM_NAMES[currAlgo])
@@ -187,7 +170,7 @@ function showMazeSprite(): void {
     scene.cameraFollowSprite(null)
     player.setPosition(0 - player.width, 0 - player.height)
     controller.moveSprite(null)
-    scene.setTileMap(null)
+    // scene.setTileMap(null)
     scene.centerCameraAt(screen.width / 2, screen.height / 2)
     if (!mazeSpriteBuilt) {
         mazeImage = maze.buildImage(10, 1, mazeImage)

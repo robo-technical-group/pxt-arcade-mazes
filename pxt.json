@@ -3,14 +3,15 @@
     "version": "3.0.0",
     "description": "",
     "dependencies": {
-        "device": "*",
-        "color-coded-tilemap": "*"
+        "device": "*"
     },
     "files": [
         "README.md",
         "main.blocks",
         "main.ts",
-        "mazes.ts"
+        "mazes.ts",
+        "tilemap.g.jres",
+        "tilemap.g.ts"
     ],
     "testFiles": [
         "test.ts"
