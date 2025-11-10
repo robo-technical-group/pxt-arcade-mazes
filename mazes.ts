@@ -675,7 +675,7 @@ namespace mazes {
                     this._path.end.row * (pathWidth + 1) + 1, this._colors.tileEnd)
             }   // if (solution)
             return img
-        }   // buildTileMapBlocks()
+        }   // buildTileMap()
 
         /**
          * Return a tile map with the maze in this grid.
@@ -1065,4 +1065,21 @@ namespace mazes {
         }   // if (mazeType)
         return toReturn
     }   // buildMaze()
+
+    //% blockId="mazes_buildMazeTilemap"
+    //% block="create maze with path tile as %pathTile and wall tile as %wallTile || and solution tile as %solnTile || with %rows rows and %columns columns of type %mazeType"
+    //% blockSetVariable=mazeTileMap
+    //% rows.defl=10 columns.defl=10 mazeType.defl=MazeType.SideWinder
+    //% expandableArgumentMode="toggle"
+    //% group="Mazes"
+    //% pathTile.shadow=tileset_tile_picker
+    //% pathTile.decompileIndirectFixedInstances=true
+    //% wallTile.shadow=tileset_tile_picker
+    //% wallTile.decompileIndirectFixedInstances=true
+    export function buildMazeTilemap(pathTile: Image, wallTile: Image, solnTile: Image,
+        rows: number = 10, columns: number = 10,
+        mazeType?: MazeType
+    ): tiles.TileMapData {
+        return null
+    }
 }   // namespace mazes
