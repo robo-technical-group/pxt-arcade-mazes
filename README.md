@@ -31,22 +31,28 @@ https://pragprog.com/titles/jbmaze/mazes-for-programmers
 
 [Link to API documentation](https://github.com/robo-technical-group/pxt-arcade-mazes/blob/master/docs/api.md)
 
+## Samples
+    
+### Modern tilemap version (v.3+)
+
+### Legacy tilemap version (v.2)
+
+-   Blocks
+    -   Playground <https://makecode.com/_c2W0szf0m6kF>
+    -   Sample game <https://makecode.com/_gJ3dC0LaWE9g>
+-   JavaScript
+    -   Playground <https://makecode.com/_53mUxx39eRoj>
+    -   Sample game <https://makecode.com/_4T54H0WhFhvW>
+    
 ## TODO
 
-- [X] See it in action here
-  * [X] Blocks
-    + [X] Playground https://makecode.com/_c2W0szf0m6kF
-    + [X] Sample game https://makecode.com/_gJ3dC0LaWE9g
-  * [X] JavaScript
-    + [X] Playground https://makecode.com/_53mUxx39eRoj
-    + [X] Sample game https://makecode.com/_4T54H0WhFhvW
 - [X] Add "icon.png" image (300x200) in the root folder
 - [X] Add "- beta" to the GitHub project description if you are still iterating it.
 - [X] Turn on your automated build on https://travis-ci.org
 - [X] Use "pxt bump" to create a tagged release on GitHub
 - [ ] Get your package reviewed and approved https://arcade.makecode.com/extensions/approval
 - [X] Change default tile colors for walls and paths (version 1.0.4).
-- [ ] Update engine for new tile map engine (version 3.0.0).
+- [X] Update engine for new tile map engine (version 3.0.0).
 
 Visit the following links to read more about building MakeCode custom blocks and extensions:
 
