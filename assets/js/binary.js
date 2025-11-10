@@ -1,5 +1,5 @@
-// meta={"simUrl":"https://trg-arcade.userpxt.io/v2.0.61/---simulator","cdnUrl":"https://cdn.makecode.com","version":"3.1.0","target":"arcade","targetVersion":"2.0.61","repo":"robo-technical-group/pxt-arcade-mazes"}
-// total=1895492 new=32.46% cached=63.34% other=4.20%
+// meta={"simUrl":"https://trg-arcade.userpxt.io/v2.0.61/---simulator","cdnUrl":"https://cdn.makecode.com","version":"3.1.1","target":"arcade","targetVersion":"2.0.61","repo":"robo-technical-group/pxt-arcade-mazes"}
+// total=1895474 new=32.46% cached=63.34% other=4.20%
 (function (ectx) {
 'use strict';
 const runtime = ectx.runtime;
@@ -493,7 +493,7 @@ const pxsim_pxtrt = pxsim.pxtrt;
 const pxsim_numops = pxsim.numops;
 
 
-function _main___P467609(s) {
+function _main___P488471(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -903,9 +903,9 @@ switch (step) {
     s.callLocIdx = 62; s.pc = 36; return s.tmp_0;
   case 36:
     r0 = s.retval;
-    globals.PATH_CHARS___456512 = ("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
-    globals.PATH_OVERFLOW___456514 = ("#");
-    globals.DEFAULT_FONT___456528 = (globals.font5___1985);
+    globals.PATH_CHARS___486562 = ("0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz");
+    globals.PATH_OVERFLOW___486564 = ("#");
+    globals.DEFAULT_FONT___486578 = (globals.font5___1985);
     r0 = pxsim.image.ofBuffer(_hex8273);
     globals.transparency16___4440 = (r0);
     s.tmp_0 = helpers__registerFactory__P3365_mk(s);
@@ -923,42 +923,42 @@ switch (step) {
     r0 = pxsim_Array__push(s.tmp_0, "Recursive backtracker");
     r0 = pxsim_Array__push(s.tmp_0, "Sidewinder");
     r0 = pxsim_Array__push(s.tmp_0, "Wilson");
-    globals.ALGORITHM_NAMES___467016 = (s.tmp_0);
-    globals.currAlgo___467027 = (4);
-    globals.gameMode___467030 = (2);
-    globals.maze___467032 = (null);
-    globals.mazeImage___467034 = (null);
-    globals.mazeSprite___467036 = (null);
-    globals.player___467038 = (null);
-    globals.mazeBuilt___467040 = (false);
-    globals.mazeSpriteBuilt___467042 = (false);
-    globals.tileMap___467044 = (null);
+    globals.ALGORITHM_NAMES___476104 = (s.tmp_0);
+    globals.currAlgo___476115 = (4);
+    globals.gameMode___476118 = (2);
+    globals.maze___476120 = (null);
+    globals.mazeImage___476122 = (null);
+    globals.mazeSprite___476124 = (null);
+    globals.player___476126 = (null);
+    globals.mazeBuilt___476128 = (false);
+    globals.mazeSpriteBuilt___476130 = (false);
+    globals.tileMap___476132 = (null);
     s.tmp_0 = controller_Button_onEvent__P2210_mk(s);
     s.tmp_0.arg0 = globals.A___2127;
     s.tmp_0.arg1 = 2049;
-    s.tmp_0.arg2 = inline__P467048;
+    s.tmp_0.arg2 = inline__P476136;
     s.callLocIdx = 211; s.pc = 38; return s.tmp_0;
   case 38:
     r0 = s.retval;
     s.tmp_0 = controller_Button_onEvent__P2210_mk(s);
     s.tmp_0.arg0 = globals.B___2128;
     s.tmp_0.arg1 = 2049;
-    s.tmp_0.arg2 = inline__P467080;
+    s.tmp_0.arg2 = inline__P476168;
     s.callLocIdx = 214; s.pc = 39; return s.tmp_0;
   case 39:
     r0 = s.retval;
-    r0 = pxsim_pxtcore_mkClassInstance(mazes_Grid__C456914_VT);
+    r0 = pxsim_pxtcore_mkClassInstance(mazes_Grid__C486964_VT);
     s.tmp_0 = r0;
-    s.tmp_1 = mazes_Grid_constructor__P456946_mk(s);
+    s.tmp_1 = mazes_Grid_constructor__P486996_mk(s);
     s.tmp_1.arg0 = s.tmp_0;
     s.tmp_1.arg1 = 14;
     s.tmp_1.arg2 = 18;
     s.callLocIdx = 235; s.pc = 40; return s.tmp_1;
   case 40:
     r0 = s.retval;
-    globals.maze___467032 = (s.tmp_0);
-    s.tmp_0 = mazes_Grid_setSolutionCells__P456932_mk(s);
-    s.tmp_0.arg0 = globals.maze___467032;
+    globals.maze___476120 = (s.tmp_0);
+    s.tmp_0 = mazes_Grid_setSolutionCells__P486982_mk(s);
+    s.tmp_0.arg0 = globals.maze___476120;
     s.tmp_0.arg1 = 0;
     s.tmp_0.arg2 = 0;
     s.tmp_0.arg3 = 13;
@@ -966,24 +966,24 @@ switch (step) {
     s.callLocIdx = 236; s.pc = 41; return s.tmp_0;
   case 41:
     r0 = s.retval;
-    r0 = pxsim.image.ofBuffer(_hex467179);
-    globals.mazeImage___467034 = (r0);
+    r0 = pxsim.image.ofBuffer(_hex476267);
+    globals.mazeImage___476122 = (r0);
     s.tmp_0 = sprites_create__P2289_mk(s);
-    s.tmp_0.arg0 = globals.mazeImage___467034;
+    s.tmp_0.arg0 = globals.mazeImage___476122;
     s.tmp_0.arg1 = undefined;
     s.callLocIdx = 237; s.pc = 42; return s.tmp_0;
   case 42:
     r0 = s.retval;
-    globals.mazeSprite___467036 = (r0);
+    globals.mazeSprite___476124 = (r0);
     s.tmp_0 = sprites_create__P2289_mk(s);
     s.tmp_0.arg0 = globals.duck1___3593;
     s.tmp_0.arg1 = 0;
     s.callLocIdx = 238; s.pc = 43; return s.tmp_0;
   case 43:
     r0 = s.retval;
-    globals.player___467038 = (r0);
-    s.tmp_0 = mazes_Grid_buildTileMap__P456929_mk(s);
-    s.tmp_0.arg0 = globals.maze___467032;
+    globals.player___476126 = (r0);
+    s.tmp_0 = mazes_Grid_buildTileMap__P486979_mk(s);
+    s.tmp_0.arg0 = globals.maze___476120;
     s.tmp_0.arg1 = globals.floorLight0___4048;
     s.tmp_0.arg2 = globals.forestTiles0___3829;
     s.tmp_0.arg3 = 2;
@@ -993,8 +993,8 @@ switch (step) {
     s.callLocIdx = 239; s.pc = 44; return s.tmp_0;
   case 44:
     r0 = s.retval;
-    globals.tileMap___467044 = (r0);
-    s.tmp_0 = showMainScreen__P467074_mk(s);
+    globals.tileMap___476132 = (r0);
+    s.tmp_0 = showMainScreen__P476162_mk(s);
     s.callLocIdx = 240; s.pc = 45; return s.tmp_0;
   case 45:
     r0 = s.retval;
@@ -1002,13 +1002,13 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-_main___P467609.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"main.ts","functionName":"<main>","argumentNames":[]}
-_main___P467609.continuations = [  ]
+_main___P488471.info = {"start":0,"length":0,"line":0,"column":0,"endLine":0,"endColumn":0,"fileName":"main.ts","functionName":"<main>","argumentNames":[]}
+_main___P488471.continuations = [  ]
 
-function _main___P467609_mk(s) {
+function _main___P488471_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: _main___P467609, depth: s.depth + 1,
+        parent: s, fn: _main___P488471, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -1043,7 +1043,7 @@ const _hex6306 = pxsim.BufferMethods.createBufferFromHex("8704100010000000000000
 const _hex6360 = pxsim.BufferMethods.createBufferFromHex("87041000100000001d1111b11d1111b1d1ddddbdd1ddddbdd1ddddbdd1ddddbdd1ddddbdd1ddddbdd1ddddbdd1ddddbdd1ddddbdd1ddddbdd1ddddddd1ddddddbbbbbbedbbbbbbed1d1111b11d1111d1d1ddddbdd1ddddbdd1ddddbdd1ddddbdd1ddddbdd1ddddbdd1ddddbdd1ddddbdd1ddddbdd1ddddbdd1ddddddd1ddddbdbbbbbbedbbbbbbed")
 const _hex6382 = pxsim.BufferMethods.createBufferFromHex("8704100010000000dbddddcddcddddcdbdbbbbdccdbbbbcbbdbbcbbdbbbcbbcbbdbbdcbbbbcbbbcbbdcbbdbbbbbbbccbbddcbbbbbbbbcbcbcdbdbbbbbbbbbbbcdcbbbbbbbbbbbbcbdcbbbbbbbbbbbbdccdbbbbbbbbbbcbcdbdbcbbbbbbbbdccbbdcbbbbbbbcbbdcbbdbbbcbbbbdcbbcbbdbbcbbbcbbdbbcbbdbbbbbcdcbbbbcbcccccccbcdccccac")
 const _hex8273 = pxsim.BufferMethods.createBufferFromHex("87041000100000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000")
-const _hex467179 = pxsim.BufferMethods.createBufferFromHex("870401000100000000000000")
+const _hex476267 = pxsim.BufferMethods.createBufferFromHex("870401000100000000000000")
 
 
 
@@ -1604,7 +1604,7 @@ function myTiles_inline__P8277_mk(s) {
 
 
 
-function inline__P467048(s) {
+function inline__P476136(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1614,23 +1614,23 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    r0 = (globals.gameMode___467030 !== 2);
+    r0 = (globals.gameMode___476118 !== 2);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 4; continue; }
-    s.tmp_1 = mazes_Grid_build__P456926_mk(s);
-    s.tmp_1.arg0 = globals.maze___467032;
-    s.tmp_1.arg1 = globals.currAlgo___467027;
+    s.tmp_1 = mazes_Grid_build__P486976_mk(s);
+    s.tmp_1.arg0 = globals.maze___476120;
+    s.tmp_1.arg1 = globals.currAlgo___476115;
     s.callLocIdx = 206; s.pc = 6; return s.tmp_1;
   case 6:
     r0 = s.retval;
-    s.tmp_0 = mazes_Grid_solve__P456933_mk(s);
-    s.tmp_0.arg0 = globals.maze___467032;
+    s.tmp_0 = mazes_Grid_solve__P486983_mk(s);
+    s.tmp_0.arg0 = globals.maze___476120;
     s.callLocIdx = 207; s.pc = 7; return s.tmp_0;
   case 7:
     r0 = s.retval;
-    s.tmp_0 = mazes_Grid_buildTileMap__P456929_mk(s);
-    s.tmp_0.arg0 = globals.maze___467032;
+    s.tmp_0 = mazes_Grid_buildTileMap__P486979_mk(s);
+    s.tmp_0.arg0 = globals.maze___476120;
     s.tmp_0.arg1 = globals.floorLight0___4048;
     s.tmp_0.arg2 = globals.forestTiles0___3829;
     s.tmp_0.arg3 = 2;
@@ -1640,10 +1640,10 @@ switch (step) {
     s.callLocIdx = 208; s.pc = 8; return s.tmp_0;
   case 8:
     r0 = s.retval;
-    globals.tileMap___467044 = (r0);
-    globals.mazeSpriteBuilt___467042 = (false);
-    globals.mazeBuilt___467040 = (true);
-    s.tmp_0 = r0 = globals.gameMode___467030;
+    globals.tileMap___476132 = (r0);
+    globals.mazeSpriteBuilt___476130 = (false);
+    globals.mazeBuilt___476128 = (true);
+    s.tmp_0 = r0 = globals.gameMode___476118;
     r0 = pxsim_pxtcore.switch_eq(0, s.tmp_0);
     if (r0) { step = 1; continue; }
     r0 = pxsim_pxtcore.switch_eq(1, s.tmp_0);
@@ -1651,13 +1651,13 @@ switch (step) {
     r0 = s.tmp_0;
     { step = 3; continue; }
   case 1:
-    s.tmp_1 = showMainScreen__P467074_mk(s);
+    s.tmp_1 = showMainScreen__P476162_mk(s);
     s.callLocIdx = 209; s.pc = 9; return s.tmp_1;
   case 9:
     r0 = s.retval;
     { step = 3; continue; }
   case 2:
-    s.tmp_0 = showMazeSprite__P467076_mk(s);
+    s.tmp_0 = showMazeSprite__P476164_mk(s);
     s.callLocIdx = 210; s.pc = 10; return s.tmp_0;
   case 10:
     r0 = s.retval;
@@ -1668,12 +1668,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-inline__P467048.info = {"start":4084,"length":743,"line":137,"column":52,"endLine":161,"endColumn":1,"fileName":"test.ts","functionName":"inline","argumentNames":[]}
+inline__P476136.info = {"start":882,"length":743,"line":43,"column":52,"endLine":67,"endColumn":1,"fileName":"test.ts","functionName":"inline","argumentNames":[]}
 
-function inline__P467048_mk(s) {
+function inline__P476136_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: inline__P467048, depth: s.depth + 1,
+        parent: s, fn: inline__P476136, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -1683,7 +1683,7 @@ function inline__P467048_mk(s) {
 
 
 
-function inline__P467080(s) {
+function inline__P476168(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -1693,7 +1693,7 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.tmp_0 = r0 = globals.gameMode___467030;
+    s.tmp_0 = r0 = globals.gameMode___476118;
     r0 = pxsim_pxtcore.switch_eq(0, s.tmp_0);
     if (r0) { step = 1; continue; }
     r0 = pxsim_pxtcore.switch_eq(1, s.tmp_0);
@@ -1701,13 +1701,13 @@ switch (step) {
     r0 = s.tmp_0;
     { step = 3; continue; }
   case 1:
-    s.tmp_1 = showMazeSprite__P467076_mk(s);
+    s.tmp_1 = showMazeSprite__P476164_mk(s);
     s.callLocIdx = 212; s.pc = 4; return s.tmp_1;
   case 4:
     r0 = s.retval;
     { step = 3; continue; }
   case 2:
-    s.tmp_0 = showMainScreen__P467074_mk(s);
+    s.tmp_0 = showMainScreen__P476162_mk(s);
     s.callLocIdx = 213; s.pc = 5; return s.tmp_0;
   case 5:
     r0 = s.retval;
@@ -1716,12 +1716,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-inline__P467080.info = {"start":4882,"length":225,"line":163,"column":52,"endLine":173,"endColumn":1,"fileName":"test.ts","functionName":"inline","argumentNames":[]}
+inline__P476168.info = {"start":1680,"length":225,"line":69,"column":52,"endLine":79,"endColumn":1,"fileName":"test.ts","functionName":"inline","argumentNames":[]}
 
-function inline__P467080_mk(s) {
+function inline__P476168_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: inline__P467080, depth: s.depth + 1,
+        parent: s, fn: inline__P476168, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -4667,7 +4667,7 @@ function helpers_arrayForEach__P109_mk(s) {
 
 
 
-function mazes_Grid_setSolutionCells__P456932(s) {
+function mazes_Grid_setSolutionCells__P486982(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -4686,10 +4686,10 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
     r0 = pxsim_pxtrt.mkMap();
     s.tmp_0 = r0;
-    s.tmp_2 = mazes_Grid_getCell__P456930_mk(s);
+    s.tmp_2 = mazes_Grid_getCell__P486980_mk(s);
     s.tmp_2.arg0 = s.arg0;
     s.tmp_2.arg1 = s.arg1;
     s.tmp_2.arg2 = s.arg2;
@@ -4698,7 +4698,7 @@ switch (step) {
     r0 = s.retval;
     s.tmp_1 = r0;
     r0 = pxsim_pxtrt.mapSetByString(s.tmp_0, "begin", s.tmp_1);
-    s.tmp_4 = mazes_Grid_getCell__P456930_mk(s);
+    s.tmp_4 = mazes_Grid_getCell__P486980_mk(s);
     s.tmp_4.arg0 = s.arg0;
     s.tmp_4.arg1 = s.arg3;
     s.tmp_4.arg2 = s.arg4;
@@ -4712,12 +4712,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_setSolutionCells__P456932.info = {"start":29156,"length":285,"line":836,"column":8,"endLine":841,"endColumn":9,"fileName":"mazes.ts","functionName":"setSolutionCells","argumentNames":["this","beginRow","beginColumn","endRow","endColumn"]}
+mazes_Grid_setSolutionCells__P486982.info = {"start":25668,"length":285,"line":760,"column":8,"endLine":765,"endColumn":9,"fileName":"mazes.ts","functionName":"setSolutionCells","argumentNames":["this","beginRow","beginColumn","endRow","endColumn"]}
 
-function mazes_Grid_setSolutionCells__P456932_mk(s) {
+function mazes_Grid_setSolutionCells__P486982_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_setSolutionCells__P456932, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_setSolutionCells__P486982, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -4735,7 +4735,7 @@ function mazes_Grid_setSolutionCells__P456932_mk(s) {
 
 
 
-function mazes_Grid_getCell__P456930(s) {
+function mazes_Grid_getCell__P486980(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -4752,7 +4752,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
     r0 = (s.arg1 >= 0);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBool(s.tmp_0);
@@ -4804,12 +4804,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_getCell__P456930.info = {"start":27840,"length":280,"line":806,"column":8,"endLine":812,"endColumn":9,"fileName":"mazes.ts","functionName":"getCell","argumentNames":["this","row","column"]}
+mazes_Grid_getCell__P486980.info = {"start":24352,"length":280,"line":730,"column":8,"endLine":736,"endColumn":9,"fileName":"mazes.ts","functionName":"getCell","argumentNames":["this","row","column"]}
 
-function mazes_Grid_getCell__P456930_mk(s) {
+function mazes_Grid_getCell__P486980_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_getCell__P456930, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_getCell__P486980, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -4828,7 +4828,7 @@ function mazes_Grid_getCell__P456930_mk(s) {
 
 
 
-function mazes_Grid_constructor__P456946(s) {
+function mazes_Grid_constructor__P486996(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -4845,7 +4845,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
     r0 = (s.arg1 <= 0);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
@@ -4881,10 +4881,10 @@ switch (step) {
     r0 = pxsim_pxtrt.mapSetByString(s.tmp_0, "imageWall", 1);
     r0 = (s.arg0).fields["_colors"] = (s.tmp_0);
     r0 = (s.arg0).fields["_cols"] = (s.arg2);
-    r0 = (s.arg0).fields["_font"] = (globals.DEFAULT_FONT___456528);
+    r0 = (s.arg0).fields["_font"] = (globals.DEFAULT_FONT___486578);
     r0 = pxsim_pxtrt.mkMap();
     s.tmp_0 = r0;
-    s.tmp_2 = mazes_Grid_getCell__P456930_mk(s);
+    s.tmp_2 = mazes_Grid_getCell__P486980_mk(s);
     s.tmp_2.arg0 = s.arg0;
     s.tmp_2.arg1 = 0;
     s.tmp_2.arg2 = 0;
@@ -4893,7 +4893,7 @@ switch (step) {
     r0 = s.retval;
     s.tmp_1 = r0;
     r0 = pxsim_pxtrt.mapSetByString(s.tmp_0, "begin", s.tmp_1);
-    s.tmp_4 = mazes_Grid_getCell__P456930_mk(s);
+    s.tmp_4 = mazes_Grid_getCell__P486980_mk(s);
     s.tmp_4.arg0 = s.arg0;
     r0 = (s.arg1 - 1);
     s.tmp_4.arg1 = r0;
@@ -4905,12 +4905,12 @@ switch (step) {
     r0 = pxsim_pxtrt.mapSetByString(s.tmp_0, "end", s.tmp_3);
     r0 = (s.arg0).fields["_path"] = (s.tmp_0);
     r0 = (s.arg0).fields["_rows"] = (s.arg1);
-    s.tmp_0 = mazes_Grid_initGrid__P456943_mk(s);
+    s.tmp_0 = mazes_Grid_initGrid__P486993_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.callLocIdx = 88; s.pc = 11; return s.tmp_0;
   case 11:
     r0 = s.retval;
-    s.tmp_0 = mazes_Grid_configure__P456940_mk(s);
+    s.tmp_0 = mazes_Grid_configure__P486990_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.callLocIdx = 89; s.pc = 12; return s.tmp_0;
   case 12:
@@ -4919,12 +4919,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_constructor__P456946.info = {"start":13524,"length":1304,"line":427,"column":8,"endLine":462,"endColumn":9,"fileName":"mazes.ts","functionName":"inline","argumentNames":["this","rows","columns"]}
+mazes_Grid_constructor__P486996.info = {"start":12599,"length":1009,"line":405,"column":8,"endLine":433,"endColumn":9,"fileName":"mazes.ts","functionName":"inline","argumentNames":["this","rows","columns"]}
 
-function mazes_Grid_constructor__P456946_mk(s) {
+function mazes_Grid_constructor__P486996_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_constructor__P456946, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_constructor__P486996, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -4940,7 +4940,7 @@ function mazes_Grid_constructor__P456946_mk(s) {
 
 
 
-function mazes_Grid_configure__P456940(s) {
+function mazes_Grid_configure__P486990(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -4950,46 +4950,46 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.row___457767 = undefined;
-    s.col___457773 = undefined;
-    s.cell___457779 = undefined;
+    s.row___487817 = undefined;
+    s.col___487823 = undefined;
+    s.cell___487829 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
-    s.row___457767 = (0);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
+    s.row___487817 = (0);
   case 1:
     r0 = s.arg0.fields["_rows"];
     s.tmp_1 = r0;
-    r0 = (s.row___457767 < s.tmp_1);
+    r0 = (s.row___487817 < s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 4; continue; }
-    s.col___457773 = (0);
+    s.col___487823 = (0);
   case 2:
     r0 = s.arg0.fields["_cols"];
     s.tmp_1 = r0;
-    r0 = (s.col___457773 < s.tmp_1);
+    r0 = (s.col___487823 < s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 3; continue; }
-    s.tmp_2 = mazes_Grid_getCell__P456930_mk(s);
+    s.tmp_2 = mazes_Grid_getCell__P486980_mk(s);
     s.tmp_2.arg0 = s.arg0;
-    s.tmp_2.arg1 = s.row___457767;
-    s.tmp_2.arg2 = s.col___457773;
+    s.tmp_2.arg1 = s.row___487817;
+    s.tmp_2.arg2 = s.col___487823;
     s.callLocIdx = 176; s.pc = 5; return s.tmp_2;
   case 5:
     r0 = s.retval;
-    s.cell___457779 = (r0);
-    s.tmp_0 = mazes_Cell_north__P456540_mk(s);
-    s.tmp_0.arg0 = s.cell___457779;
-    s.tmp_1 = mazes_Grid_getCell__P456930_mk(s);
+    s.cell___487829 = (r0);
+    s.tmp_0 = mazes_Cell_north__P486590_mk(s);
+    s.tmp_0.arg0 = s.cell___487829;
+    s.tmp_1 = mazes_Grid_getCell__P486980_mk(s);
     s.tmp_1.arg0 = s.arg0;
-    r0 = (s.row___457767 - 1);
+    r0 = (s.row___487817 - 1);
     s.tmp_1.arg1 = r0;
-    s.tmp_1.arg2 = s.col___457773;
+    s.tmp_1.arg2 = s.col___487823;
     s.callLocIdx = 177; s.pc = 7; return s.tmp_1;
   case 7:
     r0 = s.retval;
@@ -4997,13 +4997,13 @@ switch (step) {
     s.callLocIdx = 178; s.pc = 6; return s.tmp_0;
   case 6:
     r0 = s.retval;
-    s.tmp_0 = mazes_Cell_south__P456543_mk(s);
-    s.tmp_0.arg0 = s.cell___457779;
-    s.tmp_1 = mazes_Grid_getCell__P456930_mk(s);
+    s.tmp_0 = mazes_Cell_south__P486593_mk(s);
+    s.tmp_0.arg0 = s.cell___487829;
+    s.tmp_1 = mazes_Grid_getCell__P486980_mk(s);
     s.tmp_1.arg0 = s.arg0;
-    r0 = (s.row___457767 + 1);
+    r0 = (s.row___487817 + 1);
     s.tmp_1.arg1 = r0;
-    s.tmp_1.arg2 = s.col___457773;
+    s.tmp_1.arg2 = s.col___487823;
     s.callLocIdx = 179; s.pc = 9; return s.tmp_1;
   case 9:
     r0 = s.retval;
@@ -5011,12 +5011,12 @@ switch (step) {
     s.callLocIdx = 180; s.pc = 8; return s.tmp_0;
   case 8:
     r0 = s.retval;
-    s.tmp_0 = mazes_Cell_west__P456545_mk(s);
-    s.tmp_0.arg0 = s.cell___457779;
-    s.tmp_1 = mazes_Grid_getCell__P456930_mk(s);
+    s.tmp_0 = mazes_Cell_west__P486595_mk(s);
+    s.tmp_0.arg0 = s.cell___487829;
+    s.tmp_1 = mazes_Grid_getCell__P486980_mk(s);
     s.tmp_1.arg0 = s.arg0;
-    s.tmp_1.arg1 = s.row___457767;
-    r0 = (s.col___457773 - 1);
+    s.tmp_1.arg1 = s.row___487817;
+    r0 = (s.col___487823 - 1);
     s.tmp_1.arg2 = r0;
     s.callLocIdx = 181; s.pc = 11; return s.tmp_1;
   case 11:
@@ -5025,12 +5025,12 @@ switch (step) {
     s.callLocIdx = 182; s.pc = 10; return s.tmp_0;
   case 10:
     r0 = s.retval;
-    s.tmp_0 = mazes_Cell_east__P456535_mk(s);
-    s.tmp_0.arg0 = s.cell___457779;
-    s.tmp_1 = mazes_Grid_getCell__P456930_mk(s);
+    s.tmp_0 = mazes_Cell_east__P486585_mk(s);
+    s.tmp_0.arg0 = s.cell___487829;
+    s.tmp_1 = mazes_Grid_getCell__P486980_mk(s);
     s.tmp_1.arg0 = s.arg0;
-    s.tmp_1.arg1 = s.row___457767;
-    r0 = (s.col___457773 + 1);
+    s.tmp_1.arg1 = s.row___487817;
+    r0 = (s.col___487823 + 1);
     s.tmp_1.arg2 = r0;
     s.callLocIdx = 183; s.pc = 13; return s.tmp_1;
   case 13:
@@ -5039,31 +5039,31 @@ switch (step) {
     s.callLocIdx = 184; s.pc = 12; return s.tmp_0;
   case 12:
     r0 = s.retval;
-    r0 = (s.col___457773 + 1);
-    s.col___457773 = (r0);
+    r0 = (s.col___487823 + 1);
+    s.col___487823 = (r0);
     { step = 2; continue; }
   case 3:
-    r0 = (s.row___457767 + 1);
-    s.row___457767 = (r0);
+    r0 = (s.row___487817 + 1);
+    s.row___487817 = (r0);
     { step = 1; continue; }
   case 4:
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_configure__P456940.info = {"start":37836,"length":531,"line":1055,"column":8,"endLine":1065,"endColumn":9,"fileName":"mazes.ts","functionName":"configure","argumentNames":["this"]}
+mazes_Grid_configure__P486990.info = {"start":34348,"length":531,"line":979,"column":8,"endLine":989,"endColumn":9,"fileName":"mazes.ts","functionName":"configure","argumentNames":["this"]}
 
-function mazes_Grid_configure__P456940_mk(s) {
+function mazes_Grid_configure__P486990_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_configure__P456940, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_configure__P486990, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
   tmp_2: undefined,
-  row___457767: undefined,
-  col___457773: undefined,
-  cell___457779: undefined,
+  row___487817: undefined,
+  col___487823: undefined,
+  cell___487829: undefined,
   arg0: undefined,
 } }
 
@@ -5071,7 +5071,7 @@ function mazes_Grid_configure__P456940_mk(s) {
 
 
 
-function mazes_Cell_east__P456535(s) {
+function mazes_Cell_east__P486585(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -5087,18 +5087,18 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Cell__C456531_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Cell__C486581_VT)) failedCast(r0);
     r0 = (s.arg0).fields["_east"] = (s.arg1);
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Cell_east__P456535.info = {"start":4967,"length":71,"line":160,"column":8,"endLine":162,"endColumn":9,"fileName":"mazes.ts","functionName":"east","argumentNames":["this","value"]}
+mazes_Cell_east__P486585.info = {"start":4042,"length":71,"line":138,"column":8,"endLine":140,"endColumn":9,"fileName":"mazes.ts","functionName":"east","argumentNames":["this","value"]}
 
-function mazes_Cell_east__P456535_mk(s) {
+function mazes_Cell_east__P486585_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Cell_east__P456535, depth: s.depth + 1,
+        parent: s, fn: mazes_Cell_east__P486585, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   arg0: undefined,
   arg1: undefined,
@@ -5108,7 +5108,7 @@ function mazes_Cell_east__P456535_mk(s) {
 
 
 
-function mazes_Cell_east__P456534(s) {
+function mazes_Cell_east__P486584(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -5123,18 +5123,18 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Cell__C456531_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Cell__C486581_VT)) failedCast(r0);
     r0 = s.arg0.fields["_east"];
     return leaveAccessor(s, r0)
   default: oops()
 } } }
-mazes_Cell_east__P456534.info = {"start":4766,"length":65,"line":153,"column":8,"endLine":155,"endColumn":9,"fileName":"mazes.ts","functionName":"east","argumentNames":["this"]}
-mazes_Cell_east__P456534.isGetter = true;
+mazes_Cell_east__P486584.info = {"start":3841,"length":65,"line":131,"column":8,"endLine":133,"endColumn":9,"fileName":"mazes.ts","functionName":"east","argumentNames":["this"]}
+mazes_Cell_east__P486584.isGetter = true;
 
-function mazes_Cell_east__P456534_mk(s) {
+function mazes_Cell_east__P486584_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Cell_east__P456534, depth: s.depth + 1,
+        parent: s, fn: mazes_Cell_east__P486584, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   arg0: undefined,
 } }
@@ -5143,7 +5143,7 @@ function mazes_Cell_east__P456534_mk(s) {
 
 
 
-function mazes_Cell_west__P456545(s) {
+function mazes_Cell_west__P486595(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -5159,18 +5159,18 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Cell__C456531_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Cell__C486581_VT)) failedCast(r0);
     r0 = (s.arg0).fields["_west"] = (s.arg1);
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Cell_west__P456545.info = {"start":7513,"length":71,"line":248,"column":8,"endLine":250,"endColumn":9,"fileName":"mazes.ts","functionName":"west","argumentNames":["this","value"]}
+mazes_Cell_west__P486595.info = {"start":6588,"length":71,"line":226,"column":8,"endLine":228,"endColumn":9,"fileName":"mazes.ts","functionName":"west","argumentNames":["this","value"]}
 
-function mazes_Cell_west__P456545_mk(s) {
+function mazes_Cell_west__P486595_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Cell_west__P456545, depth: s.depth + 1,
+        parent: s, fn: mazes_Cell_west__P486595, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   arg0: undefined,
   arg1: undefined,
@@ -5180,7 +5180,7 @@ function mazes_Cell_west__P456545_mk(s) {
 
 
 
-function mazes_Cell_west__P456544(s) {
+function mazes_Cell_west__P486594(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -5195,18 +5195,18 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Cell__C456531_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Cell__C486581_VT)) failedCast(r0);
     r0 = s.arg0.fields["_west"];
     return leaveAccessor(s, r0)
   default: oops()
 } } }
-mazes_Cell_west__P456544.info = {"start":7313,"length":65,"line":241,"column":8,"endLine":243,"endColumn":9,"fileName":"mazes.ts","functionName":"west","argumentNames":["this"]}
-mazes_Cell_west__P456544.isGetter = true;
+mazes_Cell_west__P486594.info = {"start":6388,"length":65,"line":219,"column":8,"endLine":221,"endColumn":9,"fileName":"mazes.ts","functionName":"west","argumentNames":["this"]}
+mazes_Cell_west__P486594.isGetter = true;
 
-function mazes_Cell_west__P456544_mk(s) {
+function mazes_Cell_west__P486594_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Cell_west__P456544, depth: s.depth + 1,
+        parent: s, fn: mazes_Cell_west__P486594, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   arg0: undefined,
 } }
@@ -5215,7 +5215,7 @@ function mazes_Cell_west__P456544_mk(s) {
 
 
 
-function mazes_Cell_south__P456543(s) {
+function mazes_Cell_south__P486593(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -5231,18 +5231,18 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Cell__C456531_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Cell__C486581_VT)) failedCast(r0);
     r0 = (s.arg0).fields["_south"] = (s.arg1);
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Cell_south__P456543.info = {"start":7084,"length":73,"line":233,"column":8,"endLine":235,"endColumn":9,"fileName":"mazes.ts","functionName":"south","argumentNames":["this","value"]}
+mazes_Cell_south__P486593.info = {"start":6159,"length":73,"line":211,"column":8,"endLine":213,"endColumn":9,"fileName":"mazes.ts","functionName":"south","argumentNames":["this","value"]}
 
-function mazes_Cell_south__P456543_mk(s) {
+function mazes_Cell_south__P486593_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Cell_south__P456543, depth: s.depth + 1,
+        parent: s, fn: mazes_Cell_south__P486593, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   arg0: undefined,
   arg1: undefined,
@@ -5252,7 +5252,7 @@ function mazes_Cell_south__P456543_mk(s) {
 
 
 
-function mazes_Cell_south__P456542(s) {
+function mazes_Cell_south__P486592(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -5267,18 +5267,18 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Cell__C456531_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Cell__C486581_VT)) failedCast(r0);
     r0 = s.arg0.fields["_south"];
     return leaveAccessor(s, r0)
   default: oops()
 } } }
-mazes_Cell_south__P456542.info = {"start":6879,"length":67,"line":226,"column":8,"endLine":228,"endColumn":9,"fileName":"mazes.ts","functionName":"south","argumentNames":["this"]}
-mazes_Cell_south__P456542.isGetter = true;
+mazes_Cell_south__P486592.info = {"start":5954,"length":67,"line":204,"column":8,"endLine":206,"endColumn":9,"fileName":"mazes.ts","functionName":"south","argumentNames":["this"]}
+mazes_Cell_south__P486592.isGetter = true;
 
-function mazes_Cell_south__P456542_mk(s) {
+function mazes_Cell_south__P486592_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Cell_south__P456542, depth: s.depth + 1,
+        parent: s, fn: mazes_Cell_south__P486592, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   arg0: undefined,
 } }
@@ -5287,7 +5287,7 @@ function mazes_Cell_south__P456542_mk(s) {
 
 
 
-function mazes_Cell_north__P456540(s) {
+function mazes_Cell_north__P486590(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -5303,18 +5303,18 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Cell__C456531_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Cell__C486581_VT)) failedCast(r0);
     r0 = (s.arg0).fields["_north"] = (s.arg1);
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Cell_north__P456540.info = {"start":6490,"length":73,"line":211,"column":8,"endLine":213,"endColumn":9,"fileName":"mazes.ts","functionName":"north","argumentNames":["this","value"]}
+mazes_Cell_north__P486590.info = {"start":5565,"length":73,"line":189,"column":8,"endLine":191,"endColumn":9,"fileName":"mazes.ts","functionName":"north","argumentNames":["this","value"]}
 
-function mazes_Cell_north__P456540_mk(s) {
+function mazes_Cell_north__P486590_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Cell_north__P456540, depth: s.depth + 1,
+        parent: s, fn: mazes_Cell_north__P486590, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   arg0: undefined,
   arg1: undefined,
@@ -5324,7 +5324,7 @@ function mazes_Cell_north__P456540_mk(s) {
 
 
 
-function mazes_Cell_north__P456539(s) {
+function mazes_Cell_north__P486589(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -5339,18 +5339,18 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Cell__C456531_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Cell__C486581_VT)) failedCast(r0);
     r0 = s.arg0.fields["_north"];
     return leaveAccessor(s, r0)
   default: oops()
 } } }
-mazes_Cell_north__P456539.info = {"start":6285,"length":67,"line":204,"column":8,"endLine":206,"endColumn":9,"fileName":"mazes.ts","functionName":"north","argumentNames":["this"]}
-mazes_Cell_north__P456539.isGetter = true;
+mazes_Cell_north__P486589.info = {"start":5360,"length":67,"line":182,"column":8,"endLine":184,"endColumn":9,"fileName":"mazes.ts","functionName":"north","argumentNames":["this"]}
+mazes_Cell_north__P486589.isGetter = true;
 
-function mazes_Cell_north__P456539_mk(s) {
+function mazes_Cell_north__P486589_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Cell_north__P456539, depth: s.depth + 1,
+        parent: s, fn: mazes_Cell_north__P486589, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   arg0: undefined,
 } }
@@ -5359,7 +5359,7 @@ function mazes_Cell_north__P456539_mk(s) {
 
 
 
-function mazes_Grid_initGrid__P456943(s) {
+function mazes_Grid_initGrid__P486993(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -5369,76 +5369,76 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.row___458018 = undefined;
-    s.gridRow___458024 = undefined;
-    s.col___458026 = undefined;
+    s.row___488068 = undefined;
+    s.gridRow___488074 = undefined;
+    s.col___488076 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
     s.tmp_0 = r0 = s.arg0;
     r0 = pxsim_Array__mk();
     s.tmp_1 = r0;
     r0 = (s.tmp_0).fields["_grid"] = (s.tmp_1);
-    s.row___458018 = (0);
+    s.row___488068 = (0);
   case 1:
     r0 = s.arg0.fields["_rows"];
     s.tmp_1 = r0;
-    r0 = (s.row___458018 < s.tmp_1);
+    r0 = (s.row___488068 < s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 4; continue; }
     r0 = pxsim_Array__mk();
-    s.gridRow___458024 = (r0);
-    s.col___458026 = (0);
+    s.gridRow___488074 = (r0);
+    s.col___488076 = (0);
   case 2:
     r0 = s.arg0.fields["_cols"];
     s.tmp_1 = r0;
-    r0 = (s.col___458026 < s.tmp_1);
+    r0 = (s.col___488076 < s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 3; continue; }
-    r0 = pxsim_pxtcore_mkClassInstance(mazes_Cell__C456531_VT);
+    r0 = pxsim_pxtcore_mkClassInstance(mazes_Cell__C486581_VT);
     s.tmp_2 = r0;
-    s.tmp_3 = mazes_Cell_constructor__P456551_mk(s);
+    s.tmp_3 = mazes_Cell_constructor__P486601_mk(s);
     s.tmp_3.arg0 = s.tmp_2;
-    s.tmp_3.arg1 = s.row___458018;
-    s.tmp_3.arg2 = s.col___458026;
+    s.tmp_3.arg1 = s.row___488068;
+    s.tmp_3.arg2 = s.col___488076;
     s.callLocIdx = 201; s.pc = 5; return s.tmp_3;
   case 5:
     r0 = s.retval;
-    r0 = pxsim_Array__push(s.gridRow___458024, s.tmp_2);
-    r0 = (s.col___458026 + 1);
-    s.col___458026 = (r0);
+    r0 = pxsim_Array__push(s.gridRow___488074, s.tmp_2);
+    r0 = (s.col___488076 + 1);
+    s.col___488076 = (r0);
     { step = 2; continue; }
   case 3:
     r0 = s.arg0.fields["_grid"];
     s.tmp_0 = r0;
-    r0 = pxsim_Array__push(s.tmp_0, s.gridRow___458024);
-    r0 = (s.row___458018 + 1);
-    s.row___458018 = (r0);
+    r0 = pxsim_Array__push(s.tmp_0, s.gridRow___488074);
+    r0 = (s.row___488068 + 1);
+    s.row___488068 = (r0);
     { step = 1; continue; }
   case 4:
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_initGrid__P456943.info = {"start":41655,"length":395,"line":1135,"column":8,"endLine":1144,"endColumn":9,"fileName":"mazes.ts","functionName":"initGrid","argumentNames":["this"]}
+mazes_Grid_initGrid__P486993.info = {"start":38167,"length":395,"line":1059,"column":8,"endLine":1068,"endColumn":9,"fileName":"mazes.ts","functionName":"initGrid","argumentNames":["this"]}
 
-function mazes_Grid_initGrid__P456943_mk(s) {
+function mazes_Grid_initGrid__P486993_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_initGrid__P456943, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_initGrid__P486993, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
   tmp_2: undefined,
   tmp_3: undefined,
-  row___458018: undefined,
-  gridRow___458024: undefined,
-  col___458026: undefined,
+  row___488068: undefined,
+  gridRow___488074: undefined,
+  col___488076: undefined,
   arg0: undefined,
 } }
 
@@ -5446,7 +5446,7 @@ function mazes_Grid_initGrid__P456943_mk(s) {
 
 
 
-function mazes_Cell_constructor__P456551(s) {
+function mazes_Cell_constructor__P486601(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -5463,7 +5463,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Cell__C456531_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Cell__C486581_VT)) failedCast(r0);
     s.tmp_0 = r0 = s.arg0;
     r0 = (s.arg1 * 100);
     s.tmp_2 = r0;
@@ -5484,12 +5484,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Cell_constructor__P456551.info = {"start":2816,"length":314,"line":96,"column":8,"endLine":105,"endColumn":9,"fileName":"mazes.ts","functionName":"inline","argumentNames":["this","row","column"]}
+mazes_Cell_constructor__P486601.info = {"start":1942,"length":314,"line":75,"column":8,"endLine":84,"endColumn":9,"fileName":"mazes.ts","functionName":"inline","argumentNames":["this","row","column"]}
 
-function mazes_Cell_constructor__P456551_mk(s) {
+function mazes_Cell_constructor__P486601_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Cell_constructor__P456551, depth: s.depth + 1,
+        parent: s, fn: mazes_Cell_constructor__P486601, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -5503,7 +5503,7 @@ function mazes_Cell_constructor__P456551_mk(s) {
 
 
 
-function showMazeSprite__P467076(s) {
+function showMazeSprite__P476164(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -5513,16 +5513,16 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    globals.gameMode___467030 = (2);
+    globals.gameMode___476118 = (2);
     s.tmp_0 = scene_cameraFollowSprite__P2907_mk(s);
     s.tmp_0.arg0 = null;
     s.callLocIdx = 225; s.pc = 3; return s.tmp_0;
   case 3:
     r0 = s.retval;
     s.tmp_0 = Sprite_setPosition__P2424_mk(s);
-    s.tmp_0.arg0 = globals.player___467038;
+    s.tmp_0.arg0 = globals.player___476126;
     s.tmp_2 = Sprite_width__P2412_mk(s);
-    s.tmp_2.arg0 = globals.player___467038;
+    s.tmp_2.arg0 = globals.player___476126;
     s.callLocIdx = 226; s.pc = 5; return s.tmp_2;
   case 5:
     r0 = s.retval;
@@ -5530,7 +5530,7 @@ switch (step) {
     r0 = (0 - s.tmp_1);
     s.tmp_0.arg1 = r0;
     s.tmp_4 = Sprite_height__P2413_mk(s);
-    s.tmp_4.arg0 = globals.player___467038;
+    s.tmp_4.arg0 = globals.player___476126;
     s.callLocIdx = 227; s.pc = 6; return s.tmp_4;
   case 6:
     r0 = s.retval;
@@ -5564,32 +5564,32 @@ switch (step) {
     s.callLocIdx = 231; s.pc = 9; return s.tmp_0;
   case 9:
     r0 = s.retval;
-    r0 = pxsim_numops_toBoolDecr(globals.mazeSpriteBuilt___467042);
+    r0 = pxsim_numops_toBoolDecr(globals.mazeSpriteBuilt___476130);
     s.tmp_1 = r0;
     r0 = pxsim_Boolean__bang(s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 1; continue; }
-    s.tmp_2 = mazes_Grid_buildImage__P456927_mk(s);
-    s.tmp_2.arg0 = globals.maze___467032;
+    s.tmp_2 = mazes_Grid_buildImage__P486977_mk(s);
+    s.tmp_2.arg0 = globals.maze___476120;
     s.tmp_2.arg1 = 8;
     s.tmp_2.arg2 = 1;
-    s.tmp_2.arg3 = globals.mazeImage___467034;
+    s.tmp_2.arg3 = globals.mazeImage___476122;
     s.callLocIdx = 232; s.pc = 10; return s.tmp_2;
   case 10:
     r0 = s.retval;
-    globals.mazeImage___467034 = (r0);
+    globals.mazeImage___476122 = (r0);
     s.tmp_0 = Sprite_setImage__P2406_mk(s);
-    s.tmp_0.arg0 = globals.mazeSprite___467036;
-    s.tmp_0.arg1 = globals.mazeImage___467034;
+    s.tmp_0.arg0 = globals.mazeSprite___476124;
+    s.tmp_0.arg1 = globals.mazeImage___476122;
     s.callLocIdx = 233; s.pc = 11; return s.tmp_0;
   case 11:
     r0 = s.retval;
-    globals.mazeSpriteBuilt___467042 = (true);
+    globals.mazeSpriteBuilt___476130 = (true);
   case 1:
   case 2:
     s.tmp_0 = Sprite_setPosition__P2424_mk(s);
-    s.tmp_0.arg0 = globals.mazeSprite___467036;
+    s.tmp_0.arg0 = globals.mazeSprite___476124;
     r0 = pxsim_ImageMethods.width(globals.screen___2037);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 / 2);
@@ -5601,17 +5601,17 @@ switch (step) {
     s.callLocIdx = 234; s.pc = 12; return s.tmp_0;
   case 12:
     r0 = s.retval;
-    globals.gameMode___467030 = (1);
+    globals.gameMode___476118 = (1);
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-showMazeSprite__P467076.info = {"start":5896,"length":605,"line":201,"column":0,"endLine":216,"endColumn":1,"fileName":"test.ts","functionName":"showMazeSprite","argumentNames":[]}
+showMazeSprite__P476164.info = {"start":2449,"length":575,"line":99,"column":0,"endLine":113,"endColumn":1,"fileName":"test.ts","functionName":"showMazeSprite","argumentNames":[]}
 
-function showMazeSprite__P467076_mk(s) {
+function showMazeSprite__P476164_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: showMazeSprite__P467076, depth: s.depth + 1,
+        parent: s, fn: showMazeSprite__P476164, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -5624,7 +5624,7 @@ function showMazeSprite__P467076_mk(s) {
 
 
 
-function mazes_Grid_buildImage__P456927(s) {
+function mazes_Grid_buildImage__P486977(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -5642,17 +5642,17 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
     r0 = pxsim_numops_toBoolDecr(s.arg3);
     s.tmp_1 = r0;
     r0 = pxsim_Boolean__bang(s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 1; continue; }
-    s.arg3 = (globals.mazes_Grid__img___456945);
+    s.arg3 = (globals.mazes_Grid__img___486995);
   case 1:
   case 2:
-    s.tmp_0 = mazes_Grid_draw__P456941_mk(s);
+    s.tmp_0 = mazes_Grid_draw__P486991_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.tmp_0.arg1 = s.arg1;
     s.tmp_0.arg2 = s.arg2;
@@ -5693,12 +5693,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_buildImage__P456927.info = {"start":19369,"length":326,"line":611,"column":8,"endLine":617,"endColumn":9,"fileName":"mazes.ts","functionName":"buildImage","argumentNames":["this","cellSize","wallThickness","img"]}
+mazes_Grid_buildImage__P486977.info = {"start":18149,"length":326,"line":582,"column":8,"endLine":588,"endColumn":9,"fileName":"mazes.ts","functionName":"buildImage","argumentNames":["this","cellSize","wallThickness","img"]}
 
-function mazes_Grid_buildImage__P456927_mk(s) {
+function mazes_Grid_buildImage__P486977_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_buildImage__P456927, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_buildImage__P486977, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -5713,7 +5713,7 @@ function mazes_Grid_buildImage__P456927_mk(s) {
 
 
 
-function mazes_Grid_draw__P456941(s) {
+function mazes_Grid_draw__P486991(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -5723,15 +5723,15 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.width___457819 = undefined;
-    s.height___457826 = undefined;
-    s.row___457854 = undefined;
-    s.col___457860 = undefined;
-    s.cell___457866 = undefined;
-    s.x1___457870 = undefined;
-    s.y1___457874 = undefined;
-    s.x2___457878 = undefined;
-    s.y2___457885 = undefined;
+    s.width___487869 = undefined;
+    s.height___487876 = undefined;
+    s.row___487904 = undefined;
+    s.col___487910 = undefined;
+    s.cell___487916 = undefined;
+    s.x1___487920 = undefined;
+    s.y1___487924 = undefined;
+    s.x2___487928 = undefined;
+    s.y2___487935 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
@@ -5742,19 +5742,19 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
     r0 = s.arg0.fields["_cols"];
     s.tmp_1 = r0;
     r0 = (s.tmp_1 * s.arg1);
     s.tmp_0 = r0;
     r0 = (s.tmp_0 + s.arg2);
-    s.width___457819 = (r0);
+    s.width___487869 = (r0);
     r0 = s.arg0.fields["_rows"];
     s.tmp_1 = r0;
     r0 = (s.tmp_1 * s.arg1);
     s.tmp_0 = r0;
     r0 = (s.tmp_0 + s.arg2);
-    s.height___457826 = (r0);
+    s.height___487876 = (r0);
     r0 = pxsim_numops_toBoolDecr(s.arg5);
     s.tmp_1 = r0;
     r0 = pxsim_Boolean__bang(s.tmp_1);
@@ -5766,7 +5766,7 @@ switch (step) {
   case 1:
     r0 = pxsim_ImageMethods.width(s.arg5);
     s.tmp_2 = r0;
-    r0 = (s.tmp_2 !== s.width___457819);
+    r0 = (s.tmp_2 !== s.width___487869);
   case 2:
     // jmp value (already in r0)
     s.tmp_3 = r0;
@@ -5777,64 +5777,64 @@ switch (step) {
   case 3:
     r0 = pxsim_ImageMethods.height(s.arg5);
     s.tmp_4 = r0;
-    r0 = (s.tmp_4 !== s.height___457826);
+    r0 = (s.tmp_4 !== s.height___487876);
   case 4:
     // jmp value (already in r0)
     s.tmp_5 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_5);
     if (!r0) { step = 5; continue; }
-    r0 = pxsim.image.create(s.width___457819, s.height___457826);
+    r0 = pxsim.image.create(s.width___487869, s.height___487876);
     s.arg5 = (r0);
   case 5:
   case 6:
     r0 = pxsim_ImageMethods.fill(s.arg5, s.arg3);
-    s.row___457854 = (0);
+    s.row___487904 = (0);
   case 7:
     r0 = s.arg0.fields["_rows"];
     s.tmp_1 = r0;
-    r0 = (s.row___457854 < s.tmp_1);
+    r0 = (s.row___487904 < s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 18; continue; }
-    s.col___457860 = (0);
+    s.col___487910 = (0);
   case 8:
     r0 = s.arg0.fields["_cols"];
     s.tmp_1 = r0;
-    r0 = (s.col___457860 < s.tmp_1);
+    r0 = (s.col___487910 < s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 17; continue; }
-    s.tmp_2 = mazes_Grid_getCell__P456930_mk(s);
+    s.tmp_2 = mazes_Grid_getCell__P486980_mk(s);
     s.tmp_2.arg0 = s.arg0;
-    s.tmp_2.arg1 = s.row___457854;
-    s.tmp_2.arg2 = s.col___457860;
+    s.tmp_2.arg1 = s.row___487904;
+    s.tmp_2.arg2 = s.col___487910;
     s.callLocIdx = 185; s.pc = 19; return s.tmp_2;
   case 19:
     r0 = s.retval;
-    s.cell___457866 = (r0);
-    r0 = (s.col___457860 * s.arg1);
-    s.x1___457870 = (r0);
-    r0 = (s.row___457854 * s.arg1);
-    s.y1___457874 = (r0);
-    r0 = (s.col___457860 + 1);
+    s.cell___487916 = (r0);
+    r0 = (s.col___487910 * s.arg1);
+    s.x1___487920 = (r0);
+    r0 = (s.row___487904 * s.arg1);
+    s.y1___487924 = (r0);
+    r0 = (s.col___487910 + 1);
     s.tmp_0 = r0;
     r0 = (s.tmp_0 * s.arg1);
-    s.x2___457878 = (r0);
-    r0 = (s.row___457854 + 1);
+    s.x2___487928 = (r0);
+    r0 = (s.row___487904 + 1);
     s.tmp_0 = r0;
     r0 = (s.tmp_0 * s.arg1);
-    s.y2___457885 = (r0);
-    s.tmp_0 = mazes_Grid_drawContents__P456942_mk(s);
+    s.y2___487935 = (r0);
+    s.tmp_0 = mazes_Grid_drawContents__P486992_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.tmp_0.arg1 = s.arg5;
-    s.tmp_0.arg2 = s.cell___457866;
-    s.tmp_0.arg3 = s.x1___457870;
-    s.tmp_0.arg4 = s.y1___457874;
+    s.tmp_0.arg2 = s.cell___487916;
+    s.tmp_0.arg3 = s.x1___487920;
+    s.tmp_0.arg4 = s.y1___487924;
     s.tmp_0.arg5 = s.arg1;
     s.callLocIdx = 186; s.pc = 20; return s.tmp_0;
   case 20:
     r0 = s.retval;
-    r0 = s.cell___457866.fields["_north"];
+    r0 = s.cell___487916.fields["_north"];
     s.tmp_1 = r0;
     r0 = (s.tmp_1 == null);
     s.tmp_0 = r0;
@@ -5842,17 +5842,17 @@ switch (step) {
     if (!r0) { step = 9; continue; }
     s.tmp_2 = helpers_imageDrawLine__P1963_mk(s);
     s.tmp_2.arg0 = s.arg5;
-    s.tmp_2.arg1 = s.x1___457870;
-    s.tmp_2.arg2 = s.y1___457874;
-    s.tmp_2.arg3 = s.x2___457878;
-    s.tmp_2.arg4 = s.y1___457874;
+    s.tmp_2.arg1 = s.x1___487920;
+    s.tmp_2.arg2 = s.y1___487924;
+    s.tmp_2.arg3 = s.x2___487928;
+    s.tmp_2.arg4 = s.y1___487924;
     s.tmp_2.arg5 = s.arg4;
     s.callLocIdx = 188; s.pc = 21; return s.tmp_2;
   case 21:
     r0 = s.retval;
   case 9:
   case 10:
-    r0 = s.cell___457866.fields["_west"];
+    r0 = s.cell___487916.fields["_west"];
     s.tmp_1 = r0;
     r0 = (s.tmp_1 == null);
     s.tmp_0 = r0;
@@ -5860,19 +5860,19 @@ switch (step) {
     if (!r0) { step = 11; continue; }
     s.tmp_2 = helpers_imageDrawLine__P1963_mk(s);
     s.tmp_2.arg0 = s.arg5;
-    s.tmp_2.arg1 = s.x1___457870;
-    s.tmp_2.arg2 = s.y1___457874;
-    s.tmp_2.arg3 = s.x1___457870;
-    s.tmp_2.arg4 = s.y2___457885;
+    s.tmp_2.arg1 = s.x1___487920;
+    s.tmp_2.arg2 = s.y1___487924;
+    s.tmp_2.arg3 = s.x1___487920;
+    s.tmp_2.arg4 = s.y2___487935;
     s.tmp_2.arg5 = s.arg4;
     s.callLocIdx = 190; s.pc = 22; return s.tmp_2;
   case 22:
     r0 = s.retval;
   case 11:
   case 12:
-    s.tmp_3 = mazes_Cell_isLinked__P456547_mk(s);
-    s.tmp_3.arg0 = s.cell___457866;
-    r0 = s.cell___457866.fields["_east"];
+    s.tmp_3 = mazes_Cell_isLinked__P486597_mk(s);
+    s.tmp_3.arg0 = s.cell___487916;
+    r0 = s.cell___487916.fields["_east"];
     s.tmp_3.arg1 = r0;
     s.callLocIdx = 192; s.pc = 23; return s.tmp_3;
   case 23:
@@ -5886,19 +5886,19 @@ switch (step) {
     if (!r0) { step = 13; continue; }
     s.tmp_4 = helpers_imageDrawLine__P1963_mk(s);
     s.tmp_4.arg0 = s.arg5;
-    s.tmp_4.arg1 = s.x2___457878;
-    s.tmp_4.arg2 = s.y1___457874;
-    s.tmp_4.arg3 = s.x2___457878;
-    s.tmp_4.arg4 = s.y2___457885;
+    s.tmp_4.arg1 = s.x2___487928;
+    s.tmp_4.arg2 = s.y1___487924;
+    s.tmp_4.arg3 = s.x2___487928;
+    s.tmp_4.arg4 = s.y2___487935;
     s.tmp_4.arg5 = s.arg4;
     s.callLocIdx = 193; s.pc = 24; return s.tmp_4;
   case 24:
     r0 = s.retval;
   case 13:
   case 14:
-    s.tmp_3 = mazes_Cell_isLinked__P456547_mk(s);
-    s.tmp_3.arg0 = s.cell___457866;
-    r0 = s.cell___457866.fields["_south"];
+    s.tmp_3 = mazes_Cell_isLinked__P486597_mk(s);
+    s.tmp_3.arg0 = s.cell___487916;
+    r0 = s.cell___487916.fields["_south"];
     s.tmp_3.arg1 = r0;
     s.callLocIdx = 195; s.pc = 25; return s.tmp_3;
   case 25:
@@ -5912,34 +5912,34 @@ switch (step) {
     if (!r0) { step = 15; continue; }
     s.tmp_4 = helpers_imageDrawLine__P1963_mk(s);
     s.tmp_4.arg0 = s.arg5;
-    s.tmp_4.arg1 = s.x1___457870;
-    s.tmp_4.arg2 = s.y2___457885;
-    s.tmp_4.arg3 = s.x2___457878;
-    s.tmp_4.arg4 = s.y2___457885;
+    s.tmp_4.arg1 = s.x1___487920;
+    s.tmp_4.arg2 = s.y2___487935;
+    s.tmp_4.arg3 = s.x2___487928;
+    s.tmp_4.arg4 = s.y2___487935;
     s.tmp_4.arg5 = s.arg4;
     s.callLocIdx = 196; s.pc = 26; return s.tmp_4;
   case 26:
     r0 = s.retval;
   case 15:
   case 16:
-    r0 = (s.col___457860 + 1);
-    s.col___457860 = (r0);
+    r0 = (s.col___487910 + 1);
+    s.col___487910 = (r0);
     { step = 8; continue; }
   case 17:
-    r0 = (s.row___457854 + 1);
-    s.row___457854 = (r0);
+    r0 = (s.row___487904 + 1);
+    s.row___487904 = (r0);
     { step = 7; continue; }
   case 18:
     r0 = s.arg5;
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_draw__P456941.info = {"start":38475,"length":1926,"line":1070,"column":8,"endLine":1107,"endColumn":9,"fileName":"mazes.ts","functionName":"draw","argumentNames":["this","cellSize","wallThickness","backColor","wallColor","img"]}
+mazes_Grid_draw__P486991.info = {"start":34987,"length":1926,"line":994,"column":8,"endLine":1031,"endColumn":9,"fileName":"mazes.ts","functionName":"draw","argumentNames":["this","cellSize","wallThickness","backColor","wallColor","img"]}
 
-function mazes_Grid_draw__P456941_mk(s) {
+function mazes_Grid_draw__P486991_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_draw__P456941, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_draw__P486991, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -5947,15 +5947,15 @@ function mazes_Grid_draw__P456941_mk(s) {
   tmp_3: undefined,
   tmp_4: undefined,
   tmp_5: undefined,
-  width___457819: undefined,
-  height___457826: undefined,
-  row___457854: undefined,
-  col___457860: undefined,
-  cell___457866: undefined,
-  x1___457870: undefined,
-  y1___457874: undefined,
-  x2___457878: undefined,
-  y2___457885: undefined,
+  width___487869: undefined,
+  height___487876: undefined,
+  row___487904: undefined,
+  col___487910: undefined,
+  cell___487916: undefined,
+  x1___487920: undefined,
+  y1___487924: undefined,
+  x2___487928: undefined,
+  y2___487935: undefined,
   arg0: undefined,
   arg1: undefined,
   arg2: undefined,
@@ -5968,7 +5968,7 @@ function mazes_Grid_draw__P456941_mk(s) {
 
 
 
-function mazes_Cell_isLinked__P456547(s) {
+function mazes_Cell_isLinked__P486597(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -5984,7 +5984,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Cell__C456531_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Cell__C486581_VT)) failedCast(r0);
     r0 = (s.arg1 == null);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
@@ -5993,7 +5993,7 @@ switch (step) {
     { step = 3; continue; }
   case 1:
   case 2:
-    s.tmp_2 = mazes_Cell_findCellId__P456550_mk(s);
+    s.tmp_2 = mazes_Cell_findCellId__P486600_mk(s);
     s.tmp_2.arg0 = s.arg0;
     r0 = s.arg1.fields["_id"];
     s.tmp_2.arg1 = r0;
@@ -6006,12 +6006,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Cell_isLinked__P456547.info = {"start":7920,"length":191,"line":265,"column":8,"endLine":270,"endColumn":9,"fileName":"mazes.ts","functionName":"isLinked","argumentNames":["this","cell"]}
+mazes_Cell_isLinked__P486597.info = {"start":6995,"length":191,"line":243,"column":8,"endLine":248,"endColumn":9,"fileName":"mazes.ts","functionName":"isLinked","argumentNames":["this","cell"]}
 
-function mazes_Cell_isLinked__P456547_mk(s) {
+function mazes_Cell_isLinked__P486597_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Cell_isLinked__P456547, depth: s.depth + 1,
+        parent: s, fn: mazes_Cell_isLinked__P486597, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -6024,7 +6024,7 @@ function mazes_Cell_isLinked__P456547_mk(s) {
 
 
 
-function mazes_Cell_id__P456536(s) {
+function mazes_Cell_id__P486586(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -6039,18 +6039,18 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Cell__C456531_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Cell__C486581_VT)) failedCast(r0);
     r0 = s.arg0.fields["_id"];
     return leaveAccessor(s, r0)
   default: oops()
 } } }
-mazes_Cell_id__P456536.info = {"start":5168,"length":63,"line":168,"column":8,"endLine":170,"endColumn":9,"fileName":"mazes.ts","functionName":"id","argumentNames":["this"]}
-mazes_Cell_id__P456536.isGetter = true;
+mazes_Cell_id__P486586.info = {"start":4243,"length":63,"line":146,"column":8,"endLine":148,"endColumn":9,"fileName":"mazes.ts","functionName":"id","argumentNames":["this"]}
+mazes_Cell_id__P486586.isGetter = true;
 
-function mazes_Cell_id__P456536_mk(s) {
+function mazes_Cell_id__P486586_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Cell_id__P456536, depth: s.depth + 1,
+        parent: s, fn: mazes_Cell_id__P486586, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   arg0: undefined,
 } }
@@ -6059,7 +6059,7 @@ function mazes_Cell_id__P456536_mk(s) {
 
 
 
-function mazes_Cell_findCellId__P456550(s) {
+function mazes_Cell_findCellId__P486600(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -6069,19 +6069,19 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.toReturn___456788 = undefined;
-    s.index___456791 = undefined;
+    s.toReturn___486838 = undefined;
+    s.index___486841 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Cell__C456531_VT)) failedCast(r0);
-    s.toReturn___456788 = (-1);
-    s.index___456791 = (0);
+    if (!checkSubtype(r0, mazes_Cell__C486581_VT)) failedCast(r0);
+    s.toReturn___486838 = (-1);
+    s.index___486841 = (0);
   case 1:
-    s.tmp_1 = r0 = s.index___456791;
+    s.tmp_1 = r0 = s.index___486841;
     r0 = s.arg0.fields["_links"];
     s.tmp_3 = r0;
     r0 = pxsim_Array__length(s.tmp_3);
@@ -6092,7 +6092,7 @@ switch (step) {
     if (!r0) { step = 4; continue; }
     r0 = s.arg0.fields["_links"];
     s.tmp_7 = r0;
-    r0 = pxsim_Array__getAt(s.tmp_7, s.index___456791);
+    r0 = pxsim_Array__getAt(s.tmp_7, s.index___486841);
     s.tmp_6 = r0;
     r0 = s.tmp_6.fields["_id"];
     s.tmp_5 = r0;
@@ -6100,24 +6100,24 @@ switch (step) {
     s.tmp_4 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_4);
     if (!r0) { step = 2; continue; }
-    s.toReturn___456788 = (s.index___456791);
+    s.toReturn___486838 = (s.index___486841);
     { step = 4; continue; }
   case 2:
   case 3:
-    r0 = (s.index___456791 + 1);
-    s.index___456791 = (r0);
+    r0 = (s.index___486841 + 1);
+    s.index___486841 = (r0);
     { step = 1; continue; }
   case 4:
-    r0 = s.toReturn___456788;
+    r0 = s.toReturn___486838;
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Cell_findCellId__P456550.info = {"start":9607,"length":410,"line":311,"column":8,"endLine":320,"endColumn":9,"fileName":"mazes.ts","functionName":"findCellId","argumentNames":["this","cellId"]}
+mazes_Cell_findCellId__P486600.info = {"start":8682,"length":410,"line":289,"column":8,"endLine":298,"endColumn":9,"fileName":"mazes.ts","functionName":"findCellId","argumentNames":["this","cellId"]}
 
-function mazes_Cell_findCellId__P456550_mk(s) {
+function mazes_Cell_findCellId__P486600_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Cell_findCellId__P456550, depth: s.depth + 1,
+        parent: s, fn: mazes_Cell_findCellId__P486600, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -6127,8 +6127,8 @@ function mazes_Cell_findCellId__P456550_mk(s) {
   tmp_5: undefined,
   tmp_6: undefined,
   tmp_7: undefined,
-  toReturn___456788: undefined,
-  index___456791: undefined,
+  toReturn___486838: undefined,
+  index___486841: undefined,
   arg0: undefined,
   arg1: undefined,
 } }
@@ -6355,7 +6355,7 @@ function Math_min__P131_mk(s) {
 
 
 
-function mazes_Grid_drawContents__P456942(s) {
+function mazes_Grid_drawContents__P486992(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -6365,10 +6365,10 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.x2___457971 = undefined;
-    s.y2___457975 = undefined;
-    s.distance___457979 = undefined;
-    s.char___457984 = undefined;
+    s.x2___488021 = undefined;
+    s.y2___488025 = undefined;
+    s.distance___488029 = undefined;
+    s.char___488034 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
@@ -6379,7 +6379,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
     r0 = s.arg0.fields["_distances"];
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBool(s.tmp_0);
@@ -6387,7 +6387,7 @@ switch (step) {
     r0 = s.tmp_0;
     { step = 2; continue; }
   case 1:
-    s.tmp_2 = mazes_Distances_getDistance__P456600_mk(s);
+    s.tmp_2 = mazes_Distances_getDistance__P486650_mk(s);
     r0 = s.arg0.fields["_distances"];
     s.tmp_2.arg0 = r0;
     s.tmp_2.arg1 = s.arg2;
@@ -6411,35 +6411,35 @@ switch (step) {
     r0 = pxsim_numops_toBoolDecr(s.tmp_4);
     if (!r0) { step = 7; continue; }
     r0 = (s.arg3 + s.arg5);
-    s.x2___457971 = (r0);
+    s.x2___488021 = (r0);
     r0 = (s.arg4 + s.arg5);
-    s.y2___457975 = (r0);
-    s.tmp_0 = mazes_Distances_getDistance__P456600_mk(s);
+    s.y2___488025 = (r0);
+    s.tmp_0 = mazes_Distances_getDistance__P486650_mk(s);
     r0 = s.arg0.fields["_distances"];
     s.tmp_0.arg0 = r0;
     s.tmp_0.arg1 = s.arg2;
     s.callLocIdx = 198; s.pc = 10; return s.tmp_0;
   case 10:
     r0 = s.retval;
-    s.distance___457979 = (r0);
-    s.tmp_1 = r0 = s.distance___457979;
-    r0 = pxsim_String_.length(globals.PATH_CHARS___456512);
+    s.distance___488029 = (r0);
+    s.tmp_1 = r0 = s.distance___488029;
+    r0 = pxsim_String_.length(globals.PATH_CHARS___486562);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 >= s.tmp_2);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 5; continue; }
-    r0 = globals.PATH_OVERFLOW___456514;
+    r0 = globals.PATH_OVERFLOW___486564;
     { step = 6; continue; }
   case 5:
-    r0 = pxsim_String_.charAt(globals.PATH_CHARS___456512, s.distance___457979);
+    r0 = pxsim_String_.charAt(globals.PATH_CHARS___486562, s.distance___488029);
   case 6:
     // jmp value (already in r0)
     s.tmp_3 = r0;
-    s.char___457984 = (s.tmp_3);
+    s.char___488034 = (s.tmp_3);
     s.tmp_0 = helpers_imagePrint__P1995_mk(s);
     s.tmp_0.arg0 = s.arg1;
-    s.tmp_0.arg1 = s.char___457984;
+    s.tmp_0.arg1 = s.char___488034;
     s.tmp_2 = r0 = s.arg3;
     r0 = (s.arg5 >> 1);
     s.tmp_3 = r0;
@@ -6480,12 +6480,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_drawContents__P456942.info = {"start":40844,"length":719,"line":1117,"column":8,"endLine":1130,"endColumn":9,"fileName":"mazes.ts","functionName":"drawContents","argumentNames":["this","img","cell","x","y","cellSize"]}
+mazes_Grid_drawContents__P486992.info = {"start":37356,"length":719,"line":1041,"column":8,"endLine":1054,"endColumn":9,"fileName":"mazes.ts","functionName":"drawContents","argumentNames":["this","img","cell","x","y","cellSize"]}
 
-function mazes_Grid_drawContents__P456942_mk(s) {
+function mazes_Grid_drawContents__P486992_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_drawContents__P456942, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_drawContents__P486992, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -6495,10 +6495,10 @@ function mazes_Grid_drawContents__P456942_mk(s) {
   tmp_5: undefined,
   tmp_6: undefined,
   tmp_7: undefined,
-  x2___457971: undefined,
-  y2___457975: undefined,
-  distance___457979: undefined,
-  char___457984: undefined,
+  x2___488021: undefined,
+  y2___488025: undefined,
+  distance___488029: undefined,
+  char___488034: undefined,
   arg0: undefined,
   arg1: undefined,
   arg2: undefined,
@@ -7200,7 +7200,7 @@ function helpers_imageDrawIcon__P1960_mk(s) {
 
 
 
-function mazes_Distances_getDistance__P456600(s) {
+function mazes_Distances_getDistance__P486650(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -7210,21 +7210,21 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.index___456844 = undefined;
+    s.index___486894 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Distances__C456597_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Distances__C486647_VT)) failedCast(r0);
     r0 = s.arg0.fields["_cellIds"];
     s.tmp_0 = r0;
     r0 = s.arg1.fields["_id"];
     s.tmp_1 = r0;
     r0 = pxsim_Array_.indexOf(s.tmp_0, s.tmp_1, undefined);
-    s.index___456844 = (r0);
-    r0 = (s.index___456844 === -1);
+    s.index___486894 = (r0);
+    r0 = (s.index___486894 === -1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 1; continue; }
@@ -7234,7 +7234,7 @@ switch (step) {
   case 1:
     r0 = s.arg0.fields["_distances"];
     s.tmp_1 = r0;
-    r0 = pxsim_Array__getAt(s.tmp_1, s.index___456844);
+    r0 = pxsim_Array__getAt(s.tmp_1, s.index___486894);
     { step = 3; continue; }
   case 2:
     r0 = undefined;
@@ -7242,16 +7242,16 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Distances_getDistance__P456600.info = {"start":11307,"length":262,"line":366,"column":8,"endLine":373,"endColumn":9,"fileName":"mazes.ts","functionName":"getDistance","argumentNames":["this","cell"]}
+mazes_Distances_getDistance__P486650.info = {"start":10382,"length":262,"line":344,"column":8,"endLine":351,"endColumn":9,"fileName":"mazes.ts","functionName":"getDistance","argumentNames":["this","cell"]}
 
-function mazes_Distances_getDistance__P456600_mk(s) {
+function mazes_Distances_getDistance__P486650_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Distances_getDistance__P456600, depth: s.depth + 1,
+        parent: s, fn: mazes_Distances_getDistance__P486650, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
-  index___456844: undefined,
+  index___486894: undefined,
   arg0: undefined,
   arg1: undefined,
 } }
@@ -10643,7 +10643,7 @@ function Sprite_left__P2414_mk(s) {
 
 
 
-function showMainScreen__P467074(s) {
+function showMainScreen__P476162(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -10653,11 +10653,11 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    globals.gameMode___467030 = (2);
+    globals.gameMode___476118 = (2);
     s.tmp_0 = Sprite_setPosition__P2424_mk(s);
-    s.tmp_0.arg0 = globals.mazeSprite___467036;
+    s.tmp_0.arg0 = globals.mazeSprite___476124;
     s.tmp_2 = Sprite_width__P2412_mk(s);
-    s.tmp_2.arg0 = globals.mazeSprite___467036;
+    s.tmp_2.arg0 = globals.mazeSprite___476124;
     s.callLocIdx = 215; s.pc = 4; return s.tmp_2;
   case 4:
     r0 = s.retval;
@@ -10665,7 +10665,7 @@ switch (step) {
     r0 = (0 - s.tmp_1);
     s.tmp_0.arg1 = r0;
     s.tmp_4 = Sprite_height__P2413_mk(s);
-    s.tmp_4.arg0 = globals.mazeSprite___467036;
+    s.tmp_4.arg0 = globals.mazeSprite___476124;
     s.callLocIdx = 216; s.pc = 5; return s.tmp_4;
   case 5:
     r0 = s.retval;
@@ -10676,14 +10676,14 @@ switch (step) {
   case 3:
     r0 = s.retval;
     s.tmp_0 = tiles_setCurrentTilemap__P2781_mk(s);
-    s.tmp_0.arg0 = globals.tileMap___467044;
+    s.tmp_0.arg0 = globals.tileMap___476132;
     s.callLocIdx = 218; s.pc = 6; return s.tmp_0;
   case 6:
     r0 = s.retval;
-    r0 = pxsim_numops_toBoolDecr(globals.mazeBuilt___467040);
+    r0 = pxsim_numops_toBoolDecr(globals.mazeBuilt___476128);
     if (!r0) { step = 1; continue; }
     s.tmp_0 = tiles_placeOnRandomTile__P2791_mk(s);
-    s.tmp_0.arg0 = globals.player___467038;
+    s.tmp_0.arg0 = globals.player___476126;
     s.tmp_0.arg1 = globals.floorDarkDiamond___4059;
     s.callLocIdx = 219; s.pc = 7; return s.tmp_0;
   case 7:
@@ -10691,7 +10691,7 @@ switch (step) {
     { step = 2; continue; }
   case 1:
     s.tmp_0 = tiles_placeOnTile__P2790_mk(s);
-    s.tmp_0.arg0 = globals.player___467038;
+    s.tmp_0.arg0 = globals.player___476126;
     s.tmp_1 = tiles_getTileLocation__P2784_mk(s);
     s.tmp_1.arg0 = 1;
     s.tmp_1.arg1 = 1;
@@ -10704,20 +10704,20 @@ switch (step) {
     r0 = s.retval;
   case 2:
     s.tmp_0 = scene_cameraFollowSprite__P2907_mk(s);
-    s.tmp_0.arg0 = globals.player___467038;
+    s.tmp_0.arg0 = globals.player___476126;
     s.callLocIdx = 222; s.pc = 10; return s.tmp_0;
   case 10:
     r0 = s.retval;
     s.tmp_0 = controller_moveSprite__P2181_mk(s);
-    s.tmp_0.arg0 = globals.player___467038;
+    s.tmp_0.arg0 = globals.player___476126;
     s.tmp_0.arg1 = 100;
     s.tmp_0.arg2 = 100;
     s.callLocIdx = 223; s.pc = 11; return s.tmp_0;
   case 11:
     r0 = s.retval;
     s.tmp_0 = Sprite_say__P2426_mk(s);
-    s.tmp_0.arg0 = globals.player___467038;
-    r0 = pxsim_Array__getAt(globals.ALGORITHM_NAMES___467016, globals.currAlgo___467027);
+    s.tmp_0.arg0 = globals.player___476126;
+    r0 = pxsim_Array__getAt(globals.ALGORITHM_NAMES___476104, globals.currAlgo___476115);
     s.tmp_0.arg1 = r0;
     s.tmp_0.arg2 = undefined;
     s.tmp_0.arg3 = 15;
@@ -10725,17 +10725,17 @@ switch (step) {
     s.callLocIdx = 224; s.pc = 12; return s.tmp_0;
   case 12:
     r0 = s.retval;
-    globals.gameMode___467030 = (0);
+    globals.gameMode___476118 = (0);
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-showMainScreen__P467074.info = {"start":5131,"length":741,"line":178,"column":0,"endLine":199,"endColumn":1,"fileName":"test.ts","functionName":"showMainScreen","argumentNames":[]}
+showMainScreen__P476162.info = {"start":1929,"length":496,"line":84,"column":0,"endLine":97,"endColumn":1,"fileName":"test.ts","functionName":"showMainScreen","argumentNames":[]}
 
-function showMainScreen__P467074_mk(s) {
+function showMainScreen__P476162_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: showMainScreen__P467074, depth: s.depth + 1,
+        parent: s, fn: showMainScreen__P476162, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -15998,7 +15998,7 @@ function tiles_TileMapData_getTileset__P2742_mk(s) {
 
 
 
-function mazes_Grid_buildTileMap__P456929(s) {
+function mazes_Grid_buildTileMap__P486979(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -16008,22 +16008,22 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.solution___457120 = undefined;
-    s.img___457124 = undefined;
-    s.row___457141 = undefined;
-    s.col___457147 = undefined;
-    s.cell___457153 = undefined;
-    s.images___457233 = undefined;
-    s.i___457249 = undefined;
-    s.unnamed15828___U7 = undefined;
-    s.unnamed15829___U8 = undefined;
-    s.data___457265 = undefined;
-    s.j___457271 = undefined;
-    s.walls___457285 = undefined;
-    s.toReturn___457292 = undefined;
-    s.x___457299 = undefined;
-    s.y___457305 = undefined;
-    s.c___457311 = undefined;
+    s.solution___487170 = undefined;
+    s.img___487174 = undefined;
+    s.row___487191 = undefined;
+    s.col___487197 = undefined;
+    s.cell___487203 = undefined;
+    s.images___487283 = undefined;
+    s.i___487299 = undefined;
+    s.unnamed19040___U7 = undefined;
+    s.unnamed19041___U8 = undefined;
+    s.data___487315 = undefined;
+    s.j___487321 = undefined;
+    s.walls___487335 = undefined;
+    s.toReturn___487342 = undefined;
+    s.x___487349 = undefined;
+    s.y___487355 = undefined;
+    s.c___487361 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
@@ -16035,7 +16035,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
     r0 = (s.arg1 == null);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBool(s.tmp_0);
@@ -16053,29 +16053,29 @@ switch (step) {
   case 3:
   case 4:
     r0 = s.arg0.fields["_distances"];
-    s.solution___457120 = (r0);
-    s.tmp_0 = mazes_Grid_distances__P456919_mk(s);
+    s.solution___487170 = (r0);
+    s.tmp_0 = mazes_Grid_distances__P486969_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.tmp_0.arg1 = null;
     s.callLocIdx = 101; s.pc = 25; return s.tmp_0;
   case 25:
     r0 = s.retval;
-    s.img___457124 = (globals.mazes_Grid__img___456945);
-    s.tmp_0 = mazes_Grid_draw__P456941_mk(s);
+    s.img___487174 = (globals.mazes_Grid__img___486995);
+    s.tmp_0 = mazes_Grid_draw__P486991_mk(s);
     s.tmp_0.arg0 = s.arg0;
     r0 = (s.arg3 + 1);
     s.tmp_0.arg1 = r0;
     s.tmp_0.arg2 = 1;
     s.tmp_0.arg3 = 1;
     s.tmp_0.arg4 = 2;
-    s.tmp_0.arg5 = s.img___457124;
+    s.tmp_0.arg5 = s.img___487174;
     s.callLocIdx = 102; s.pc = 26; return s.tmp_0;
   case 26:
     r0 = s.retval;
-    s.img___457124 = (r0);
-    s.tmp_0 = mazes_Grid_distances__P456919_mk(s);
+    s.img___487174 = (r0);
+    s.tmp_0 = mazes_Grid_distances__P486969_mk(s);
     s.tmp_0.arg0 = s.arg0;
-    s.tmp_0.arg1 = s.solution___457120;
+    s.tmp_0.arg1 = s.solution___487170;
     s.callLocIdx = 103; s.pc = 27; return s.tmp_0;
   case 27:
     r0 = s.retval;
@@ -16094,33 +16094,33 @@ switch (step) {
     s.tmp_2 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_2);
     if (!r0) { step = 13; continue; }
-    s.row___457141 = (0);
+    s.row___487191 = (0);
   case 7:
     r0 = s.arg0.fields["_rows"];
     s.tmp_1 = r0;
-    r0 = (s.row___457141 < s.tmp_1);
+    r0 = (s.row___487191 < s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 12; continue; }
-    s.col___457147 = (0);
+    s.col___487197 = (0);
   case 8:
     r0 = s.arg0.fields["_cols"];
     s.tmp_1 = r0;
-    r0 = (s.col___457147 < s.tmp_1);
+    r0 = (s.col___487197 < s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 11; continue; }
-    s.tmp_2 = mazes_Grid_getCell__P456930_mk(s);
+    s.tmp_2 = mazes_Grid_getCell__P486980_mk(s);
     s.tmp_2.arg0 = s.arg0;
-    s.tmp_2.arg1 = s.row___457141;
-    s.tmp_2.arg2 = s.col___457147;
+    s.tmp_2.arg1 = s.row___487191;
+    s.tmp_2.arg2 = s.col___487197;
     s.callLocIdx = 105; s.pc = 28; return s.tmp_2;
   case 28:
     r0 = s.retval;
-    s.cell___457153 = (r0);
-    s.tmp_2 = mazes_Distances_getDistance__P456600_mk(s);
-    s.tmp_2.arg0 = s.solution___457120;
-    s.tmp_2.arg1 = s.cell___457153;
+    s.cell___487203 = (r0);
+    s.tmp_2 = mazes_Distances_getDistance__P486650_mk(s);
+    s.tmp_2.arg0 = s.solution___487170;
+    s.tmp_2.arg1 = s.cell___487203;
     s.callLocIdx = 106; s.pc = 29; return s.tmp_2;
   case 29:
     r0 = s.retval;
@@ -16129,15 +16129,15 @@ switch (step) {
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 9; continue; }
-    s.tmp_3 = r0 = s.img___457124;
-    s.tmp_6 = r0 = s.col___457147;
+    s.tmp_3 = r0 = s.img___487174;
+    s.tmp_6 = r0 = s.col___487197;
     r0 = (s.arg3 + 1);
     s.tmp_7 = r0;
     r0 = (s.tmp_6 * s.tmp_7);
     s.tmp_5 = r0;
     r0 = (s.tmp_5 + 1);
     s.tmp_4 = r0;
-    s.tmp_10 = r0 = s.row___457141;
+    s.tmp_10 = r0 = s.row___487191;
     r0 = (s.arg3 + 1);
     s.tmp_11 = r0;
     r0 = (s.tmp_10 * s.tmp_11);
@@ -16147,15 +16147,15 @@ switch (step) {
     r0 = pxsim_ImageMethods.setPixel(s.tmp_3, s.tmp_4, s.tmp_8, 4);
   case 9:
   case 10:
-    r0 = (s.col___457147 + 1);
-    s.col___457147 = (r0);
+    r0 = (s.col___487197 + 1);
+    s.col___487197 = (r0);
     { step = 8; continue; }
   case 11:
-    r0 = (s.row___457141 + 1);
-    s.row___457141 = (r0);
+    r0 = (s.row___487191 + 1);
+    s.row___487191 = (r0);
     { step = 7; continue; }
   case 12:
-    s.tmp_0 = r0 = s.img___457124;
+    s.tmp_0 = r0 = s.img___487174;
     s.tmp_5 = if_begin_1_mk(s);
     r0 = s.arg0.fields["_path"];
     s.tmp_5.arg0 = r0;
@@ -16201,7 +16201,7 @@ switch (step) {
     r0 = (s.tmp_8 + 1);
     s.tmp_7 = r0;
     r0 = pxsim_ImageMethods.setPixel(s.tmp_0, s.tmp_1, s.tmp_7, 3);
-    s.tmp_0 = r0 = s.img___457124;
+    s.tmp_0 = r0 = s.img___487174;
     s.tmp_5 = if_end_1_mk(s);
     r0 = s.arg0.fields["_path"];
     s.tmp_5.arg0 = r0;
@@ -16250,60 +16250,60 @@ switch (step) {
   case 13:
   case 14:
     r0 = pxsim_Array__mk();
-    s.images___457233 = (r0);
-    s.tmp_0 = r0 = s.images___457233;
+    s.images___487283 = (r0);
+    s.tmp_0 = r0 = s.images___487283;
     r0 = pxsim.image.create(16, 16);
     s.tmp_1 = r0;
     r0 = pxsim_Array__push(s.tmp_0, s.tmp_1);
-    r0 = pxsim_Array__push(s.images___457233, s.arg1);
-    r0 = pxsim_Array__push(s.images___457233, s.arg2);
-    s.i___457249 = (undefined);
+    r0 = pxsim_Array__push(s.images___487283, s.arg1);
+    r0 = pxsim_Array__push(s.images___487283, s.arg2);
+    s.i___487299 = (undefined);
     r0 = pxsim_Array__mk();
     s.tmp_0 = r0;
     r0 = pxsim_Array__push(s.tmp_0, s.arg4);
     r0 = pxsim_Array__push(s.tmp_0, s.arg5);
     r0 = pxsim_Array__push(s.tmp_0, s.arg6);
-    s.unnamed15828___U7 = (s.tmp_0);
-    s.unnamed15829___U8 = (0);
+    s.unnamed19040___U7 = (s.tmp_0);
+    s.unnamed19041___U8 = (0);
   case 15:
-    s.tmp_0 = r0 = s.unnamed15829___U8;
-    r0 = pxsim_Array__length(s.unnamed15828___U7);
+    s.tmp_0 = r0 = s.unnamed19041___U8;
+    r0 = pxsim_Array__length(s.unnamed19040___U7);
     s.tmp_1 = r0;
     r0 = (s.tmp_0 < s.tmp_1);
     if (!r0) { step = 18; continue; }
-    r0 = pxsim_Array__getAt(s.unnamed15828___U7, s.unnamed15829___U8);
-    s.i___457249 = (r0);
-    r0 = (s.i___457249 != null);
+    r0 = pxsim_Array__getAt(s.unnamed19040___U7, s.unnamed19041___U8);
+    s.i___487299 = (r0);
+    r0 = (s.i___487299 != null);
     s.tmp_2 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_2);
     if (!r0) { step = 16; continue; }
-    r0 = pxsim_Array__push(s.images___457233, s.i___457249);
+    r0 = pxsim_Array__push(s.images___487283, s.i___487299);
     { step = 17; continue; }
   case 16:
-    r0 = pxsim_Array__push(s.images___457233, s.arg1);
+    r0 = pxsim_Array__push(s.images___487283, s.arg1);
   case 17:
-    r0 = (s.unnamed15829___U8 + 1);
-    s.unnamed15829___U8 = (r0);
+    r0 = (s.unnamed19041___U8 + 1);
+    s.unnamed19041___U8 = (r0);
     { step = 15; continue; }
   case 18:
-    s.unnamed15828___U7 = (undefined);
+    s.unnamed19040___U7 = (undefined);
     r0 = pxsim_Array__mk();
     s.tmp_0 = r0;
-    r0 = pxsim_ImageMethods.width(s.img___457124);
+    r0 = pxsim_ImageMethods.width(s.img___487174);
     s.tmp_1 = r0;
     r0 = pxsim_Array__push(s.tmp_0, s.tmp_1);
     r0 = pxsim_Array__push(s.tmp_0, 0);
-    r0 = pxsim_ImageMethods.height(s.img___457124);
+    r0 = pxsim_ImageMethods.height(s.img___487174);
     s.tmp_2 = r0;
     r0 = pxsim_Array__push(s.tmp_0, s.tmp_2);
     r0 = pxsim_Array__push(s.tmp_0, 0);
-    s.data___457265 = (s.tmp_0);
-    s.j___457271 = (0);
+    s.data___487315 = (s.tmp_0);
+    s.j___487321 = (0);
   case 19:
-    s.tmp_1 = r0 = s.j___457271;
-    r0 = pxsim_ImageMethods.width(s.img___457124);
+    s.tmp_1 = r0 = s.j___487321;
+    r0 = pxsim_ImageMethods.width(s.img___487174);
     s.tmp_3 = r0;
-    r0 = pxsim_ImageMethods.height(s.img___457124);
+    r0 = pxsim_ImageMethods.height(s.img___487174);
     s.tmp_4 = r0;
     r0 = (s.tmp_3 * s.tmp_4);
     s.tmp_2 = r0;
@@ -16311,86 +16311,86 @@ switch (step) {
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 20; continue; }
-    r0 = pxsim_Array__push(s.data___457265, 0);
-    r0 = (s.j___457271 + 1);
-    s.j___457271 = (r0);
+    r0 = pxsim_Array__push(s.data___487315, 0);
+    r0 = (s.j___487321 + 1);
+    s.j___487321 = (r0);
     { step = 19; continue; }
   case 20:
-    r0 = pxsim_ImageMethods.width(s.img___457124);
+    r0 = pxsim_ImageMethods.width(s.img___487174);
     s.tmp_0 = r0;
-    r0 = pxsim_ImageMethods.height(s.img___457124);
+    r0 = pxsim_ImageMethods.height(s.img___487174);
     s.tmp_1 = r0;
     r0 = pxsim.image.create(s.tmp_0, s.tmp_1);
-    s.walls___457285 = (r0);
+    s.walls___487335 = (r0);
     s.tmp_0 = tiles_createTilemap__P2779_mk(s);
     s.tmp_1 = Buffer_fromArray__P210_mk(s);
-    s.tmp_1.arg0 = s.data___457265;
+    s.tmp_1.arg0 = s.data___487315;
     s.callLocIdx = 115; s.pc = 35; return s.tmp_1;
   case 35:
     r0 = s.retval;
     s.tmp_0.arg0 = r0;
-    s.tmp_0.arg1 = s.walls___457285;
-    s.tmp_0.arg2 = s.images___457233;
+    s.tmp_0.arg1 = s.walls___487335;
+    s.tmp_0.arg2 = s.images___487283;
     s.tmp_0.arg3 = 4;
     s.callLocIdx = 116; s.pc = 34; return s.tmp_0;
   case 34:
     r0 = s.retval;
-    s.toReturn___457292 = (r0);
-    s.x___457299 = (0);
+    s.toReturn___487342 = (r0);
+    s.x___487349 = (0);
   case 21:
-    s.tmp_1 = r0 = s.x___457299;
-    r0 = pxsim_ImageMethods.width(s.img___457124);
+    s.tmp_1 = r0 = s.x___487349;
+    r0 = pxsim_ImageMethods.width(s.img___487174);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 < s.tmp_2);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 24; continue; }
-    s.y___457305 = (0);
+    s.y___487355 = (0);
   case 22:
-    s.tmp_1 = r0 = s.y___457305;
-    r0 = pxsim_ImageMethods.height(s.img___457124);
+    s.tmp_1 = r0 = s.y___487355;
+    r0 = pxsim_ImageMethods.height(s.img___487174);
     s.tmp_2 = r0;
     r0 = (s.tmp_1 < s.tmp_2);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 23; continue; }
-    r0 = pxsim_ImageMethods.getPixel(s.img___457124, s.x___457299, s.y___457305);
-    s.c___457311 = (r0);
+    r0 = pxsim_ImageMethods.getPixel(s.img___487174, s.x___487349, s.y___487355);
+    s.c___487361 = (r0);
     s.tmp_0 = tiles_TileMapData_setTile__P2741_mk(s);
-    s.tmp_0.arg0 = s.toReturn___457292;
-    s.tmp_0.arg1 = s.x___457299;
-    s.tmp_0.arg2 = s.y___457305;
-    s.tmp_0.arg3 = s.c___457311;
+    s.tmp_0.arg0 = s.toReturn___487342;
+    s.tmp_0.arg1 = s.x___487349;
+    s.tmp_0.arg2 = s.y___487355;
+    s.tmp_0.arg3 = s.c___487361;
     s.callLocIdx = 117; s.pc = 36; return s.tmp_0;
   case 36:
     r0 = s.retval;
     s.tmp_0 = tiles_TileMapData_setWall__P2744_mk(s);
-    s.tmp_0.arg0 = s.toReturn___457292;
-    s.tmp_0.arg1 = s.x___457299;
-    s.tmp_0.arg2 = s.y___457305;
-    r0 = (s.c___457311 == 2);
+    s.tmp_0.arg0 = s.toReturn___487342;
+    s.tmp_0.arg1 = s.x___487349;
+    s.tmp_0.arg2 = s.y___487355;
+    r0 = (s.c___487361 == 2);
     s.tmp_0.arg3 = r0;
     s.callLocIdx = 118; s.pc = 37; return s.tmp_0;
   case 37:
     r0 = s.retval;
-    r0 = (s.y___457305 + 1);
-    s.y___457305 = (r0);
+    r0 = (s.y___487355 + 1);
+    s.y___487355 = (r0);
     { step = 22; continue; }
   case 23:
-    r0 = (s.x___457299 + 1);
-    s.x___457299 = (r0);
+    r0 = (s.x___487349 + 1);
+    s.x___487349 = (r0);
     { step = 21; continue; }
   case 24:
-    r0 = s.toReturn___457292;
+    r0 = s.toReturn___487342;
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_buildTileMap__P456929.info = {"start":21115,"length":3617,"line":645,"column":8,"endLine":735,"endColumn":9,"fileName":"mazes.ts","functionName":"buildTileMap","argumentNames":["this","pathTile","wallTile","pathWidth","beginTile","endTile","solnTile"]}
+mazes_Grid_buildTileMap__P486979.info = {"start":19895,"length":3617,"line":616,"column":8,"endLine":706,"endColumn":9,"fileName":"mazes.ts","functionName":"buildTileMap","argumentNames":["this","pathTile","wallTile","pathWidth","beginTile","endTile","solnTile"]}
 
-function mazes_Grid_buildTileMap__P456929_mk(s) {
+function mazes_Grid_buildTileMap__P486979_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_buildTileMap__P456929, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_buildTileMap__P486979, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -16405,22 +16405,22 @@ function mazes_Grid_buildTileMap__P456929_mk(s) {
   tmp_10: undefined,
   tmp_11: undefined,
   tmp_12: undefined,
-  solution___457120: undefined,
-  img___457124: undefined,
-  row___457141: undefined,
-  col___457147: undefined,
-  cell___457153: undefined,
-  images___457233: undefined,
-  i___457249: undefined,
-  unnamed15828___U7: undefined,
-  unnamed15829___U8: undefined,
-  data___457265: undefined,
-  j___457271: undefined,
-  walls___457285: undefined,
-  toReturn___457292: undefined,
-  x___457299: undefined,
-  y___457305: undefined,
-  c___457311: undefined,
+  solution___487170: undefined,
+  img___487174: undefined,
+  row___487191: undefined,
+  col___487197: undefined,
+  cell___487203: undefined,
+  images___487283: undefined,
+  i___487299: undefined,
+  unnamed19040___U7: undefined,
+  unnamed19041___U8: undefined,
+  data___487315: undefined,
+  j___487321: undefined,
+  walls___487335: undefined,
+  toReturn___487342: undefined,
+  x___487349: undefined,
+  y___487355: undefined,
+  c___487361: undefined,
   arg0: undefined,
   arg1: undefined,
   arg2: undefined,
@@ -16754,7 +16754,7 @@ function tiles_TileMapData_constructor__P2735_mk(s) {
 
 
 
-function mazes_Cell_row__P456541(s) {
+function mazes_Cell_row__P486591(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -16769,18 +16769,18 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Cell__C456531_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Cell__C486581_VT)) failedCast(r0);
     r0 = s.arg0.fields["_row"];
     return leaveAccessor(s, r0)
   default: oops()
 } } }
-mazes_Cell_row__P456541.info = {"start":6658,"length":65,"line":218,"column":8,"endLine":220,"endColumn":9,"fileName":"mazes.ts","functionName":"row","argumentNames":["this"]}
-mazes_Cell_row__P456541.isGetter = true;
+mazes_Cell_row__P486591.info = {"start":5733,"length":65,"line":196,"column":8,"endLine":198,"endColumn":9,"fileName":"mazes.ts","functionName":"row","argumentNames":["this"]}
+mazes_Cell_row__P486591.isGetter = true;
 
-function mazes_Cell_row__P456541_mk(s) {
+function mazes_Cell_row__P486591_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Cell_row__P456541, depth: s.depth + 1,
+        parent: s, fn: mazes_Cell_row__P486591, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   arg0: undefined,
 } }
@@ -16789,7 +16789,7 @@ function mazes_Cell_row__P456541_mk(s) {
 
 
 
-function mazes_Cell_column__P456532(s) {
+function mazes_Cell_column__P486582(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -16804,18 +16804,18 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Cell__C456531_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Cell__C486581_VT)) failedCast(r0);
     r0 = s.arg0.fields["_col"];
     return leaveAccessor(s, r0)
   default: oops()
 } } }
-mazes_Cell_column__P456532.info = {"start":3284,"length":68,"line":113,"column":8,"endLine":115,"endColumn":9,"fileName":"mazes.ts","functionName":"column","argumentNames":["this"]}
-mazes_Cell_column__P456532.isGetter = true;
+mazes_Cell_column__P486582.info = {"start":2410,"length":68,"line":92,"column":8,"endLine":94,"endColumn":9,"fileName":"mazes.ts","functionName":"column","argumentNames":["this"]}
+mazes_Cell_column__P486582.isGetter = true;
 
-function mazes_Cell_column__P456532_mk(s) {
+function mazes_Cell_column__P486582_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Cell_column__P456532, depth: s.depth + 1,
+        parent: s, fn: mazes_Cell_column__P486582, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   arg0: undefined,
 } }
@@ -16824,7 +16824,7 @@ function mazes_Cell_column__P456532_mk(s) {
 
 
 
-function mazes_Grid_distances__P456919(s) {
+function mazes_Grid_distances__P486969(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -16840,18 +16840,18 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
     r0 = (s.arg0).fields["_distances"] = (s.arg1);
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_distances__P456919.info = {"start":16017,"length":86,"line":505,"column":8,"endLine":507,"endColumn":9,"fileName":"mazes.ts","functionName":"distances","argumentNames":["this","value"]}
+mazes_Grid_distances__P486969.info = {"start":14797,"length":86,"line":476,"column":8,"endLine":478,"endColumn":9,"fileName":"mazes.ts","functionName":"distances","argumentNames":["this","value"]}
 
-function mazes_Grid_distances__P456919_mk(s) {
+function mazes_Grid_distances__P486969_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_distances__P456919, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_distances__P486969, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   arg0: undefined,
   arg1: undefined,
@@ -16861,7 +16861,7 @@ function mazes_Grid_distances__P456919_mk(s) {
 
 
 
-function mazes_Grid_distances__P456918(s) {
+function mazes_Grid_distances__P486968(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -16876,18 +16876,18 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
     r0 = s.arg0.fields["_distances"];
     return leaveAccessor(s, r0)
   default: oops()
 } } }
-mazes_Grid_distances__P456918.info = {"start":15800,"length":80,"line":498,"column":8,"endLine":500,"endColumn":9,"fileName":"mazes.ts","functionName":"distances","argumentNames":["this"]}
-mazes_Grid_distances__P456918.isGetter = true;
+mazes_Grid_distances__P486968.info = {"start":14580,"length":80,"line":469,"column":8,"endLine":471,"endColumn":9,"fileName":"mazes.ts","functionName":"distances","argumentNames":["this"]}
+mazes_Grid_distances__P486968.isGetter = true;
 
-function mazes_Grid_distances__P456918_mk(s) {
+function mazes_Grid_distances__P486968_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_distances__P456918, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_distances__P486968, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   arg0: undefined,
 } }
@@ -16896,7 +16896,7 @@ function mazes_Grid_distances__P456918_mk(s) {
 
 
 
-function mazes_Grid_solve__P456933(s) {
+function mazes_Grid_solve__P486983(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -16911,10 +16911,10 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
     s.tmp_0 = r0 = s.arg0;
-    s.tmp_2 = mazes_Distances_getPath__P456601_mk(s);
-    s.tmp_3 = mazes_Cell_distances__P456533_mk(s);
+    s.tmp_2 = mazes_Distances_getPath__P486651_mk(s);
+    s.tmp_3 = mazes_Cell_distances__P486583_mk(s);
     s.tmp_4 = if_begin_1_mk(s);
     r0 = s.arg0.fields["_path"];
     s.tmp_4.arg0 = r0;
@@ -16956,12 +16956,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_solve__P456933.info = {"start":29741,"length":113,"line":850,"column":8,"endLine":852,"endColumn":9,"fileName":"mazes.ts","functionName":"solve","argumentNames":["this"]}
+mazes_Grid_solve__P486983.info = {"start":26253,"length":113,"line":774,"column":8,"endLine":776,"endColumn":9,"fileName":"mazes.ts","functionName":"solve","argumentNames":["this"]}
 
-function mazes_Grid_solve__P456933_mk(s) {
+function mazes_Grid_solve__P486983_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_solve__P456933, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_solve__P486983, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -16976,7 +16976,7 @@ function mazes_Grid_solve__P456933_mk(s) {
 
 
 
-function mazes_Cell_distances__P456533(s) {
+function mazes_Cell_distances__P486583(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -16986,76 +16986,76 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.toReturn___456595 = undefined;
-    s.frontier___456604 = undefined;
-    s.rounds___456606 = undefined;
-    s.frontierLength___456607 = undefined;
-    s.thisId___456608 = undefined;
-    s.newFrontier___456614 = undefined;
-    s.cell___456617 = undefined;
-    s.unnamed15822___U7 = undefined;
-    s.unnamed15823___U8 = undefined;
-    s.linked___456620 = undefined;
-    s.unnamed15824___U10 = undefined;
-    s.unnamed15825___U11 = undefined;
-    s.d___456630 = undefined;
+    s.toReturn___486645 = undefined;
+    s.frontier___486654 = undefined;
+    s.rounds___486656 = undefined;
+    s.frontierLength___486657 = undefined;
+    s.thisId___486658 = undefined;
+    s.newFrontier___486664 = undefined;
+    s.cell___486667 = undefined;
+    s.unnamed19034___U7 = undefined;
+    s.unnamed19035___U8 = undefined;
+    s.linked___486670 = undefined;
+    s.unnamed19036___U10 = undefined;
+    s.unnamed19037___U11 = undefined;
+    s.d___486680 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Cell__C456531_VT)) failedCast(r0);
-    r0 = pxsim_pxtcore_mkClassInstance(mazes_Distances__C456597_VT);
+    if (!checkSubtype(r0, mazes_Cell__C486581_VT)) failedCast(r0);
+    r0 = pxsim_pxtcore_mkClassInstance(mazes_Distances__C486647_VT);
     s.tmp_0 = r0;
-    s.tmp_1 = mazes_Distances_constructor__P456603_mk(s);
+    s.tmp_1 = mazes_Distances_constructor__P486653_mk(s);
     s.tmp_1.arg0 = s.tmp_0;
     s.tmp_1.arg1 = s.arg0;
     s.callLocIdx = 63; s.pc = 9; return s.tmp_1;
   case 9:
     r0 = s.retval;
-    s.toReturn___456595 = (s.tmp_0);
+    s.toReturn___486645 = (s.tmp_0);
     r0 = pxsim_Array__mk();
     s.tmp_0 = r0;
     r0 = pxsim_Array__push(s.tmp_0, s.arg0);
-    s.frontier___456604 = (s.tmp_0);
-    s.rounds___456606 = (0);
+    s.frontier___486654 = (s.tmp_0);
+    s.rounds___486656 = (0);
     r0 = s.arg0.fields["_id"];
-    s.thisId___456608 = (r0);
+    s.thisId___486658 = (r0);
   case 1:
-    r0 = pxsim_Array__length(s.frontier___456604);
+    r0 = pxsim_Array__length(s.frontier___486654);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 > 0);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 8; continue; }
     r0 = pxsim_Array__mk();
-    s.newFrontier___456614 = (r0);
-    s.cell___456617 = (undefined);
-    s.unnamed15822___U7 = (s.frontier___456604);
-    s.unnamed15823___U8 = (0);
+    s.newFrontier___486664 = (r0);
+    s.cell___486667 = (undefined);
+    s.unnamed19034___U7 = (s.frontier___486654);
+    s.unnamed19035___U8 = (0);
   case 2:
-    s.tmp_0 = r0 = s.unnamed15823___U8;
-    r0 = pxsim_Array__length(s.unnamed15822___U7);
+    s.tmp_0 = r0 = s.unnamed19035___U8;
+    r0 = pxsim_Array__length(s.unnamed19034___U7);
     s.tmp_1 = r0;
     r0 = (s.tmp_0 < s.tmp_1);
     if (!r0) { step = 7; continue; }
-    r0 = pxsim_Array__getAt(s.unnamed15822___U7, s.unnamed15823___U8);
-    s.cell___456617 = (r0);
-    s.linked___456620 = (undefined);
-    r0 = s.cell___456617.fields["_links"];
-    s.unnamed15824___U10 = (r0);
-    s.unnamed15825___U11 = (0);
+    r0 = pxsim_Array__getAt(s.unnamed19034___U7, s.unnamed19035___U8);
+    s.cell___486667 = (r0);
+    s.linked___486670 = (undefined);
+    r0 = s.cell___486667.fields["_links"];
+    s.unnamed19036___U10 = (r0);
+    s.unnamed19037___U11 = (0);
   case 3:
-    s.tmp_0 = r0 = s.unnamed15825___U11;
-    r0 = pxsim_Array__length(s.unnamed15824___U10);
+    s.tmp_0 = r0 = s.unnamed19037___U11;
+    r0 = pxsim_Array__length(s.unnamed19036___U10);
     s.tmp_1 = r0;
     r0 = (s.tmp_0 < s.tmp_1);
     if (!r0) { step = 6; continue; }
-    r0 = pxsim_Array__getAt(s.unnamed15824___U10, s.unnamed15825___U11);
-    s.linked___456620 = (r0);
-    s.tmp_4 = mazes_Distances_getDistance__P456600_mk(s);
-    s.tmp_4.arg0 = s.toReturn___456595;
-    s.tmp_4.arg1 = s.linked___456620;
+    r0 = pxsim_Array__getAt(s.unnamed19036___U10, s.unnamed19037___U11);
+    s.linked___486670 = (r0);
+    s.tmp_4 = mazes_Distances_getDistance__P486650_mk(s);
+    s.tmp_4.arg0 = s.toReturn___486645;
+    s.tmp_4.arg1 = s.linked___486670;
     s.callLocIdx = 66; s.pc = 10; return s.tmp_4;
   case 10:
     r0 = s.retval;
@@ -17064,53 +17064,53 @@ switch (step) {
     s.tmp_2 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_2);
     if (!r0) { step = 4; continue; }
-    s.tmp_6 = mazes_Distances_getDistance__P456600_mk(s);
-    s.tmp_6.arg0 = s.toReturn___456595;
-    s.tmp_6.arg1 = s.cell___456617;
+    s.tmp_6 = mazes_Distances_getDistance__P486650_mk(s);
+    s.tmp_6.arg0 = s.toReturn___486645;
+    s.tmp_6.arg1 = s.cell___486667;
     s.callLocIdx = 67; s.pc = 11; return s.tmp_6;
   case 11:
     r0 = s.retval;
     s.tmp_5 = r0;
     r0 = (s.tmp_5 + 1);
-    s.d___456630 = (r0);
-    s.tmp_0 = mazes_Distances_setDistance__P456602_mk(s);
-    s.tmp_0.arg0 = s.toReturn___456595;
-    s.tmp_0.arg1 = s.linked___456620;
-    s.tmp_0.arg2 = s.d___456630;
+    s.d___486680 = (r0);
+    s.tmp_0 = mazes_Distances_setDistance__P486652_mk(s);
+    s.tmp_0.arg0 = s.toReturn___486645;
+    s.tmp_0.arg1 = s.linked___486670;
+    s.tmp_0.arg2 = s.d___486680;
     s.callLocIdx = 68; s.pc = 12; return s.tmp_0;
   case 12:
     r0 = s.retval;
-    r0 = pxsim_Array__push(s.newFrontier___456614, s.linked___456620);
+    r0 = pxsim_Array__push(s.newFrontier___486664, s.linked___486670);
   case 4:
   case 5:
-    r0 = (s.unnamed15825___U11 + 1);
-    s.unnamed15825___U11 = (r0);
+    r0 = (s.unnamed19037___U11 + 1);
+    s.unnamed19037___U11 = (r0);
     { step = 3; continue; }
   case 6:
-    s.unnamed15824___U10 = (undefined);
-    r0 = (s.unnamed15823___U8 + 1);
-    s.unnamed15823___U8 = (r0);
+    s.unnamed19036___U10 = (undefined);
+    r0 = (s.unnamed19035___U8 + 1);
+    s.unnamed19035___U8 = (r0);
     { step = 2; continue; }
   case 7:
-    s.unnamed15822___U7 = (undefined);
-    s.frontier___456604 = (s.newFrontier___456614);
-    r0 = pxsim_Array__length(s.frontier___456604);
-    s.frontierLength___456607 = (r0);
-    r0 = (s.rounds___456606 + 1);
-    s.rounds___456606 = (r0);
+    s.unnamed19034___U7 = (undefined);
+    s.frontier___486654 = (s.newFrontier___486664);
+    r0 = pxsim_Array__length(s.frontier___486654);
+    s.frontierLength___486657 = (r0);
+    r0 = (s.rounds___486656 + 1);
+    s.rounds___486656 = (r0);
     { step = 1; continue; }
   case 8:
-    r0 = s.toReturn___456595;
+    r0 = s.toReturn___486645;
     return leaveAccessor(s, r0)
   default: oops()
 } } }
-mazes_Cell_distances__P456533.info = {"start":3526,"length":1079,"line":121,"column":8,"endLine":147,"endColumn":9,"fileName":"mazes.ts","functionName":"distances","argumentNames":["this"]}
-mazes_Cell_distances__P456533.isGetter = true;
+mazes_Cell_distances__P486583.info = {"start":2652,"length":1028,"line":100,"column":8,"endLine":125,"endColumn":9,"fileName":"mazes.ts","functionName":"distances","argumentNames":["this"]}
+mazes_Cell_distances__P486583.isGetter = true;
 
-function mazes_Cell_distances__P456533_mk(s) {
+function mazes_Cell_distances__P486583_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Cell_distances__P456533, depth: s.depth + 1,
+        parent: s, fn: mazes_Cell_distances__P486583, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -17119,19 +17119,19 @@ function mazes_Cell_distances__P456533_mk(s) {
   tmp_4: undefined,
   tmp_5: undefined,
   tmp_6: undefined,
-  toReturn___456595: undefined,
-  frontier___456604: undefined,
-  rounds___456606: undefined,
-  frontierLength___456607: undefined,
-  thisId___456608: undefined,
-  newFrontier___456614: undefined,
-  cell___456617: undefined,
-  unnamed15822___U7: undefined,
-  unnamed15823___U8: undefined,
-  linked___456620: undefined,
-  unnamed15824___U10: undefined,
-  unnamed15825___U11: undefined,
-  d___456630: undefined,
+  toReturn___486645: undefined,
+  frontier___486654: undefined,
+  rounds___486656: undefined,
+  frontierLength___486657: undefined,
+  thisId___486658: undefined,
+  newFrontier___486664: undefined,
+  cell___486667: undefined,
+  unnamed19034___U7: undefined,
+  unnamed19035___U8: undefined,
+  linked___486670: undefined,
+  unnamed19036___U10: undefined,
+  unnamed19037___U11: undefined,
+  d___486680: undefined,
   arg0: undefined,
 } }
 
@@ -17139,7 +17139,7 @@ function mazes_Cell_distances__P456533_mk(s) {
 
 
 
-function mazes_Distances_setDistance__P456602(s) {
+function mazes_Distances_setDistance__P486652(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -17156,7 +17156,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Distances__C456597_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Distances__C486647_VT)) failedCast(r0);
     r0 = s.arg0.fields["_cellIds"];
     s.tmp_0 = r0;
     r0 = s.arg1.fields["_id"];
@@ -17169,12 +17169,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Distances_setDistance__P456602.info = {"start":12749,"length":149,"line":401,"column":8,"endLine":404,"endColumn":9,"fileName":"mazes.ts","functionName":"setDistance","argumentNames":["this","cell","distance"]}
+mazes_Distances_setDistance__P486652.info = {"start":11824,"length":149,"line":379,"column":8,"endLine":382,"endColumn":9,"fileName":"mazes.ts","functionName":"setDistance","argumentNames":["this","cell","distance"]}
 
-function mazes_Distances_setDistance__P456602_mk(s) {
+function mazes_Distances_setDistance__P486652_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Distances_setDistance__P456602, depth: s.depth + 1,
+        parent: s, fn: mazes_Distances_setDistance__P486652, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -17187,7 +17187,7 @@ function mazes_Distances_setDistance__P456602_mk(s) {
 
 
 
-function mazes_Cell_links__P456537(s) {
+function mazes_Cell_links__P486587(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -17202,18 +17202,18 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Cell__C456531_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Cell__C486581_VT)) failedCast(r0);
     r0 = s.arg0.fields["_links"];
     return leaveAccessor(s, r0)
   default: oops()
 } } }
-mazes_Cell_links__P456537.info = {"start":5373,"length":69,"line":176,"column":8,"endLine":178,"endColumn":9,"fileName":"mazes.ts","functionName":"links","argumentNames":["this"]}
-mazes_Cell_links__P456537.isGetter = true;
+mazes_Cell_links__P486587.info = {"start":4448,"length":69,"line":154,"column":8,"endLine":156,"endColumn":9,"fileName":"mazes.ts","functionName":"links","argumentNames":["this"]}
+mazes_Cell_links__P486587.isGetter = true;
 
-function mazes_Cell_links__P456537_mk(s) {
+function mazes_Cell_links__P486587_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Cell_links__P456537, depth: s.depth + 1,
+        parent: s, fn: mazes_Cell_links__P486587, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   arg0: undefined,
 } }
@@ -17222,7 +17222,7 @@ function mazes_Cell_links__P456537_mk(s) {
 
 
 
-function mazes_Distances_constructor__P456603(s) {
+function mazes_Distances_constructor__P486653(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -17238,7 +17238,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Distances__C456597_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Distances__C486647_VT)) failedCast(r0);
     r0 = (s.arg0).fields["_root"] = (s.arg1);
     s.tmp_0 = r0 = s.arg0;
     r0 = pxsim_Array__mk();
@@ -17260,12 +17260,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Distances_constructor__P456603.info = {"start":10434,"length":205,"line":336,"column":8,"endLine":342,"endColumn":9,"fileName":"mazes.ts","functionName":"inline","argumentNames":["this","root"]}
+mazes_Distances_constructor__P486653.info = {"start":9509,"length":205,"line":314,"column":8,"endLine":320,"endColumn":9,"fileName":"mazes.ts","functionName":"inline","argumentNames":["this","root"]}
 
-function mazes_Distances_constructor__P456603_mk(s) {
+function mazes_Distances_constructor__P486653_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Distances_constructor__P456603, depth: s.depth + 1,
+        parent: s, fn: mazes_Distances_constructor__P486653, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -17277,7 +17277,7 @@ function mazes_Distances_constructor__P456603_mk(s) {
 
 
 
-function mazes_Distances_getPath__P456601(s) {
+function mazes_Distances_getPath__P486651(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -17287,35 +17287,35 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.current___456863 = undefined;
-    s.toReturn___456865 = undefined;
-    s.neighbor___456883 = undefined;
-    s.unnamed15826___U3 = undefined;
-    s.unnamed15827___U4 = undefined;
+    s.current___486913 = undefined;
+    s.toReturn___486915 = undefined;
+    s.neighbor___486933 = undefined;
+    s.unnamed19038___U3 = undefined;
+    s.unnamed19039___U4 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.arg1 = (s.lambdaArgs[1]);
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Distances__C456597_VT)) failedCast(r0);
-    s.current___456863 = (s.arg1);
-    r0 = pxsim_pxtcore_mkClassInstance(mazes_Distances__C456597_VT);
+    if (!checkSubtype(r0, mazes_Distances__C486647_VT)) failedCast(r0);
+    s.current___486913 = (s.arg1);
+    r0 = pxsim_pxtcore_mkClassInstance(mazes_Distances__C486647_VT);
     s.tmp_0 = r0;
-    s.tmp_1 = mazes_Distances_constructor__P456603_mk(s);
+    s.tmp_1 = mazes_Distances_constructor__P486653_mk(s);
     s.tmp_1.arg0 = s.tmp_0;
     r0 = s.arg0.fields["_root"];
     s.tmp_1.arg1 = r0;
     s.callLocIdx = 75; s.pc = 7; return s.tmp_1;
   case 7:
     r0 = s.retval;
-    s.toReturn___456865 = (s.tmp_0);
-    s.tmp_0 = mazes_Distances_setDistance__P456602_mk(s);
-    s.tmp_0.arg0 = s.toReturn___456865;
-    s.tmp_0.arg1 = s.current___456863;
-    s.tmp_1 = mazes_Distances_getDistance__P456600_mk(s);
+    s.toReturn___486915 = (s.tmp_0);
+    s.tmp_0 = mazes_Distances_setDistance__P486652_mk(s);
+    s.tmp_0.arg0 = s.toReturn___486915;
+    s.tmp_0.arg1 = s.current___486913;
+    s.tmp_1 = mazes_Distances_getDistance__P486650_mk(s);
     s.tmp_1.arg0 = s.arg0;
-    s.tmp_1.arg1 = s.current___456863;
+    s.tmp_1.arg1 = s.current___486913;
     s.callLocIdx = 76; s.pc = 9; return s.tmp_1;
   case 9:
     r0 = s.retval;
@@ -17324,7 +17324,7 @@ switch (step) {
   case 8:
     r0 = s.retval;
   case 1:
-    r0 = s.current___456863.fields["_id"];
+    r0 = s.current___486913.fields["_id"];
     s.tmp_1 = r0;
     r0 = s.arg0.fields["_root"];
     s.tmp_3 = r0;
@@ -17334,28 +17334,28 @@ switch (step) {
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 6; continue; }
-    s.neighbor___456883 = (undefined);
-    r0 = s.current___456863.fields["_links"];
-    s.unnamed15826___U3 = (r0);
-    s.unnamed15827___U4 = (0);
+    s.neighbor___486933 = (undefined);
+    r0 = s.current___486913.fields["_links"];
+    s.unnamed19038___U3 = (r0);
+    s.unnamed19039___U4 = (0);
   case 2:
-    s.tmp_0 = r0 = s.unnamed15827___U4;
-    r0 = pxsim_Array__length(s.unnamed15826___U3);
+    s.tmp_0 = r0 = s.unnamed19039___U4;
+    r0 = pxsim_Array__length(s.unnamed19038___U3);
     s.tmp_1 = r0;
     r0 = (s.tmp_0 < s.tmp_1);
     if (!r0) { step = 5; continue; }
-    r0 = pxsim_Array__getAt(s.unnamed15826___U3, s.unnamed15827___U4);
-    s.neighbor___456883 = (r0);
-    s.tmp_4 = mazes_Distances_getDistance__P456600_mk(s);
+    r0 = pxsim_Array__getAt(s.unnamed19038___U3, s.unnamed19039___U4);
+    s.neighbor___486933 = (r0);
+    s.tmp_4 = mazes_Distances_getDistance__P486650_mk(s);
     s.tmp_4.arg0 = s.arg0;
-    s.tmp_4.arg1 = s.neighbor___456883;
+    s.tmp_4.arg1 = s.neighbor___486933;
     s.callLocIdx = 81; s.pc = 10; return s.tmp_4;
   case 10:
     r0 = s.retval;
     s.tmp_3 = r0;
-    s.tmp_6 = mazes_Distances_getDistance__P456600_mk(s);
+    s.tmp_6 = mazes_Distances_getDistance__P486650_mk(s);
     s.tmp_6.arg0 = s.arg0;
-    s.tmp_6.arg1 = s.current___456863;
+    s.tmp_6.arg1 = s.current___486913;
     s.callLocIdx = 82; s.pc = 11; return s.tmp_6;
   case 11:
     r0 = s.retval;
@@ -17364,12 +17364,12 @@ switch (step) {
     s.tmp_2 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_2);
     if (!r0) { step = 3; continue; }
-    s.tmp_7 = mazes_Distances_setDistance__P456602_mk(s);
-    s.tmp_7.arg0 = s.toReturn___456865;
-    s.tmp_7.arg1 = s.neighbor___456883;
-    s.tmp_8 = mazes_Distances_getDistance__P456600_mk(s);
+    s.tmp_7 = mazes_Distances_setDistance__P486652_mk(s);
+    s.tmp_7.arg0 = s.toReturn___486915;
+    s.tmp_7.arg1 = s.neighbor___486933;
+    s.tmp_8 = mazes_Distances_getDistance__P486650_mk(s);
     s.tmp_8.arg0 = s.arg0;
-    s.tmp_8.arg1 = s.neighbor___456883;
+    s.tmp_8.arg1 = s.neighbor___486933;
     s.callLocIdx = 83; s.pc = 13; return s.tmp_8;
   case 13:
     r0 = s.retval;
@@ -17377,27 +17377,27 @@ switch (step) {
     s.callLocIdx = 84; s.pc = 12; return s.tmp_7;
   case 12:
     r0 = s.retval;
-    s.current___456863 = (s.neighbor___456883);
+    s.current___486913 = (s.neighbor___486933);
     { step = 5; continue; }
   case 3:
   case 4:
-    r0 = (s.unnamed15827___U4 + 1);
-    s.unnamed15827___U4 = (r0);
+    r0 = (s.unnamed19039___U4 + 1);
+    s.unnamed19039___U4 = (r0);
     { step = 2; continue; }
   case 5:
-    s.unnamed15826___U3 = (undefined);
+    s.unnamed19038___U3 = (undefined);
     { step = 1; continue; }
   case 6:
-    r0 = s.toReturn___456865;
+    r0 = s.toReturn___486915;
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Distances_getPath__P456601.info = {"start":11831,"length":773,"line":380,"column":8,"endLine":395,"endColumn":9,"fileName":"mazes.ts","functionName":"getPath","argumentNames":["this","goal"]}
+mazes_Distances_getPath__P486651.info = {"start":10906,"length":773,"line":358,"column":8,"endLine":373,"endColumn":9,"fileName":"mazes.ts","functionName":"getPath","argumentNames":["this","goal"]}
 
-function mazes_Distances_getPath__P456601_mk(s) {
+function mazes_Distances_getPath__P486651_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Distances_getPath__P456601, depth: s.depth + 1,
+        parent: s, fn: mazes_Distances_getPath__P486651, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -17408,11 +17408,11 @@ function mazes_Distances_getPath__P456601_mk(s) {
   tmp_6: undefined,
   tmp_7: undefined,
   tmp_8: undefined,
-  current___456863: undefined,
-  toReturn___456865: undefined,
-  neighbor___456883: undefined,
-  unnamed15826___U3: undefined,
-  unnamed15827___U4: undefined,
+  current___486913: undefined,
+  toReturn___486915: undefined,
+  neighbor___486933: undefined,
+  unnamed19038___U3: undefined,
+  unnamed19039___U4: undefined,
   arg0: undefined,
   arg1: undefined,
 } }
@@ -17421,7 +17421,7 @@ function mazes_Distances_getPath__P456601_mk(s) {
 
 
 
-function mazes_Grid_build__P456926(s) {
+function mazes_Grid_build__P486976(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -17437,8 +17437,8 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
-    s.tmp_0 = mazes_Grid_resetLinks__P456944_mk(s);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
+    s.tmp_0 = mazes_Grid_resetLinks__P486994_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.callLocIdx = 90; s.pc = 10; return s.tmp_0;
   case 10:
@@ -17466,42 +17466,42 @@ switch (step) {
     r0 = s.tmp_0;
     { step = 9; continue; }
   case 3:
-    s.tmp_1 = mazes_Grid_buildAldousBroder__P456934_mk(s);
+    s.tmp_1 = mazes_Grid_buildAldousBroder__P486984_mk(s);
     s.tmp_1.arg0 = s.arg0;
     s.callLocIdx = 91; s.pc = 11; return s.tmp_1;
   case 11:
     r0 = s.retval;
     { step = 9; continue; }
   case 4:
-    s.tmp_0 = mazes_Grid_buildBinaryTree__P456935_mk(s);
+    s.tmp_0 = mazes_Grid_buildBinaryTree__P486985_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.callLocIdx = 92; s.pc = 12; return s.tmp_0;
   case 12:
     r0 = s.retval;
     { step = 9; continue; }
   case 5:
-    s.tmp_0 = mazes_Grid_buildHuntAndKill__P456936_mk(s);
+    s.tmp_0 = mazes_Grid_buildHuntAndKill__P486986_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.callLocIdx = 93; s.pc = 13; return s.tmp_0;
   case 13:
     r0 = s.retval;
     { step = 9; continue; }
   case 6:
-    s.tmp_0 = mazes_Grid_buildRecursiveBacktracker__P456937_mk(s);
+    s.tmp_0 = mazes_Grid_buildRecursiveBacktracker__P486987_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.callLocIdx = 94; s.pc = 14; return s.tmp_0;
   case 14:
     r0 = s.retval;
     { step = 9; continue; }
   case 7:
-    s.tmp_0 = mazes_Grid_buildSideWinder__P456938_mk(s);
+    s.tmp_0 = mazes_Grid_buildSideWinder__P486988_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.callLocIdx = 95; s.pc = 15; return s.tmp_0;
   case 15:
     r0 = s.retval;
     { step = 9; continue; }
   case 8:
-    s.tmp_0 = mazes_Grid_buildWilson__P456939_mk(s);
+    s.tmp_0 = mazes_Grid_buildWilson__P486989_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.callLocIdx = 96; s.pc = 16; return s.tmp_0;
   case 16:
@@ -17511,12 +17511,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_build__P456926.info = {"start":18002,"length":944,"line":571,"column":8,"endLine":602,"endColumn":9,"fileName":"mazes.ts","functionName":"build","argumentNames":["this","method"]}
+mazes_Grid_build__P486976.info = {"start":16782,"length":944,"line":542,"column":8,"endLine":573,"endColumn":9,"fileName":"mazes.ts","functionName":"build","argumentNames":["this","method"]}
 
-function mazes_Grid_build__P456926_mk(s) {
+function mazes_Grid_build__P486976_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_build__P456926, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_build__P486976, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -17528,7 +17528,7 @@ function mazes_Grid_build__P456926_mk(s) {
 
 
 
-function mazes_Grid_buildWilson__P456939(s) {
+function mazes_Grid_buildWilson__P486989(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -17538,110 +17538,110 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.unvisited___457661 = undefined;
-    s.row___457664 = undefined;
-    s.unnamed15840___U2 = undefined;
-    s.unnamed15841___U3 = undefined;
-    s.cell___457668 = undefined;
-    s.unnamed15842___U5 = undefined;
-    s.unnamed15843___U6 = undefined;
-    s.first___457675 = undefined;
-    s.passes___457682 = undefined;
-    s.cellId___457687 = undefined;
-    s.path___457690 = undefined;
-    s.cell___457702 = undefined;
-    s.position___457709 = undefined;
-    s.index___457734 = undefined;
-    s.cell___457744 = undefined;
-    s.nextCellId___457747 = undefined;
-    s.nextCell___457752 = undefined;
+    s.unvisited___487711 = undefined;
+    s.row___487714 = undefined;
+    s.unnamed19052___U2 = undefined;
+    s.unnamed19053___U3 = undefined;
+    s.cell___487718 = undefined;
+    s.unnamed19054___U5 = undefined;
+    s.unnamed19055___U6 = undefined;
+    s.first___487725 = undefined;
+    s.passes___487732 = undefined;
+    s.cellId___487737 = undefined;
+    s.path___487740 = undefined;
+    s.cell___487752 = undefined;
+    s.position___487759 = undefined;
+    s.index___487784 = undefined;
+    s.cell___487794 = undefined;
+    s.nextCellId___487797 = undefined;
+    s.nextCell___487802 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
     r0 = pxsim_Array__mk();
-    s.unvisited___457661 = (r0);
-    s.row___457664 = (undefined);
+    s.unvisited___487711 = (r0);
+    s.row___487714 = (undefined);
     r0 = s.arg0.fields["_grid"];
-    s.unnamed15840___U2 = (r0);
-    s.unnamed15841___U3 = (0);
+    s.unnamed19052___U2 = (r0);
+    s.unnamed19053___U3 = (0);
   case 1:
-    s.tmp_0 = r0 = s.unnamed15841___U3;
-    r0 = pxsim_Array__length(s.unnamed15840___U2);
+    s.tmp_0 = r0 = s.unnamed19053___U3;
+    r0 = pxsim_Array__length(s.unnamed19052___U2);
     s.tmp_1 = r0;
     r0 = (s.tmp_0 < s.tmp_1);
     if (!r0) { step = 4; continue; }
-    r0 = pxsim_Array__getAt(s.unnamed15840___U2, s.unnamed15841___U3);
-    s.row___457664 = (r0);
-    s.cell___457668 = (undefined);
-    s.unnamed15842___U5 = (s.row___457664);
-    s.unnamed15843___U6 = (0);
+    r0 = pxsim_Array__getAt(s.unnamed19052___U2, s.unnamed19053___U3);
+    s.row___487714 = (r0);
+    s.cell___487718 = (undefined);
+    s.unnamed19054___U5 = (s.row___487714);
+    s.unnamed19055___U6 = (0);
   case 2:
-    s.tmp_0 = r0 = s.unnamed15843___U6;
-    r0 = pxsim_Array__length(s.unnamed15842___U5);
+    s.tmp_0 = r0 = s.unnamed19055___U6;
+    r0 = pxsim_Array__length(s.unnamed19054___U5);
     s.tmp_1 = r0;
     r0 = (s.tmp_0 < s.tmp_1);
     if (!r0) { step = 3; continue; }
-    r0 = pxsim_Array__getAt(s.unnamed15842___U5, s.unnamed15843___U6);
-    s.cell___457668 = (r0);
-    s.tmp_2 = r0 = s.unvisited___457661;
-    r0 = s.cell___457668.fields["_id"];
+    r0 = pxsim_Array__getAt(s.unnamed19054___U5, s.unnamed19055___U6);
+    s.cell___487718 = (r0);
+    s.tmp_2 = r0 = s.unvisited___487711;
+    r0 = s.cell___487718.fields["_id"];
     s.tmp_3 = r0;
     r0 = pxsim_Array__push(s.tmp_2, s.tmp_3);
-    r0 = (s.unnamed15843___U6 + 1);
-    s.unnamed15843___U6 = (r0);
+    r0 = (s.unnamed19055___U6 + 1);
+    s.unnamed19055___U6 = (r0);
     { step = 2; continue; }
   case 3:
-    s.unnamed15842___U5 = (undefined);
-    r0 = (s.unnamed15841___U3 + 1);
-    s.unnamed15841___U3 = (r0);
+    s.unnamed19054___U5 = (undefined);
+    r0 = (s.unnamed19053___U3 + 1);
+    s.unnamed19053___U3 = (r0);
     { step = 1; continue; }
   case 4:
-    s.unnamed15840___U2 = (undefined);
+    s.unnamed19052___U2 = (undefined);
     s.tmp_0 = Math_pickRandom__P3090_mk(s);
-    s.tmp_0.arg0 = s.unvisited___457661;
+    s.tmp_0.arg0 = s.unvisited___487711;
     s.callLocIdx = 164; s.pc = 13; return s.tmp_0;
   case 13:
     r0 = s.retval;
-    s.first___457675 = (r0);
-    r0 = pxsim_Array_.removeElement(s.unvisited___457661, s.first___457675);
-    s.passes___457682 = (1);
+    s.first___487725 = (r0);
+    r0 = pxsim_Array_.removeElement(s.unvisited___487711, s.first___487725);
+    s.passes___487732 = (1);
   case 5:
-    r0 = pxsim_Array__length(s.unvisited___457661);
+    r0 = pxsim_Array__length(s.unvisited___487711);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 > 0);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 12; continue; }
     s.tmp_2 = Math_pickRandom__P3090_mk(s);
-    s.tmp_2.arg0 = s.unvisited___457661;
+    s.tmp_2.arg0 = s.unvisited___487711;
     s.callLocIdx = 165; s.pc = 14; return s.tmp_2;
   case 14:
     r0 = s.retval;
-    s.cellId___457687 = (r0);
+    s.cellId___487737 = (r0);
     r0 = pxsim_Array__mk();
     s.tmp_0 = r0;
-    r0 = pxsim_Array__push(s.tmp_0, s.cellId___457687);
-    s.path___457690 = (s.tmp_0);
+    r0 = pxsim_Array__push(s.tmp_0, s.cellId___487737);
+    s.path___487740 = (s.tmp_0);
   case 6:
-    r0 = pxsim_Array_.indexOf(s.unvisited___457661, s.cellId___457687, undefined);
+    r0 = pxsim_Array_.indexOf(s.unvisited___487711, s.cellId___487737, undefined);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 > -1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 9; continue; }
-    s.tmp_2 = mazes_Grid_getCellById__P456931_mk(s);
+    s.tmp_2 = mazes_Grid_getCellById__P486981_mk(s);
     s.tmp_2.arg0 = s.arg0;
-    s.tmp_2.arg1 = s.cellId___457687;
+    s.tmp_2.arg1 = s.cellId___487737;
     s.callLocIdx = 166; s.pc = 15; return s.tmp_2;
   case 15:
     r0 = s.retval;
-    s.cell___457702 = (r0);
+    s.cell___487752 = (r0);
     s.tmp_0 = Math_pickRandom__P3090_mk(s);
-    s.tmp_1 = mazes_Cell_neighbors__P456538_mk(s);
-    s.tmp_1.arg0 = s.cell___457702;
+    s.tmp_1 = mazes_Cell_neighbors__P486588_mk(s);
+    s.tmp_1.arg0 = s.cell___487752;
     s.callLocIdx = 167; s.pc = 17; return s.tmp_1;
   case 17:
     r0 = s.retval;
@@ -17649,40 +17649,40 @@ switch (step) {
     s.callLocIdx = 168; s.pc = 16; return s.tmp_0;
   case 16:
     r0 = s.retval;
-    s.cell___457702 = (r0);
-    s.tmp_0 = r0 = s.path___457690;
-    r0 = s.cell___457702.fields["_id"];
+    s.cell___487752 = (r0);
+    s.tmp_0 = r0 = s.path___487740;
+    r0 = s.cell___487752.fields["_id"];
     s.tmp_1 = r0;
     r0 = pxsim_Array_.indexOf(s.tmp_0, s.tmp_1, undefined);
-    s.position___457709 = (r0);
-    r0 = (s.position___457709 > -1);
+    s.position___487759 = (r0);
+    r0 = (s.position___487759 > -1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 7; continue; }
     s.tmp_1 = helpers_arraySlice__P115_mk(s);
-    s.tmp_1.arg0 = s.path___457690;
+    s.tmp_1.arg0 = s.path___487740;
     s.tmp_1.arg1 = 0;
-    r0 = (s.position___457709 + 1);
+    r0 = (s.position___487759 + 1);
     s.tmp_1.arg2 = r0;
     s.callLocIdx = 170; s.pc = 18; return s.tmp_1;
   case 18:
     r0 = s.retval;
-    s.path___457690 = (r0);
+    s.path___487740 = (r0);
     { step = 8; continue; }
   case 7:
-    s.tmp_0 = r0 = s.path___457690;
-    r0 = s.cell___457702.fields["_id"];
+    s.tmp_0 = r0 = s.path___487740;
+    r0 = s.cell___487752.fields["_id"];
     s.tmp_1 = r0;
     r0 = pxsim_Array__push(s.tmp_0, s.tmp_1);
   case 8:
-    r0 = s.cell___457702.fields["_id"];
-    s.cellId___457687 = (r0);
+    r0 = s.cell___487752.fields["_id"];
+    s.cellId___487737 = (r0);
     { step = 6; continue; }
   case 9:
-    s.index___457734 = (0);
+    s.index___487784 = (0);
   case 10:
-    s.tmp_1 = r0 = s.index___457734;
-    r0 = pxsim_Array__length(s.path___457690);
+    s.tmp_1 = r0 = s.index___487784;
+    r0 = pxsim_Array__length(s.path___487740);
     s.tmp_3 = r0;
     r0 = (s.tmp_3 - 1);
     s.tmp_2 = r0;
@@ -17690,75 +17690,75 @@ switch (step) {
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 11; continue; }
-    r0 = pxsim_Array__getAt(s.path___457690, s.index___457734);
-    s.cellId___457687 = (r0);
-    s.tmp_0 = mazes_Grid_getCellById__P456931_mk(s);
+    r0 = pxsim_Array__getAt(s.path___487740, s.index___487784);
+    s.cellId___487737 = (r0);
+    s.tmp_0 = mazes_Grid_getCellById__P486981_mk(s);
     s.tmp_0.arg0 = s.arg0;
-    s.tmp_0.arg1 = s.cellId___457687;
+    s.tmp_0.arg1 = s.cellId___487737;
     s.callLocIdx = 173; s.pc = 19; return s.tmp_0;
   case 19:
     r0 = s.retval;
-    s.cell___457744 = (r0);
-    s.tmp_0 = r0 = s.path___457690;
-    r0 = (s.index___457734 + 1);
+    s.cell___487794 = (r0);
+    s.tmp_0 = r0 = s.path___487740;
+    r0 = (s.index___487784 + 1);
     s.tmp_1 = r0;
     r0 = pxsim_Array__getAt(s.tmp_0, s.tmp_1);
-    s.nextCellId___457747 = (r0);
-    s.tmp_0 = mazes_Grid_getCellById__P456931_mk(s);
+    s.nextCellId___487797 = (r0);
+    s.tmp_0 = mazes_Grid_getCellById__P486981_mk(s);
     s.tmp_0.arg0 = s.arg0;
-    s.tmp_0.arg1 = s.cellId___457687;
+    s.tmp_0.arg1 = s.cellId___487737;
     s.callLocIdx = 174; s.pc = 20; return s.tmp_0;
   case 20:
     r0 = s.retval;
-    s.nextCell___457752 = (r0);
-    s.tmp_0 = mazes_Cell_link__P456548_mk(s);
-    s.tmp_0.arg0 = s.cell___457744;
-    s.tmp_0.arg1 = s.nextCell___457752;
+    s.nextCell___487802 = (r0);
+    s.tmp_0 = mazes_Cell_link__P486598_mk(s);
+    s.tmp_0.arg0 = s.cell___487794;
+    s.tmp_0.arg1 = s.nextCell___487802;
     s.tmp_0.arg2 = true;
     s.callLocIdx = 175; s.pc = 21; return s.tmp_0;
   case 21:
     r0 = s.retval;
-    r0 = pxsim_Array_.removeElement(s.unvisited___457661, s.cellId___457687);
-    r0 = (s.index___457734 + 1);
-    s.index___457734 = (r0);
+    r0 = pxsim_Array_.removeElement(s.unvisited___487711, s.cellId___487737);
+    r0 = (s.index___487784 + 1);
+    s.index___487784 = (r0);
     { step = 10; continue; }
   case 11:
-    r0 = (s.passes___457682 + 1);
-    s.passes___457682 = (r0);
+    r0 = (s.passes___487732 + 1);
+    s.passes___487732 = (r0);
     { step = 5; continue; }
   case 12:
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_buildWilson__P456939.info = {"start":36093,"length":1628,"line":1013,"column":8,"endLine":1050,"endColumn":9,"fileName":"mazes.ts","functionName":"buildWilson","argumentNames":["this"]}
+mazes_Grid_buildWilson__P486989.info = {"start":32605,"length":1628,"line":937,"column":8,"endLine":974,"endColumn":9,"fileName":"mazes.ts","functionName":"buildWilson","argumentNames":["this"]}
 
-function mazes_Grid_buildWilson__P456939_mk(s) {
+function mazes_Grid_buildWilson__P486989_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_buildWilson__P456939, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_buildWilson__P486989, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
   tmp_2: undefined,
   tmp_3: undefined,
-  unvisited___457661: undefined,
-  row___457664: undefined,
-  unnamed15840___U2: undefined,
-  unnamed15841___U3: undefined,
-  cell___457668: undefined,
-  unnamed15842___U5: undefined,
-  unnamed15843___U6: undefined,
-  first___457675: undefined,
-  passes___457682: undefined,
-  cellId___457687: undefined,
-  path___457690: undefined,
-  cell___457702: undefined,
-  position___457709: undefined,
-  index___457734: undefined,
-  cell___457744: undefined,
-  nextCellId___457747: undefined,
-  nextCell___457752: undefined,
+  unvisited___487711: undefined,
+  row___487714: undefined,
+  unnamed19052___U2: undefined,
+  unnamed19053___U3: undefined,
+  cell___487718: undefined,
+  unnamed19054___U5: undefined,
+  unnamed19055___U6: undefined,
+  first___487725: undefined,
+  passes___487732: undefined,
+  cellId___487737: undefined,
+  path___487740: undefined,
+  cell___487752: undefined,
+  position___487759: undefined,
+  index___487784: undefined,
+  cell___487794: undefined,
+  nextCellId___487797: undefined,
+  nextCell___487802: undefined,
   arg0: undefined,
 } }
 
@@ -17766,7 +17766,7 @@ function mazes_Grid_buildWilson__P456939_mk(s) {
 
 
 
-function mazes_Cell_link__P456548(s) {
+function mazes_Cell_link__P486598(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -17783,7 +17783,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Cell__C456531_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Cell__C486581_VT)) failedCast(r0);
     r0 = (s.arg1 != null);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
@@ -17793,7 +17793,7 @@ switch (step) {
     r0 = pxsim_Array__push(s.tmp_1, s.arg1);
     r0 = pxsim_numops_toBoolDecr(s.arg2);
     if (!r0) { step = 1; continue; }
-    s.tmp_0 = mazes_Cell_link__P456548_mk(s);
+    s.tmp_0 = mazes_Cell_link__P486598_mk(s);
     s.tmp_0.arg0 = s.arg1;
     s.tmp_0.arg1 = s.arg0;
     s.tmp_0.arg2 = false;
@@ -17808,12 +17808,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Cell_link__P456548.info = {"start":8347,"length":285,"line":277,"column":8,"endLine":284,"endColumn":9,"fileName":"mazes.ts","functionName":"link","argumentNames":["this","cell","reciprocal"]}
+mazes_Cell_link__P486598.info = {"start":7422,"length":285,"line":255,"column":8,"endLine":262,"endColumn":9,"fileName":"mazes.ts","functionName":"link","argumentNames":["this","cell","reciprocal"]}
 
-function mazes_Cell_link__P456548_mk(s) {
+function mazes_Cell_link__P486598_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Cell_link__P456548, depth: s.depth + 1,
+        parent: s, fn: mazes_Cell_link__P486598, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -17826,7 +17826,7 @@ function mazes_Cell_link__P456548_mk(s) {
 
 
 
-function mazes_Cell_neighbors__P456538(s) {
+function mazes_Cell_neighbors__P486588(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -17836,15 +17836,15 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.toReturn___456668 = undefined;
+    s.toReturn___486718 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Cell__C456531_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Cell__C486581_VT)) failedCast(r0);
     r0 = pxsim_Array__mk();
-    s.toReturn___456668 = (r0);
+    s.toReturn___486718 = (r0);
     r0 = s.arg0.fields["_north"];
     s.tmp_1 = r0;
     r0 = (s.tmp_1 != null);
@@ -17853,7 +17853,7 @@ switch (step) {
     if (!r0) { step = 1; continue; }
     r0 = s.arg0.fields["_north"];
     s.tmp_2 = r0;
-    r0 = pxsim_Array__push(s.toReturn___456668, s.tmp_2);
+    r0 = pxsim_Array__push(s.toReturn___486718, s.tmp_2);
   case 1:
   case 2:
     r0 = s.arg0.fields["_south"];
@@ -17864,7 +17864,7 @@ switch (step) {
     if (!r0) { step = 3; continue; }
     r0 = s.arg0.fields["_south"];
     s.tmp_2 = r0;
-    r0 = pxsim_Array__push(s.toReturn___456668, s.tmp_2);
+    r0 = pxsim_Array__push(s.toReturn___486718, s.tmp_2);
   case 3:
   case 4:
     r0 = s.arg0.fields["_east"];
@@ -17875,7 +17875,7 @@ switch (step) {
     if (!r0) { step = 5; continue; }
     r0 = s.arg0.fields["_east"];
     s.tmp_2 = r0;
-    r0 = pxsim_Array__push(s.toReturn___456668, s.tmp_2);
+    r0 = pxsim_Array__push(s.toReturn___486718, s.tmp_2);
   case 5:
   case 6:
     r0 = s.arg0.fields["_west"];
@@ -17886,25 +17886,25 @@ switch (step) {
     if (!r0) { step = 7; continue; }
     r0 = s.arg0.fields["_west"];
     s.tmp_2 = r0;
-    r0 = pxsim_Array__push(s.toReturn___456668, s.tmp_2);
+    r0 = pxsim_Array__push(s.toReturn___486718, s.tmp_2);
   case 7:
   case 8:
-    r0 = s.toReturn___456668;
+    r0 = s.toReturn___486718;
     return leaveAccessor(s, r0)
   default: oops()
 } } }
-mazes_Cell_neighbors__P456538.info = {"start":5549,"length":574,"line":183,"column":8,"endLine":198,"endColumn":9,"fileName":"mazes.ts","functionName":"neighbors","argumentNames":["this"]}
-mazes_Cell_neighbors__P456538.isGetter = true;
+mazes_Cell_neighbors__P486588.info = {"start":4624,"length":574,"line":161,"column":8,"endLine":176,"endColumn":9,"fileName":"mazes.ts","functionName":"neighbors","argumentNames":["this"]}
+mazes_Cell_neighbors__P486588.isGetter = true;
 
-function mazes_Cell_neighbors__P456538_mk(s) {
+function mazes_Cell_neighbors__P486588_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Cell_neighbors__P456538, depth: s.depth + 1,
+        parent: s, fn: mazes_Cell_neighbors__P486588, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
   tmp_2: undefined,
-  toReturn___456668: undefined,
+  toReturn___486718: undefined,
   arg0: undefined,
 } }
 
@@ -17912,7 +17912,7 @@ function mazes_Cell_neighbors__P456538_mk(s) {
 
 
 
-function mazes_Grid_getCellById__P456931(s) {
+function mazes_Grid_getCellById__P486981(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -17928,8 +17928,8 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
-    s.tmp_0 = mazes_Grid_getCell__P456930_mk(s);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
+    s.tmp_0 = mazes_Grid_getCell__P486980_mk(s);
     s.tmp_0.arg0 = s.arg0;
     r0 = (s.arg1 / 100);
     s.tmp_1 = r0;
@@ -17943,12 +17943,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_getCellById__P456931.info = {"start":28269,"length":178,"line":818,"column":8,"endLine":823,"endColumn":9,"fileName":"mazes.ts","functionName":"getCellById","argumentNames":["this","id"]}
+mazes_Grid_getCellById__P486981.info = {"start":24781,"length":178,"line":742,"column":8,"endLine":747,"endColumn":9,"fileName":"mazes.ts","functionName":"getCellById","argumentNames":["this","id"]}
 
-function mazes_Grid_getCellById__P456931_mk(s) {
+function mazes_Grid_getCellById__P486981_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_getCellById__P456931, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_getCellById__P486981, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -18029,7 +18029,7 @@ function Math_pickRandom__P3090_mk(s) {
 
 
 
-function mazes_Grid_buildSideWinder__P456938(s) {
+function mazes_Grid_buildSideWinder__P486988(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -18039,62 +18039,62 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.row___457599 = undefined;
-    s.run___457605 = undefined;
-    s.col___457607 = undefined;
-    s.cell___457613 = undefined;
-    s.atEasternBoundary___457621 = undefined;
-    s.atNorthernBoundary___457626 = undefined;
-    s.shouldCloseOut___457631 = undefined;
-    s.member___457639 = undefined;
+    s.row___487649 = undefined;
+    s.run___487655 = undefined;
+    s.col___487657 = undefined;
+    s.cell___487663 = undefined;
+    s.atEasternBoundary___487671 = undefined;
+    s.atNorthernBoundary___487676 = undefined;
+    s.shouldCloseOut___487681 = undefined;
+    s.member___487689 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
-    s.row___457599 = (0);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
+    s.row___487649 = (0);
   case 1:
     r0 = s.arg0.fields["_rows"];
     s.tmp_1 = r0;
-    r0 = (s.row___457599 < s.tmp_1);
+    r0 = (s.row___487649 < s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 12; continue; }
     r0 = pxsim_Array__mk();
-    s.run___457605 = (r0);
-    s.col___457607 = (0);
+    s.run___487655 = (r0);
+    s.col___487657 = (0);
   case 2:
     r0 = s.arg0.fields["_cols"];
     s.tmp_1 = r0;
-    r0 = (s.col___457607 < s.tmp_1);
+    r0 = (s.col___487657 < s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 11; continue; }
-    s.tmp_2 = mazes_Grid_getCell__P456930_mk(s);
+    s.tmp_2 = mazes_Grid_getCell__P486980_mk(s);
     s.tmp_2.arg0 = s.arg0;
-    s.tmp_2.arg1 = s.row___457599;
-    s.tmp_2.arg2 = s.col___457607;
+    s.tmp_2.arg1 = s.row___487649;
+    s.tmp_2.arg2 = s.col___487657;
     s.callLocIdx = 153; s.pc = 13; return s.tmp_2;
   case 13:
     r0 = s.retval;
-    s.cell___457613 = (r0);
-    r0 = pxsim_Array__push(s.run___457605, s.cell___457613);
-    r0 = s.cell___457613.fields["_east"];
+    s.cell___487663 = (r0);
+    r0 = pxsim_Array__push(s.run___487655, s.cell___487663);
+    r0 = s.cell___487663.fields["_east"];
     s.tmp_0 = r0;
     r0 = (s.tmp_0 == null);
-    s.atEasternBoundary___457621 = (r0);
-    r0 = s.cell___457613.fields["_north"];
+    s.atEasternBoundary___487671 = (r0);
+    r0 = s.cell___487663.fields["_north"];
     s.tmp_0 = r0;
     r0 = (s.tmp_0 == null);
-    s.atNorthernBoundary___457626 = (r0);
-    s.tmp_0 = r0 = s.atEasternBoundary___457621;
+    s.atNorthernBoundary___487676 = (r0);
+    s.tmp_0 = r0 = s.atEasternBoundary___487671;
     r0 = pxsim_numops_toBool(s.tmp_0);
     if (!r0) { step = 3; continue; }
     r0 = s.tmp_0;
     { step = 6; continue; }
   case 3:
-    r0 = pxsim_numops_toBoolDecr(s.atNorthernBoundary___457626);
+    r0 = pxsim_numops_toBoolDecr(s.atNorthernBoundary___487676);
     s.tmp_2 = r0;
     r0 = pxsim_Boolean__bang(s.tmp_2);
     s.tmp_1 = r0;
@@ -18115,24 +18115,24 @@ switch (step) {
   case 6:
     // jmp value (already in r0)
     s.tmp_5 = r0;
-    s.shouldCloseOut___457631 = (s.tmp_5);
-    r0 = pxsim_numops_toBoolDecr(s.shouldCloseOut___457631);
+    s.shouldCloseOut___487681 = (s.tmp_5);
+    r0 = pxsim_numops_toBoolDecr(s.shouldCloseOut___487681);
     if (!r0) { step = 9; continue; }
     s.tmp_0 = Math_pickRandom__P3090_mk(s);
-    s.tmp_0.arg0 = s.run___457605;
+    s.tmp_0.arg0 = s.run___487655;
     s.callLocIdx = 157; s.pc = 15; return s.tmp_0;
   case 15:
     r0 = s.retval;
-    s.member___457639 = (r0);
-    r0 = s.member___457639.fields["_north"];
+    s.member___487689 = (r0);
+    r0 = s.member___487689.fields["_north"];
     s.tmp_1 = r0;
     r0 = (s.tmp_1 != null);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 7; continue; }
-    s.tmp_2 = mazes_Cell_link__P456548_mk(s);
-    s.tmp_2.arg0 = s.member___457639;
-    r0 = s.member___457639.fields["_north"];
+    s.tmp_2 = mazes_Cell_link__P486598_mk(s);
+    s.tmp_2.arg0 = s.member___487689;
+    r0 = s.member___487689.fields["_north"];
     s.tmp_2.arg1 = r0;
     s.tmp_2.arg2 = true;
     s.callLocIdx = 160; s.pc = 16; return s.tmp_2;
@@ -18141,36 +18141,36 @@ switch (step) {
   case 7:
   case 8:
     r0 = pxsim_Array__mk();
-    s.run___457605 = (r0);
+    s.run___487655 = (r0);
     { step = 10; continue; }
   case 9:
-    s.tmp_0 = mazes_Cell_link__P456548_mk(s);
-    s.tmp_0.arg0 = s.cell___457613;
-    r0 = s.cell___457613.fields["_east"];
+    s.tmp_0 = mazes_Cell_link__P486598_mk(s);
+    s.tmp_0.arg0 = s.cell___487663;
+    r0 = s.cell___487663.fields["_east"];
     s.tmp_0.arg1 = r0;
     s.tmp_0.arg2 = true;
     s.callLocIdx = 162; s.pc = 17; return s.tmp_0;
   case 17:
     r0 = s.retval;
   case 10:
-    r0 = (s.col___457607 + 1);
-    s.col___457607 = (r0);
+    r0 = (s.col___487657 + 1);
+    s.col___487657 = (r0);
     { step = 2; continue; }
   case 11:
-    r0 = (s.row___457599 + 1);
-    s.row___457599 = (r0);
+    r0 = (s.row___487649 + 1);
+    s.row___487649 = (r0);
     { step = 1; continue; }
   case 12:
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_buildSideWinder__P456938.info = {"start":34867,"length":1119,"line":982,"column":8,"endLine":1008,"endColumn":9,"fileName":"mazes.ts","functionName":"buildSideWinder","argumentNames":["this"]}
+mazes_Grid_buildSideWinder__P486988.info = {"start":31379,"length":1119,"line":906,"column":8,"endLine":932,"endColumn":9,"fileName":"mazes.ts","functionName":"buildSideWinder","argumentNames":["this"]}
 
-function mazes_Grid_buildSideWinder__P456938_mk(s) {
+function mazes_Grid_buildSideWinder__P486988_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_buildSideWinder__P456938, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_buildSideWinder__P486988, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -18178,14 +18178,14 @@ function mazes_Grid_buildSideWinder__P456938_mk(s) {
   tmp_3: undefined,
   tmp_4: undefined,
   tmp_5: undefined,
-  row___457599: undefined,
-  run___457605: undefined,
-  col___457607: undefined,
-  cell___457613: undefined,
-  atEasternBoundary___457621: undefined,
-  atNorthernBoundary___457626: undefined,
-  shouldCloseOut___457631: undefined,
-  member___457639: undefined,
+  row___487649: undefined,
+  run___487655: undefined,
+  col___487657: undefined,
+  cell___487663: undefined,
+  atEasternBoundary___487671: undefined,
+  atNorthernBoundary___487676: undefined,
+  shouldCloseOut___487681: undefined,
+  member___487689: undefined,
   arg0: undefined,
 } }
 
@@ -18248,7 +18248,7 @@ function Math_percentChance__P3089_mk(s) {
 
 
 
-function mazes_Grid_buildRecursiveBacktracker__P456937(s) {
+function mazes_Grid_buildRecursiveBacktracker__P486987(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -18258,65 +18258,65 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.start___457551 = undefined;
-    s.stack___457553 = undefined;
-    s.passes___457556 = undefined;
-    s.current___457561 = undefined;
-    s.neighbors___457566 = undefined;
-    s.n___457569 = undefined;
-    s.unnamed15838___U6 = undefined;
-    s.unnamed15839___U7 = undefined;
-    s.neighbor___457586 = undefined;
+    s.start___487601 = undefined;
+    s.stack___487603 = undefined;
+    s.passes___487606 = undefined;
+    s.current___487611 = undefined;
+    s.neighbors___487616 = undefined;
+    s.n___487619 = undefined;
+    s.unnamed19050___U6 = undefined;
+    s.unnamed19051___U7 = undefined;
+    s.neighbor___487636 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
-    s.tmp_0 = mazes_Grid_randomCell__P456922_mk(s);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
+    s.tmp_0 = mazes_Grid_randomCell__P486972_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.callLocIdx = 148; s.pc = 9; return s.tmp_0;
   case 9:
     r0 = s.retval;
-    s.start___457551 = (r0);
+    s.start___487601 = (r0);
     r0 = pxsim_Array__mk();
     s.tmp_0 = r0;
-    r0 = pxsim_Array__push(s.tmp_0, s.start___457551);
-    s.stack___457553 = (s.tmp_0);
-    s.passes___457556 = (1);
+    r0 = pxsim_Array__push(s.tmp_0, s.start___487601);
+    s.stack___487603 = (s.tmp_0);
+    s.passes___487606 = (1);
   case 1:
-    r0 = pxsim_Array__length(s.stack___457553);
+    r0 = pxsim_Array__length(s.stack___487603);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 > 0);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 8; continue; }
-    s.tmp_2 = r0 = s.stack___457553;
-    r0 = pxsim_Array__length(s.stack___457553);
+    s.tmp_2 = r0 = s.stack___487603;
+    r0 = pxsim_Array__length(s.stack___487603);
     s.tmp_4 = r0;
     r0 = (s.tmp_4 - 1);
     s.tmp_3 = r0;
     r0 = pxsim_Array__getAt(s.tmp_2, s.tmp_3);
-    s.current___457561 = (r0);
+    s.current___487611 = (r0);
     r0 = pxsim_Array__mk();
-    s.neighbors___457566 = (r0);
-    s.n___457569 = (undefined);
-    s.tmp_0 = mazes_Cell_neighbors__P456538_mk(s);
-    s.tmp_0.arg0 = s.current___457561;
+    s.neighbors___487616 = (r0);
+    s.n___487619 = (undefined);
+    s.tmp_0 = mazes_Cell_neighbors__P486588_mk(s);
+    s.tmp_0.arg0 = s.current___487611;
     s.callLocIdx = 149; s.pc = 10; return s.tmp_0;
   case 10:
     r0 = s.retval;
-    s.unnamed15838___U6 = (r0);
-    s.unnamed15839___U7 = (0);
+    s.unnamed19050___U6 = (r0);
+    s.unnamed19051___U7 = (0);
   case 2:
-    s.tmp_0 = r0 = s.unnamed15839___U7;
-    r0 = pxsim_Array__length(s.unnamed15838___U6);
+    s.tmp_0 = r0 = s.unnamed19051___U7;
+    r0 = pxsim_Array__length(s.unnamed19050___U6);
     s.tmp_1 = r0;
     r0 = (s.tmp_0 < s.tmp_1);
     if (!r0) { step = 5; continue; }
-    r0 = pxsim_Array__getAt(s.unnamed15838___U6, s.unnamed15839___U7);
-    s.n___457569 = (r0);
-    r0 = s.n___457569.fields["_links"];
+    r0 = pxsim_Array__getAt(s.unnamed19050___U6, s.unnamed19051___U7);
+    s.n___487619 = (r0);
+    r0 = s.n___487619.fields["_links"];
     s.tmp_4 = r0;
     r0 = pxsim_Array__length(s.tmp_4);
     s.tmp_3 = r0;
@@ -18324,67 +18324,67 @@ switch (step) {
     s.tmp_2 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_2);
     if (!r0) { step = 3; continue; }
-    r0 = pxsim_Array__push(s.neighbors___457566, s.n___457569);
+    r0 = pxsim_Array__push(s.neighbors___487616, s.n___487619);
   case 3:
   case 4:
-    r0 = (s.unnamed15839___U7 + 1);
-    s.unnamed15839___U7 = (r0);
+    r0 = (s.unnamed19051___U7 + 1);
+    s.unnamed19051___U7 = (r0);
     { step = 2; continue; }
   case 5:
-    s.unnamed15838___U6 = (undefined);
-    r0 = pxsim_Array__length(s.neighbors___457566);
+    s.unnamed19050___U6 = (undefined);
+    r0 = pxsim_Array__length(s.neighbors___487616);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 === 0);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 6; continue; }
-    r0 = pxsim_Array_.pop(s.stack___457553);
+    r0 = pxsim_Array_.pop(s.stack___487603);
     { step = 7; continue; }
   case 6:
     s.tmp_0 = Math_pickRandom__P3090_mk(s);
-    s.tmp_0.arg0 = s.neighbors___457566;
+    s.tmp_0.arg0 = s.neighbors___487616;
     s.callLocIdx = 151; s.pc = 11; return s.tmp_0;
   case 11:
     r0 = s.retval;
-    s.neighbor___457586 = (r0);
-    s.tmp_0 = mazes_Cell_link__P456548_mk(s);
-    s.tmp_0.arg0 = s.current___457561;
-    s.tmp_0.arg1 = s.neighbor___457586;
+    s.neighbor___487636 = (r0);
+    s.tmp_0 = mazes_Cell_link__P486598_mk(s);
+    s.tmp_0.arg0 = s.current___487611;
+    s.tmp_0.arg1 = s.neighbor___487636;
     s.tmp_0.arg2 = true;
     s.callLocIdx = 152; s.pc = 12; return s.tmp_0;
   case 12:
     r0 = s.retval;
-    r0 = pxsim_Array__push(s.stack___457553, s.neighbor___457586);
+    r0 = pxsim_Array__push(s.stack___487603, s.neighbor___487636);
   case 7:
-    r0 = (s.passes___457556 + 1);
-    s.passes___457556 = (r0);
+    r0 = (s.passes___487606 + 1);
+    s.passes___487606 = (r0);
     { step = 1; continue; }
   case 8:
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_buildRecursiveBacktracker__P456937.info = {"start":33842,"length":904,"line":953,"column":8,"endLine":977,"endColumn":9,"fileName":"mazes.ts","functionName":"buildRecursiveBacktracker","argumentNames":["this"]}
+mazes_Grid_buildRecursiveBacktracker__P486987.info = {"start":30354,"length":904,"line":877,"column":8,"endLine":901,"endColumn":9,"fileName":"mazes.ts","functionName":"buildRecursiveBacktracker","argumentNames":["this"]}
 
-function mazes_Grid_buildRecursiveBacktracker__P456937_mk(s) {
+function mazes_Grid_buildRecursiveBacktracker__P486987_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_buildRecursiveBacktracker__P456937, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_buildRecursiveBacktracker__P486987, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
   tmp_2: undefined,
   tmp_3: undefined,
   tmp_4: undefined,
-  start___457551: undefined,
-  stack___457553: undefined,
-  passes___457556: undefined,
-  current___457561: undefined,
-  neighbors___457566: undefined,
-  n___457569: undefined,
-  unnamed15838___U6: undefined,
-  unnamed15839___U7: undefined,
-  neighbor___457586: undefined,
+  start___487601: undefined,
+  stack___487603: undefined,
+  passes___487606: undefined,
+  current___487611: undefined,
+  neighbors___487616: undefined,
+  n___487619: undefined,
+  unnamed19050___U6: undefined,
+  unnamed19051___U7: undefined,
+  neighbor___487636: undefined,
   arg0: undefined,
 } }
 
@@ -18392,7 +18392,7 @@ function mazes_Grid_buildRecursiveBacktracker__P456937_mk(s) {
 
 
 
-function mazes_Grid_randomCell__P456922(s) {
+function mazes_Grid_randomCell__P486972(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -18407,7 +18407,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
     r0 = s.arg0.fields["_grid"];
     s.tmp_1 = r0;
     r0 = s.arg0.fields["_rows"];
@@ -18428,13 +18428,13 @@ switch (step) {
     return leaveAccessor(s, r0)
   default: oops()
 } } }
-mazes_Grid_randomCell__P456922.info = {"start":16659,"length":145,"line":527,"column":8,"endLine":529,"endColumn":9,"fileName":"mazes.ts","functionName":"randomCell","argumentNames":["this"]}
-mazes_Grid_randomCell__P456922.isGetter = true;
+mazes_Grid_randomCell__P486972.info = {"start":15439,"length":145,"line":498,"column":8,"endLine":500,"endColumn":9,"fileName":"mazes.ts","functionName":"randomCell","argumentNames":["this"]}
+mazes_Grid_randomCell__P486972.isGetter = true;
 
-function mazes_Grid_randomCell__P456922_mk(s) {
+function mazes_Grid_randomCell__P486972_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_randomCell__P456922, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_randomCell__P486972, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -18451,7 +18451,7 @@ function mazes_Grid_randomCell__P456922_mk(s) {
 
 
 
-function mazes_Grid_buildHuntAndKill__P456936(s) {
+function mazes_Grid_buildHuntAndKill__P486986(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -18461,60 +18461,60 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.current___457475 = undefined;
-    s.passes___457477 = undefined;
-    s.unvisitedNeighbors___457480 = undefined;
-    s.cell___457483 = undefined;
-    s.unnamed15830___U4 = undefined;
-    s.unnamed15831___U5 = undefined;
-    s.neighbor___457497 = undefined;
-    s.getOut___457507 = undefined;
-    s.row___457509 = undefined;
-    s.unnamed15832___U9 = undefined;
-    s.unnamed15833___U10 = undefined;
-    s.cell___457513 = undefined;
-    s.unnamed15834___U12 = undefined;
-    s.unnamed15835___U13 = undefined;
-    s.visitedNeighbors___457515 = undefined;
-    s.n___457518 = undefined;
-    s.unnamed15836___U16 = undefined;
-    s.unnamed15837___U17 = undefined;
-    s.neighbor___457539 = undefined;
+    s.current___487525 = undefined;
+    s.passes___487527 = undefined;
+    s.unvisitedNeighbors___487530 = undefined;
+    s.cell___487533 = undefined;
+    s.unnamed19042___U4 = undefined;
+    s.unnamed19043___U5 = undefined;
+    s.neighbor___487547 = undefined;
+    s.getOut___487557 = undefined;
+    s.row___487559 = undefined;
+    s.unnamed19044___U9 = undefined;
+    s.unnamed19045___U10 = undefined;
+    s.cell___487563 = undefined;
+    s.unnamed19046___U12 = undefined;
+    s.unnamed19047___U13 = undefined;
+    s.visitedNeighbors___487565 = undefined;
+    s.n___487568 = undefined;
+    s.unnamed19048___U16 = undefined;
+    s.unnamed19049___U17 = undefined;
+    s.neighbor___487589 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
-    s.tmp_0 = mazes_Grid_randomCell__P456922_mk(s);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
+    s.tmp_0 = mazes_Grid_randomCell__P486972_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.callLocIdx = 138; s.pc = 25; return s.tmp_0;
   case 25:
     r0 = s.retval;
-    s.current___457475 = (r0);
-    s.passes___457477 = (1);
+    s.current___487525 = (r0);
+    s.passes___487527 = (1);
   case 1:
-    r0 = pxsim_numops_toBoolDecr(s.current___457475);
+    r0 = pxsim_numops_toBoolDecr(s.current___487525);
     if (!r0) { step = 24; continue; }
     r0 = pxsim_Array__mk();
-    s.unvisitedNeighbors___457480 = (r0);
-    s.cell___457483 = (undefined);
-    s.tmp_0 = mazes_Cell_neighbors__P456538_mk(s);
-    s.tmp_0.arg0 = s.current___457475;
+    s.unvisitedNeighbors___487530 = (r0);
+    s.cell___487533 = (undefined);
+    s.tmp_0 = mazes_Cell_neighbors__P486588_mk(s);
+    s.tmp_0.arg0 = s.current___487525;
     s.callLocIdx = 139; s.pc = 26; return s.tmp_0;
   case 26:
     r0 = s.retval;
-    s.unnamed15830___U4 = (r0);
-    s.unnamed15831___U5 = (0);
+    s.unnamed19042___U4 = (r0);
+    s.unnamed19043___U5 = (0);
   case 2:
-    s.tmp_0 = r0 = s.unnamed15831___U5;
-    r0 = pxsim_Array__length(s.unnamed15830___U4);
+    s.tmp_0 = r0 = s.unnamed19043___U5;
+    r0 = pxsim_Array__length(s.unnamed19042___U4);
     s.tmp_1 = r0;
     r0 = (s.tmp_0 < s.tmp_1);
     if (!r0) { step = 5; continue; }
-    r0 = pxsim_Array__getAt(s.unnamed15830___U4, s.unnamed15831___U5);
-    s.cell___457483 = (r0);
-    r0 = s.cell___457483.fields["_links"];
+    r0 = pxsim_Array__getAt(s.unnamed19042___U4, s.unnamed19043___U5);
+    s.cell___487533 = (r0);
+    r0 = s.cell___487533.fields["_links"];
     s.tmp_4 = r0;
     r0 = pxsim_Array__length(s.tmp_4);
     s.tmp_3 = r0;
@@ -18522,80 +18522,80 @@ switch (step) {
     s.tmp_2 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_2);
     if (!r0) { step = 3; continue; }
-    r0 = pxsim_Array__push(s.unvisitedNeighbors___457480, s.cell___457483);
+    r0 = pxsim_Array__push(s.unvisitedNeighbors___487530, s.cell___487533);
   case 3:
   case 4:
-    r0 = (s.unnamed15831___U5 + 1);
-    s.unnamed15831___U5 = (r0);
+    r0 = (s.unnamed19043___U5 + 1);
+    s.unnamed19043___U5 = (r0);
     { step = 2; continue; }
   case 5:
-    s.unnamed15830___U4 = (undefined);
-    r0 = pxsim_Array__length(s.unvisitedNeighbors___457480);
+    s.unnamed19042___U4 = (undefined);
+    r0 = pxsim_Array__length(s.unvisitedNeighbors___487530);
     s.tmp_1 = r0;
     r0 = (s.tmp_1 > 0);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 6; continue; }
     s.tmp_2 = Math_pickRandom__P3090_mk(s);
-    s.tmp_2.arg0 = s.unvisitedNeighbors___457480;
+    s.tmp_2.arg0 = s.unvisitedNeighbors___487530;
     s.callLocIdx = 141; s.pc = 27; return s.tmp_2;
   case 27:
     r0 = s.retval;
-    s.neighbor___457497 = (r0);
-    s.tmp_0 = mazes_Cell_link__P456548_mk(s);
-    s.tmp_0.arg0 = s.current___457475;
-    s.tmp_0.arg1 = s.neighbor___457497;
+    s.neighbor___487547 = (r0);
+    s.tmp_0 = mazes_Cell_link__P486598_mk(s);
+    s.tmp_0.arg0 = s.current___487525;
+    s.tmp_0.arg1 = s.neighbor___487547;
     s.tmp_0.arg2 = true;
     s.callLocIdx = 142; s.pc = 28; return s.tmp_0;
   case 28:
     r0 = s.retval;
-    s.current___457475 = (s.neighbor___457497);
+    s.current___487525 = (s.neighbor___487547);
     { step = 23; continue; }
   case 6:
-    s.current___457475 = (null);
-    s.getOut___457507 = (false);
-    s.row___457509 = (undefined);
+    s.current___487525 = (null);
+    s.getOut___487557 = (false);
+    s.row___487559 = (undefined);
     r0 = s.arg0.fields["_grid"];
-    s.unnamed15832___U9 = (r0);
-    s.unnamed15833___U10 = (0);
+    s.unnamed19044___U9 = (r0);
+    s.unnamed19045___U10 = (0);
   case 7:
-    s.tmp_0 = r0 = s.unnamed15833___U10;
-    r0 = pxsim_Array__length(s.unnamed15832___U9);
+    s.tmp_0 = r0 = s.unnamed19045___U10;
+    r0 = pxsim_Array__length(s.unnamed19044___U9);
     s.tmp_1 = r0;
     r0 = (s.tmp_0 < s.tmp_1);
     if (!r0) { step = 22; continue; }
-    r0 = pxsim_Array__getAt(s.unnamed15832___U9, s.unnamed15833___U10);
-    s.row___457509 = (r0);
-    s.cell___457513 = (undefined);
-    s.unnamed15834___U12 = (s.row___457509);
-    s.unnamed15835___U13 = (0);
+    r0 = pxsim_Array__getAt(s.unnamed19044___U9, s.unnamed19045___U10);
+    s.row___487559 = (r0);
+    s.cell___487563 = (undefined);
+    s.unnamed19046___U12 = (s.row___487559);
+    s.unnamed19047___U13 = (0);
   case 8:
-    s.tmp_0 = r0 = s.unnamed15835___U13;
-    r0 = pxsim_Array__length(s.unnamed15834___U12);
+    s.tmp_0 = r0 = s.unnamed19047___U13;
+    r0 = pxsim_Array__length(s.unnamed19046___U12);
     s.tmp_1 = r0;
     r0 = (s.tmp_0 < s.tmp_1);
     if (!r0) { step = 19; continue; }
-    r0 = pxsim_Array__getAt(s.unnamed15834___U12, s.unnamed15835___U13);
-    s.cell___457513 = (r0);
+    r0 = pxsim_Array__getAt(s.unnamed19046___U12, s.unnamed19047___U13);
+    s.cell___487563 = (r0);
     r0 = pxsim_Array__mk();
-    s.visitedNeighbors___457515 = (r0);
-    s.n___457518 = (undefined);
-    s.tmp_0 = mazes_Cell_neighbors__P456538_mk(s);
-    s.tmp_0.arg0 = s.cell___457513;
+    s.visitedNeighbors___487565 = (r0);
+    s.n___487568 = (undefined);
+    s.tmp_0 = mazes_Cell_neighbors__P486588_mk(s);
+    s.tmp_0.arg0 = s.cell___487563;
     s.callLocIdx = 143; s.pc = 29; return s.tmp_0;
   case 29:
     r0 = s.retval;
-    s.unnamed15836___U16 = (r0);
-    s.unnamed15837___U17 = (0);
+    s.unnamed19048___U16 = (r0);
+    s.unnamed19049___U17 = (0);
   case 9:
-    s.tmp_0 = r0 = s.unnamed15837___U17;
-    r0 = pxsim_Array__length(s.unnamed15836___U16);
+    s.tmp_0 = r0 = s.unnamed19049___U17;
+    r0 = pxsim_Array__length(s.unnamed19048___U16);
     s.tmp_1 = r0;
     r0 = (s.tmp_0 < s.tmp_1);
     if (!r0) { step = 12; continue; }
-    r0 = pxsim_Array__getAt(s.unnamed15836___U16, s.unnamed15837___U17);
-    s.n___457518 = (r0);
-    r0 = s.n___457518.fields["_links"];
+    r0 = pxsim_Array__getAt(s.unnamed19048___U16, s.unnamed19049___U17);
+    s.n___487568 = (r0);
+    r0 = s.n___487568.fields["_links"];
     s.tmp_4 = r0;
     r0 = pxsim_Array__length(s.tmp_4);
     s.tmp_3 = r0;
@@ -18603,15 +18603,15 @@ switch (step) {
     s.tmp_2 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_2);
     if (!r0) { step = 10; continue; }
-    r0 = pxsim_Array__push(s.visitedNeighbors___457515, s.n___457518);
+    r0 = pxsim_Array__push(s.visitedNeighbors___487565, s.n___487568);
   case 10:
   case 11:
-    r0 = (s.unnamed15837___U17 + 1);
-    s.unnamed15837___U17 = (r0);
+    r0 = (s.unnamed19049___U17 + 1);
+    s.unnamed19049___U17 = (r0);
     { step = 9; continue; }
   case 12:
-    s.unnamed15836___U16 = (undefined);
-    r0 = s.cell___457513.fields["_links"];
+    s.unnamed19048___U16 = (undefined);
+    r0 = s.cell___487563.fields["_links"];
     s.tmp_2 = r0;
     r0 = pxsim_Array__length(s.tmp_2);
     s.tmp_1 = r0;
@@ -18622,7 +18622,7 @@ switch (step) {
     r0 = s.tmp_0;
     { step = 14; continue; }
   case 13:
-    r0 = pxsim_Array__length(s.visitedNeighbors___457515);
+    r0 = pxsim_Array__length(s.visitedNeighbors___487565);
     s.tmp_3 = r0;
     r0 = (s.tmp_3 > 0);
   case 14:
@@ -18630,83 +18630,83 @@ switch (step) {
     s.tmp_4 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_4);
     if (!r0) { step = 15; continue; }
-    s.current___457475 = (s.cell___457513);
+    s.current___487525 = (s.cell___487563);
     s.tmp_0 = Math_pickRandom__P3090_mk(s);
-    s.tmp_0.arg0 = s.visitedNeighbors___457515;
+    s.tmp_0.arg0 = s.visitedNeighbors___487565;
     s.callLocIdx = 146; s.pc = 30; return s.tmp_0;
   case 30:
     r0 = s.retval;
-    s.neighbor___457539 = (r0);
-    s.tmp_0 = mazes_Cell_link__P456548_mk(s);
-    s.tmp_0.arg0 = s.current___457475;
-    s.tmp_0.arg1 = s.neighbor___457539;
+    s.neighbor___487589 = (r0);
+    s.tmp_0 = mazes_Cell_link__P486598_mk(s);
+    s.tmp_0.arg0 = s.current___487525;
+    s.tmp_0.arg1 = s.neighbor___487589;
     s.tmp_0.arg2 = true;
     s.callLocIdx = 147; s.pc = 31; return s.tmp_0;
   case 31:
     r0 = s.retval;
-    s.getOut___457507 = (true);
+    s.getOut___487557 = (true);
   case 15:
   case 16:
-    r0 = pxsim_numops_toBoolDecr(s.getOut___457507);
+    r0 = pxsim_numops_toBoolDecr(s.getOut___487557);
     if (!r0) { step = 17; continue; }
     { step = 19; continue; }
   case 17:
   case 18:
-    r0 = (s.unnamed15835___U13 + 1);
-    s.unnamed15835___U13 = (r0);
+    r0 = (s.unnamed19047___U13 + 1);
+    s.unnamed19047___U13 = (r0);
     { step = 8; continue; }
   case 19:
-    s.unnamed15834___U12 = (undefined);
-    r0 = pxsim_numops_toBoolDecr(s.getOut___457507);
+    s.unnamed19046___U12 = (undefined);
+    r0 = pxsim_numops_toBoolDecr(s.getOut___487557);
     if (!r0) { step = 20; continue; }
     { step = 22; continue; }
   case 20:
   case 21:
-    r0 = (s.unnamed15833___U10 + 1);
-    s.unnamed15833___U10 = (r0);
+    r0 = (s.unnamed19045___U10 + 1);
+    s.unnamed19045___U10 = (r0);
     { step = 7; continue; }
   case 22:
-    s.unnamed15832___U9 = (undefined);
+    s.unnamed19044___U9 = (undefined);
   case 23:
-    r0 = (s.passes___457477 + 1);
-    s.passes___457477 = (r0);
+    r0 = (s.passes___487527 + 1);
+    s.passes___487527 = (r0);
     { step = 1; continue; }
   case 24:
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_buildHuntAndKill__P456936.info = {"start":31669,"length":2048,"line":903,"column":8,"endLine":948,"endColumn":9,"fileName":"mazes.ts","functionName":"buildHuntAndKill","argumentNames":["this"]}
+mazes_Grid_buildHuntAndKill__P486986.info = {"start":28181,"length":2048,"line":827,"column":8,"endLine":872,"endColumn":9,"fileName":"mazes.ts","functionName":"buildHuntAndKill","argumentNames":["this"]}
 
-function mazes_Grid_buildHuntAndKill__P456936_mk(s) {
+function mazes_Grid_buildHuntAndKill__P486986_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_buildHuntAndKill__P456936, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_buildHuntAndKill__P486986, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
   tmp_2: undefined,
   tmp_3: undefined,
   tmp_4: undefined,
-  current___457475: undefined,
-  passes___457477: undefined,
-  unvisitedNeighbors___457480: undefined,
-  cell___457483: undefined,
-  unnamed15830___U4: undefined,
-  unnamed15831___U5: undefined,
-  neighbor___457497: undefined,
-  getOut___457507: undefined,
-  row___457509: undefined,
-  unnamed15832___U9: undefined,
-  unnamed15833___U10: undefined,
-  cell___457513: undefined,
-  unnamed15834___U12: undefined,
-  unnamed15835___U13: undefined,
-  visitedNeighbors___457515: undefined,
-  n___457518: undefined,
-  unnamed15836___U16: undefined,
-  unnamed15837___U17: undefined,
-  neighbor___457539: undefined,
+  current___487525: undefined,
+  passes___487527: undefined,
+  unvisitedNeighbors___487530: undefined,
+  cell___487533: undefined,
+  unnamed19042___U4: undefined,
+  unnamed19043___U5: undefined,
+  neighbor___487547: undefined,
+  getOut___487557: undefined,
+  row___487559: undefined,
+  unnamed19044___U9: undefined,
+  unnamed19045___U10: undefined,
+  cell___487563: undefined,
+  unnamed19046___U12: undefined,
+  unnamed19047___U13: undefined,
+  visitedNeighbors___487565: undefined,
+  n___487568: undefined,
+  unnamed19048___U16: undefined,
+  unnamed19049___U17: undefined,
+  neighbor___487589: undefined,
   arg0: undefined,
 } }
 
@@ -18714,7 +18714,7 @@ function mazes_Grid_buildHuntAndKill__P456936_mk(s) {
 
 
 
-function mazes_Grid_buildBinaryTree__P456935(s) {
+function mazes_Grid_buildBinaryTree__P486985(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -18724,114 +18724,114 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.row___457425 = undefined;
-    s.col___457431 = undefined;
-    s.cell___457437 = undefined;
-    s.neighbors___457441 = undefined;
-    s.randomNeighbor___457461 = undefined;
+    s.row___487475 = undefined;
+    s.col___487481 = undefined;
+    s.cell___487487 = undefined;
+    s.neighbors___487491 = undefined;
+    s.randomNeighbor___487511 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
-    s.row___457425 = (0);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
+    s.row___487475 = (0);
   case 1:
     r0 = s.arg0.fields["_rows"];
     s.tmp_1 = r0;
-    r0 = (s.row___457425 < s.tmp_1);
+    r0 = (s.row___487475 < s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 10; continue; }
-    s.col___457431 = (0);
+    s.col___487481 = (0);
   case 2:
     r0 = s.arg0.fields["_cols"];
     s.tmp_1 = r0;
-    r0 = (s.col___457431 < s.tmp_1);
+    r0 = (s.col___487481 < s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 9; continue; }
-    s.tmp_2 = mazes_Grid_getCell__P456930_mk(s);
+    s.tmp_2 = mazes_Grid_getCell__P486980_mk(s);
     s.tmp_2.arg0 = s.arg0;
-    s.tmp_2.arg1 = s.row___457425;
-    s.tmp_2.arg2 = s.col___457431;
+    s.tmp_2.arg1 = s.row___487475;
+    s.tmp_2.arg2 = s.col___487481;
     s.callLocIdx = 131; s.pc = 11; return s.tmp_2;
   case 11:
     r0 = s.retval;
-    s.cell___457437 = (r0);
+    s.cell___487487 = (r0);
     r0 = pxsim_Array__mk();
-    s.neighbors___457441 = (r0);
-    r0 = s.cell___457437.fields["_north"];
+    s.neighbors___487491 = (r0);
+    r0 = s.cell___487487.fields["_north"];
     s.tmp_1 = r0;
     r0 = (s.tmp_1 != null);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 3; continue; }
-    s.tmp_2 = r0 = s.neighbors___457441;
-    r0 = s.cell___457437.fields["_north"];
+    s.tmp_2 = r0 = s.neighbors___487491;
+    r0 = s.cell___487487.fields["_north"];
     s.tmp_3 = r0;
     r0 = pxsim_Array__push(s.tmp_2, s.tmp_3);
   case 3:
   case 4:
-    r0 = s.cell___457437.fields["_east"];
+    r0 = s.cell___487487.fields["_east"];
     s.tmp_1 = r0;
     r0 = (s.tmp_1 != null);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 5; continue; }
-    s.tmp_2 = r0 = s.neighbors___457441;
-    r0 = s.cell___457437.fields["_east"];
+    s.tmp_2 = r0 = s.neighbors___487491;
+    r0 = s.cell___487487.fields["_east"];
     s.tmp_3 = r0;
     r0 = pxsim_Array__push(s.tmp_2, s.tmp_3);
   case 5:
   case 6:
     s.tmp_0 = Math_pickRandom__P3090_mk(s);
-    s.tmp_0.arg0 = s.neighbors___457441;
+    s.tmp_0.arg0 = s.neighbors___487491;
     s.callLocIdx = 136; s.pc = 12; return s.tmp_0;
   case 12:
     r0 = s.retval;
-    s.randomNeighbor___457461 = (r0);
-    r0 = (s.randomNeighbor___457461 != null);
+    s.randomNeighbor___487511 = (r0);
+    r0 = (s.randomNeighbor___487511 != null);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 7; continue; }
-    s.tmp_1 = mazes_Cell_link__P456548_mk(s);
-    s.tmp_1.arg0 = s.cell___457437;
-    s.tmp_1.arg1 = s.randomNeighbor___457461;
+    s.tmp_1 = mazes_Cell_link__P486598_mk(s);
+    s.tmp_1.arg0 = s.cell___487487;
+    s.tmp_1.arg1 = s.randomNeighbor___487511;
     s.tmp_1.arg2 = true;
     s.callLocIdx = 137; s.pc = 13; return s.tmp_1;
   case 13:
     r0 = s.retval;
   case 7:
   case 8:
-    r0 = (s.col___457431 + 1);
-    s.col___457431 = (r0);
+    r0 = (s.col___487481 + 1);
+    s.col___487481 = (r0);
     { step = 2; continue; }
   case 9:
-    r0 = (s.row___457425 + 1);
-    s.row___457425 = (r0);
+    r0 = (s.row___487475 + 1);
+    s.row___487475 = (r0);
     { step = 1; continue; }
   case 10:
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_buildBinaryTree__P456935.info = {"start":30708,"length":845,"line":880,"column":8,"endLine":898,"endColumn":9,"fileName":"mazes.ts","functionName":"buildBinaryTree","argumentNames":["this"]}
+mazes_Grid_buildBinaryTree__P486985.info = {"start":27220,"length":845,"line":804,"column":8,"endLine":822,"endColumn":9,"fileName":"mazes.ts","functionName":"buildBinaryTree","argumentNames":["this"]}
 
-function mazes_Grid_buildBinaryTree__P456935_mk(s) {
+function mazes_Grid_buildBinaryTree__P486985_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_buildBinaryTree__P456935, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_buildBinaryTree__P486985, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
   tmp_2: undefined,
   tmp_3: undefined,
-  row___457425: undefined,
-  col___457431: undefined,
-  cell___457437: undefined,
-  neighbors___457441: undefined,
-  randomNeighbor___457461: undefined,
+  row___487475: undefined,
+  col___487481: undefined,
+  cell___487487: undefined,
+  neighbors___487491: undefined,
+  randomNeighbor___487511: undefined,
   arg0: undefined,
 } }
 
@@ -18839,7 +18839,7 @@ function mazes_Grid_buildBinaryTree__P456935_mk(s) {
 
 
 
-function mazes_Grid_buildAldousBroder__P456934(s) {
+function mazes_Grid_buildAldousBroder__P486984(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -18849,22 +18849,22 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.cell___457393 = undefined;
-    s.unvisited___457395 = undefined;
-    s.passes___457402 = undefined;
-    s.neighbor___457406 = undefined;
+    s.cell___487443 = undefined;
+    s.unvisited___487445 = undefined;
+    s.passes___487452 = undefined;
+    s.neighbor___487456 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
-    s.tmp_0 = mazes_Grid_randomCell__P456922_mk(s);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
+    s.tmp_0 = mazes_Grid_randomCell__P486972_mk(s);
     s.tmp_0.arg0 = s.arg0;
     s.callLocIdx = 126; s.pc = 5; return s.tmp_0;
   case 5:
     r0 = s.retval;
-    s.cell___457393 = (r0);
+    s.cell___487443 = (r0);
     r0 = s.arg0.fields["_rows"];
     s.tmp_1 = r0;
     r0 = s.arg0.fields["_cols"];
@@ -18872,16 +18872,16 @@ switch (step) {
     r0 = (s.tmp_1 * s.tmp_2);
     s.tmp_0 = r0;
     r0 = (s.tmp_0 - 1);
-    s.unvisited___457395 = (r0);
-    s.passes___457402 = (1);
+    s.unvisited___487445 = (r0);
+    s.passes___487452 = (1);
   case 1:
-    r0 = (s.unvisited___457395 > 0);
+    r0 = (s.unvisited___487445 > 0);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 4; continue; }
     s.tmp_1 = Math_pickRandom__P3090_mk(s);
-    s.tmp_2 = mazes_Cell_neighbors__P456538_mk(s);
-    s.tmp_2.arg0 = s.cell___457393;
+    s.tmp_2 = mazes_Cell_neighbors__P486588_mk(s);
+    s.tmp_2.arg0 = s.cell___487443;
     s.callLocIdx = 127; s.pc = 7; return s.tmp_2;
   case 7:
     r0 = s.retval;
@@ -18889,8 +18889,8 @@ switch (step) {
     s.callLocIdx = 128; s.pc = 6; return s.tmp_1;
   case 6:
     r0 = s.retval;
-    s.neighbor___457406 = (r0);
-    r0 = s.neighbor___457406.fields["_links"];
+    s.neighbor___487456 = (r0);
+    r0 = s.neighbor___487456.fields["_links"];
     s.tmp_2 = r0;
     r0 = pxsim_Array__length(s.tmp_2);
     s.tmp_1 = r0;
@@ -18898,41 +18898,41 @@ switch (step) {
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 2; continue; }
-    s.tmp_3 = mazes_Cell_link__P456548_mk(s);
-    s.tmp_3.arg0 = s.cell___457393;
-    s.tmp_3.arg1 = s.neighbor___457406;
+    s.tmp_3 = mazes_Cell_link__P486598_mk(s);
+    s.tmp_3.arg0 = s.cell___487443;
+    s.tmp_3.arg1 = s.neighbor___487456;
     s.tmp_3.arg2 = true;
     s.callLocIdx = 130; s.pc = 8; return s.tmp_3;
   case 8:
     r0 = s.retval;
-    r0 = (s.unvisited___457395 - 1);
-    s.unvisited___457395 = (r0);
+    r0 = (s.unvisited___487445 - 1);
+    s.unvisited___487445 = (r0);
   case 2:
   case 3:
-    s.cell___457393 = (s.neighbor___457406);
-    r0 = (s.passes___457402 + 1);
-    s.passes___457402 = (r0);
+    s.cell___487443 = (s.neighbor___487456);
+    r0 = (s.passes___487452 + 1);
+    s.passes___487452 = (r0);
     { step = 1; continue; }
   case 4:
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_buildAldousBroder__P456934.info = {"start":30013,"length":579,"line":860,"column":8,"endLine":875,"endColumn":9,"fileName":"mazes.ts","functionName":"buildAldousBroder","argumentNames":["this"]}
+mazes_Grid_buildAldousBroder__P486984.info = {"start":26525,"length":579,"line":784,"column":8,"endLine":799,"endColumn":9,"fileName":"mazes.ts","functionName":"buildAldousBroder","argumentNames":["this"]}
 
-function mazes_Grid_buildAldousBroder__P456934_mk(s) {
+function mazes_Grid_buildAldousBroder__P486984_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_buildAldousBroder__P456934, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_buildAldousBroder__P486984, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
   tmp_2: undefined,
   tmp_3: undefined,
-  cell___457393: undefined,
-  unvisited___457395: undefined,
-  passes___457402: undefined,
-  neighbor___457406: undefined,
+  cell___487443: undefined,
+  unvisited___487445: undefined,
+  passes___487452: undefined,
+  neighbor___487456: undefined,
   arg0: undefined,
 } }
 
@@ -18940,7 +18940,7 @@ function mazes_Grid_buildAldousBroder__P456934_mk(s) {
 
 
 
-function mazes_Grid_resetLinks__P456944(s) {
+function mazes_Grid_resetLinks__P486994(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -18950,69 +18950,69 @@ if (yieldSteps-- < 0 && maybeYield(s, step, r0) || runtime !== pxsim.runtime) re
 switch (step) {
   case 0:
 
-    s.row___458049 = undefined;
-    s.col___458055 = undefined;
-    s.cell___458061 = undefined;
+    s.row___488099 = undefined;
+    s.col___488105 = undefined;
+    s.cell___488111 = undefined;
     if (s.lambdaArgs) {
       s.arg0 = (s.lambdaArgs[0]);
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
-    s.row___458049 = (0);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
+    s.row___488099 = (0);
   case 1:
     r0 = s.arg0.fields["_rows"];
     s.tmp_1 = r0;
-    r0 = (s.row___458049 < s.tmp_1);
+    r0 = (s.row___488099 < s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 4; continue; }
-    s.col___458055 = (0);
+    s.col___488105 = (0);
   case 2:
     r0 = s.arg0.fields["_cols"];
     s.tmp_1 = r0;
-    r0 = (s.col___458055 < s.tmp_1);
+    r0 = (s.col___488105 < s.tmp_1);
     s.tmp_0 = r0;
     r0 = pxsim_numops_toBoolDecr(s.tmp_0);
     if (!r0) { step = 3; continue; }
-    s.tmp_2 = mazes_Grid_getCell__P456930_mk(s);
+    s.tmp_2 = mazes_Grid_getCell__P486980_mk(s);
     s.tmp_2.arg0 = s.arg0;
-    s.tmp_2.arg1 = s.row___458049;
-    s.tmp_2.arg2 = s.col___458055;
+    s.tmp_2.arg1 = s.row___488099;
+    s.tmp_2.arg2 = s.col___488105;
     s.callLocIdx = 202; s.pc = 5; return s.tmp_2;
   case 5:
     r0 = s.retval;
-    s.cell___458061 = (r0);
-    s.tmp_0 = mazes_Cell_clearLinks__P456546_mk(s);
-    s.tmp_0.arg0 = s.cell___458061;
+    s.cell___488111 = (r0);
+    s.tmp_0 = mazes_Cell_clearLinks__P486596_mk(s);
+    s.tmp_0.arg0 = s.cell___488111;
     s.callLocIdx = 203; s.pc = 6; return s.tmp_0;
   case 6:
     r0 = s.retval;
-    r0 = (s.col___458055 + 1);
-    s.col___458055 = (r0);
+    r0 = (s.col___488105 + 1);
+    s.col___488105 = (r0);
     { step = 2; continue; }
   case 3:
-    r0 = (s.row___458049 + 1);
-    s.row___458049 = (r0);
+    r0 = (s.row___488099 + 1);
+    s.row___488099 = (r0);
     { step = 1; continue; }
   case 4:
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_resetLinks__P456944.info = {"start":42134,"length":332,"line":1149,"column":8,"endLine":1156,"endColumn":9,"fileName":"mazes.ts","functionName":"resetLinks","argumentNames":["this"]}
+mazes_Grid_resetLinks__P486994.info = {"start":38646,"length":332,"line":1073,"column":8,"endLine":1080,"endColumn":9,"fileName":"mazes.ts","functionName":"resetLinks","argumentNames":["this"]}
 
-function mazes_Grid_resetLinks__P456944_mk(s) {
+function mazes_Grid_resetLinks__P486994_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_resetLinks__P456944, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_resetLinks__P486994, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
   tmp_2: undefined,
-  row___458049: undefined,
-  col___458055: undefined,
-  cell___458061: undefined,
+  row___488099: undefined,
+  col___488105: undefined,
+  cell___488111: undefined,
   arg0: undefined,
 } }
 
@@ -19020,7 +19020,7 @@ function mazes_Grid_resetLinks__P456944_mk(s) {
 
 
 
-function mazes_Cell_clearLinks__P456546(s) {
+function mazes_Cell_clearLinks__P486596(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -19035,7 +19035,7 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Cell__C456531_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Cell__C486581_VT)) failedCast(r0);
     s.tmp_0 = r0 = s.arg0;
     r0 = pxsim_Array__mk();
     s.tmp_1 = r0;
@@ -19044,12 +19044,12 @@ switch (step) {
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Cell_clearLinks__P456546.info = {"start":7727,"length":66,"line":258,"column":8,"endLine":260,"endColumn":9,"fileName":"mazes.ts","functionName":"clearLinks","argumentNames":["this"]}
+mazes_Cell_clearLinks__P486596.info = {"start":6802,"length":66,"line":236,"column":8,"endLine":238,"endColumn":9,"fileName":"mazes.ts","functionName":"clearLinks","argumentNames":["this"]}
 
-function mazes_Cell_clearLinks__P456546_mk(s) {
+function mazes_Cell_clearLinks__P486596_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Cell_clearLinks__P456546, depth: s.depth + 1,
+        parent: s, fn: mazes_Cell_clearLinks__P486596, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   tmp_0: undefined,
   tmp_1: undefined,
@@ -46306,7 +46306,7 @@ function sprites_BaseSprite___visible__P2111_mk(s) {
 
 
 
-function mazes_Grid_font__P456921(s) {
+function mazes_Grid_font__P486971(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -46322,18 +46322,18 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
     r0 = (s.arg0).fields["_font"] = (s.arg1);
     r0 = undefined;
     return leave(s, r0)
   default: oops()
 } } }
-mazes_Grid_font__P456921.info = {"start":16473,"length":77,"line":520,"column":8,"endLine":522,"endColumn":9,"fileName":"mazes.ts","functionName":"font","argumentNames":["this","value"]}
+mazes_Grid_font__P486971.info = {"start":15253,"length":77,"line":491,"column":8,"endLine":493,"endColumn":9,"fileName":"mazes.ts","functionName":"font","argumentNames":["this","value"]}
 
-function mazes_Grid_font__P456921_mk(s) {
+function mazes_Grid_font__P486971_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_font__P456921, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_font__P486971, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   arg0: undefined,
   arg1: undefined,
@@ -46343,7 +46343,7 @@ function mazes_Grid_font__P456921_mk(s) {
 
 
 
-function mazes_Grid_font__P456920(s) {
+function mazes_Grid_font__P486970(s) {
 let r0 = s.r0, step = s.pc;
 s.pc = -1;
 
@@ -46358,18 +46358,18 @@ switch (step) {
       s.lambdaArgs = null;
     }
     r0 = s.arg0;
-    if (!checkSubtype(r0, mazes_Grid__C456914_VT)) failedCast(r0);
+    if (!checkSubtype(r0, mazes_Grid__C486964_VT)) failedCast(r0);
     r0 = s.arg0.fields["_font"];
     return leaveAccessor(s, r0)
   default: oops()
 } } }
-mazes_Grid_font__P456920.info = {"start":16265,"length":71,"line":513,"column":8,"endLine":515,"endColumn":9,"fileName":"mazes.ts","functionName":"font","argumentNames":["this"]}
-mazes_Grid_font__P456920.isGetter = true;
+mazes_Grid_font__P486970.info = {"start":15045,"length":71,"line":484,"column":8,"endLine":486,"endColumn":9,"fileName":"mazes.ts","functionName":"font","argumentNames":["this"]}
+mazes_Grid_font__P486970.isGetter = true;
 
-function mazes_Grid_font__P456920_mk(s) {
+function mazes_Grid_font__P486970_mk(s) {
     checkStack(s.depth);
     return {
-        parent: s, fn: mazes_Grid_font__P456920, depth: s.depth + 1,
+        parent: s, fn: mazes_Grid_font__P486970, depth: s.depth + 1,
         pc: 0, retval: undefined, r0: undefined, overwrittenPC: false, lambdaArgs: null,
   arg0: undefined,
 } }
@@ -49479,7 +49479,7 @@ const Math_FastRandom__C3091_VT = mkVTable({
     "pickRandom": Math_FastRandom_pickRandom__P3096,
   },
 });
-const mazes_Grid__C456914_VT = mkVTable({
+const mazes_Grid__C486964_VT = mkVTable({
   name: "Grid",
   numFields: 7,
   classNo: 21,
@@ -49502,29 +49502,29 @@ const mazes_Grid__C456914_VT = mkVTable({
     "set/_path": null,
     "_rows": null,
     "set/_rows": null,
-    "distances": mazes_Grid_distances__P456918,
-    "set/distances": mazes_Grid_distances__P456919,
-    "font": mazes_Grid_font__P456920,
-    "set/font": mazes_Grid_font__P456921,
-    "randomCell": mazes_Grid_randomCell__P456922,
-    "build": mazes_Grid_build__P456926,
-    "buildImage": mazes_Grid_buildImage__P456927,
-    "buildTileMap": mazes_Grid_buildTileMap__P456929,
-    "getCell": mazes_Grid_getCell__P456930,
-    "getCellById": mazes_Grid_getCellById__P456931,
-    "setSolutionCells": mazes_Grid_setSolutionCells__P456932,
-    "solve": mazes_Grid_solve__P456933,
-    "buildAldousBroder": mazes_Grid_buildAldousBroder__P456934,
-    "buildBinaryTree": mazes_Grid_buildBinaryTree__P456935,
-    "buildHuntAndKill": mazes_Grid_buildHuntAndKill__P456936,
-    "buildRecursiveBacktracker": mazes_Grid_buildRecursiveBacktracker__P456937,
-    "buildSideWinder": mazes_Grid_buildSideWinder__P456938,
-    "buildWilson": mazes_Grid_buildWilson__P456939,
-    "configure": mazes_Grid_configure__P456940,
-    "draw": mazes_Grid_draw__P456941,
-    "drawContents": mazes_Grid_drawContents__P456942,
-    "initGrid": mazes_Grid_initGrid__P456943,
-    "resetLinks": mazes_Grid_resetLinks__P456944,
+    "distances": mazes_Grid_distances__P486968,
+    "set/distances": mazes_Grid_distances__P486969,
+    "font": mazes_Grid_font__P486970,
+    "set/font": mazes_Grid_font__P486971,
+    "randomCell": mazes_Grid_randomCell__P486972,
+    "build": mazes_Grid_build__P486976,
+    "buildImage": mazes_Grid_buildImage__P486977,
+    "buildTileMap": mazes_Grid_buildTileMap__P486979,
+    "getCell": mazes_Grid_getCell__P486980,
+    "getCellById": mazes_Grid_getCellById__P486981,
+    "setSolutionCells": mazes_Grid_setSolutionCells__P486982,
+    "solve": mazes_Grid_solve__P486983,
+    "buildAldousBroder": mazes_Grid_buildAldousBroder__P486984,
+    "buildBinaryTree": mazes_Grid_buildBinaryTree__P486985,
+    "buildHuntAndKill": mazes_Grid_buildHuntAndKill__P486986,
+    "buildRecursiveBacktracker": mazes_Grid_buildRecursiveBacktracker__P486987,
+    "buildSideWinder": mazes_Grid_buildSideWinder__P486988,
+    "buildWilson": mazes_Grid_buildWilson__P486989,
+    "configure": mazes_Grid_configure__P486990,
+    "draw": mazes_Grid_draw__P486991,
+    "drawContents": mazes_Grid_drawContents__P486992,
+    "initGrid": mazes_Grid_initGrid__P486993,
+    "resetLinks": mazes_Grid_resetLinks__P486994,
   },
 });
 const sprites_BaseSprite__C2108_VT = mkVTable({
@@ -49829,7 +49829,7 @@ const scene_Scene__C2860_VT = mkVTable({
     "render": scene_Scene_render__P2889,
   },
 });
-const mazes_Cell__C456531_VT = mkVTable({
+const mazes_Cell__C486581_VT = mkVTable({
   name: "Cell",
   numFields: 8,
   classNo: 31,
@@ -49854,27 +49854,27 @@ const mazes_Cell__C456531_VT = mkVTable({
     "set/_south": null,
     "_west": null,
     "set/_west": null,
-    "column": mazes_Cell_column__P456532,
-    "distances": mazes_Cell_distances__P456533,
-    "east": mazes_Cell_east__P456534,
-    "set/east": mazes_Cell_east__P456535,
-    "id": mazes_Cell_id__P456536,
-    "links": mazes_Cell_links__P456537,
-    "neighbors": mazes_Cell_neighbors__P456538,
-    "north": mazes_Cell_north__P456539,
-    "set/north": mazes_Cell_north__P456540,
-    "row": mazes_Cell_row__P456541,
-    "south": mazes_Cell_south__P456542,
-    "set/south": mazes_Cell_south__P456543,
-    "west": mazes_Cell_west__P456544,
-    "set/west": mazes_Cell_west__P456545,
-    "clearLinks": mazes_Cell_clearLinks__P456546,
-    "isLinked": mazes_Cell_isLinked__P456547,
-    "link": mazes_Cell_link__P456548,
-    "findCellId": mazes_Cell_findCellId__P456550,
+    "column": mazes_Cell_column__P486582,
+    "distances": mazes_Cell_distances__P486583,
+    "east": mazes_Cell_east__P486584,
+    "set/east": mazes_Cell_east__P486585,
+    "id": mazes_Cell_id__P486586,
+    "links": mazes_Cell_links__P486587,
+    "neighbors": mazes_Cell_neighbors__P486588,
+    "north": mazes_Cell_north__P486589,
+    "set/north": mazes_Cell_north__P486590,
+    "row": mazes_Cell_row__P486591,
+    "south": mazes_Cell_south__P486592,
+    "set/south": mazes_Cell_south__P486593,
+    "west": mazes_Cell_west__P486594,
+    "set/west": mazes_Cell_west__P486595,
+    "clearLinks": mazes_Cell_clearLinks__P486596,
+    "isLinked": mazes_Cell_isLinked__P486597,
+    "link": mazes_Cell_link__P486598,
+    "findCellId": mazes_Cell_findCellId__P486600,
   },
 });
-const mazes_Distances__C456597_VT = mkVTable({
+const mazes_Distances__C486647_VT = mkVTable({
   name: "Distances",
   numFields: 3,
   classNo: 32,
@@ -49889,9 +49889,9 @@ const mazes_Distances__C456597_VT = mkVTable({
     "set/_cellIds": null,
     "_distances": null,
     "set/_distances": null,
-    "getDistance": mazes_Distances_getDistance__P456600,
-    "getPath": mazes_Distances_getPath__P456601,
-    "setDistance": mazes_Distances_setDistance__P456602,
+    "getDistance": mazes_Distances_getDistance__P486650,
+    "getPath": mazes_Distances_getPath__P486651,
+    "setDistance": mazes_Distances_setDistance__P486652,
   },
 });
 const scene_Camera__C2798_VT = mkVTable({
@@ -50847,7 +50847,7 @@ const sprites_StaticObstacle__C2514_VT = mkVTable({
   },
 });
 
-const breakpoints = setupDebugger(1, ["DEFAULT_FONT___456528","transparency16___4440","gameMode___467030","maze___467032","currAlgo___467027","tileMap___467044","mazeSpriteBuilt___467042","mazeBuilt___467040","mazeImage___467034","mazeSprite___467036","player___467038","mazes_Grid__img___456945","PATH_CHARS___456512","PATH_OVERFLOW___456514","ALGORITHM_NAMES___467016"])
+const breakpoints = setupDebugger(1, ["DEFAULT_FONT___486578","transparency16___4440","gameMode___476118","maze___476120","currAlgo___476115","tileMap___476132","mazeSpriteBuilt___476130","mazeBuilt___476128","mazeImage___476122","mazeSprite___476124","player___476126","mazes_Grid__img___486995","PATH_CHARS___486562","PATH_OVERFLOW___486564","ALGORITHM_NAMES___476104"])
 
-return _main___P467609
+return _main___P488471
 })
