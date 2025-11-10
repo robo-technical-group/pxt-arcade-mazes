@@ -8,6 +8,7 @@
     },
     "files": [
         "README.md",
+        "main.blocks",
         "main.ts",
         "mazes.ts"
     ],
