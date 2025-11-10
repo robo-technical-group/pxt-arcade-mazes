@@ -11,6 +11,7 @@ enum GameMode {
  * Constants
  */
 const ALGORITHM_NAMES: string[] = [
+    'None',
     'Aldous-Broder',
     'Binary tree',
     'Hunt and kill',
@@ -19,7 +20,7 @@ const ALGORITHM_NAMES: string[] = [
     'Wilson'
 ]
 
-const GRID_HEIGHT: number = 10
+const GRID_HEIGHT: number = 14
 const GRID_WIDTH: number = 18
 const PATH_WIDTH: number = 2 // width of maze path in number of tiles
 const START_METHOD: MazeType = MazeType.RecursiveBacktracker
@@ -35,6 +36,8 @@ let mazeSprite: Sprite = null
 let player: Sprite = null
 let mazeBuilt: boolean = false
 let mazeSpriteBuilt: boolean = false
+let tileMap: tiles.TileMapData = null
+
 /*
 scene.setTile(mazes.DEFAULT_COLOR_MAP_PATH, img`
     d d d d d d d d d d d d d d d d
@@ -136,6 +139,14 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (gameMode !== GameMode.NotReady) {
         maze.build(currAlgo)
         maze.solve()
+        tileMap = maze.buildTileMap(
+            sprites.dungeon.floorLight0,
+            sprites.builtin.forestTiles0,
+            2,
+            sprites.dungeon.floorDarkDiamond,
+            sprites.dungeon.collectibleInsignia,
+            sprites.dungeon.collectibleRedCrystal
+        )
         mazeSpriteBuilt = false
         mazeBuilt = true
         switch (gameMode) {
@@ -176,6 +187,12 @@ function showMainScreen(): void {
         scene.getTile(1, 1).place(player)
     }   // if (mazeBuilt)
     */
+    tiles.setCurrentTilemap(tileMap)
+    if (mazeBuilt) {
+        tiles.placeOnRandomTile(player, sprites.dungeon.floorDarkDiamond)
+    } else {
+        tiles.placeOnTile(player, tiles.getTileLocation(1, 1))
+    }
     scene.cameraFollowSprite(player)
     controller.moveSprite(player)
     player.say(ALGORITHM_NAMES[currAlgo])
@@ -188,6 +205,7 @@ function showMazeSprite(): void {
     player.setPosition(0 - player.width, 0 - player.height)
     controller.moveSprite(null)
     // scene.setTileMap(null)
+    tiles.setCurrentTilemap(null)
     scene.centerCameraAt(screen.width / 2, screen.height / 2)
     if (!mazeSpriteBuilt) {
         mazeImage = maze.buildImage(8, 1, mazeImage)
@@ -206,4 +224,13 @@ maze.setSolutionCells(0, 0, GRID_HEIGHT - 1, GRID_WIDTH - 1)
 mazeImage = img`.`
 mazeSprite = sprites.create(mazeImage)
 player = sprites.create(sprites.duck.duck1, 0)
-showMazeSprite()
+tileMap = maze.buildTileMap(
+    sprites.dungeon.floorLight0,
+    sprites.builtin.forestTiles0,
+    2,
+    sprites.dungeon.floorDarkDiamond,
+    sprites.dungeon.collectibleInsignia,
+    sprites.dungeon.collectibleRedCrystal
+)
+showMainScreen()
+// showMazeSprite()

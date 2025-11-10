@@ -635,10 +635,106 @@ namespace mazes {
 
         /**
          * Return a tile map with the maze in this grid.
+         * @param {Image} pathTile - Tile image for pathways.
+         * @param {Image} wallTile - Tile image for walls.
          * @param {number} pathWidth - Width in tiles of the path.
-         * @param {Image} img - Canvas to use for image, null = use common canvas.
-         * @return {Image} Tile map of this maze.
+         * @param {Image} beginTile - Tile image for the starting tile of the solution path.
+         * @param {Image} endTile - Tile image for the finishing tile of the solution path.
+         * @param {Image} solnTile - Tile image for the solution pathway.
+         * @return {TileMapData} Tile map of this maze.
          */
+        public buildTileMap(
+            pathTile: Image, wallTile: Image,
+            pathWidth: number = 1,
+            beginTile?: Image, endTile?: Image, solnTile?: Image
+        ): tiles.TileMapData {
+            if (pathTile == null || wallTile == null) {
+                throw 'buildTileMap(): Must set pathTile and wallTile'
+            }
+
+            // Hide solution for now so that distances are not printed.
+            let solution: Distances = this.distances
+            this.distances = null
+
+            /**
+             * Build a bitmap of the maze.
+             * Each pixel represents the tile for that location in the tilemap.
+             * Path == 1, Wall == 2
+             */
+            let img: Image = Grid._img
+            img = this.draw(pathWidth + 1, 1, 1, 2, img)
+
+            // Restore the existing solution.
+            this.distances = solution
+
+            /**
+             * Draw the solution path if needed.
+             * Begin loc == 3, Solution path == 4, End loc == 5
+             */
+            if (solnTile != null && this.distances != null) {
+                for (let row: number = 0; row < this._rows; row++) {
+                    for (let col: number = 0; col < this._cols; col++) {
+                        let cell: Cell = this.getCell(row, col)
+                        if (solution.getDistance(cell) > -1) {
+                            img.setPixel(col * (pathWidth + 1) + 1,
+                                row * (pathWidth + 1) + 1,
+                                4)
+                        }   // if (solution.getDistance(cell) > -1)
+                    }   // for (col)
+                }   // for (row)
+                img.setPixel(this._path.begin.column * (pathWidth + 1) + 1,
+                    this._path.begin.row * (pathWidth + 1) + 1,
+                    3)
+                img.setPixel(this._path.end.column * (pathWidth + 1) + 1,
+                    this._path.end.row * (pathWidth + 1) + 1,
+                    5)
+            }
+
+            // Collect tile images into a collection.
+            let images: Image[] = []
+            images.push(image.create(16, 16)) // Transparent image
+            images.push(pathTile)
+            images.push(wallTile)
+            for (let i of [beginTile, endTile, solnTile,]) {
+                if (i != null) {
+                    images.push(i)
+                } else {
+                    images.push(pathTile)
+                }
+            }
+
+            /**
+             * Build the tilemap.
+             * This is a bit inefficient, as we already have all of the information
+             * that we need to build the wall layer and the data array,
+             * but this will suffice. :-)
+             */
+
+            // Initialize tilemap.
+            let data: number[] = [img.width, 0, img.height, 0]
+            for (let j: number = 0; j < img.width * img.height; j++) {
+                data.push(0)
+            }
+            let walls: Image = image.create(img.width, img.height)
+            let toReturn: tiles.TileMapData = tiles.createTilemap(
+                Buffer.fromArray(data),
+                walls,
+                images,
+                TileScale.Sixteen
+            )
+
+            // Iterate through the bitmap and set corresponding tiles in the tilemap.
+            for (let x: number = 0; x < img.width; x++) {
+                for (let y: number = 0; y < img.height; y++) {
+                    let c: number = img.getPixel(x, y)
+                    toReturn.setTile(x, y, c)
+                    toReturn.setWall(x, y, c == 2)
+                }
+            }
+
+            return toReturn
+        }
+
         /*
         public buildTileMap(pathWidth: number = 1, img: Image = null): Image {
             if (!img) {
@@ -702,12 +798,6 @@ namespace mazes {
             return this.buildTileMap(pathWidth, Grid._img)
         }   // buildTileMapBlocks()
         */
-
-        public buildTileMap(
-
-        ): tiles.TileMapData {
-            return null
-        }
 
         /**
          * @param {number} row - Row of requested cell.
@@ -1073,7 +1163,11 @@ namespace mazes {
     //% rows.defl=10 columns.defl=10 mazeType.defl=MazeType.SideWinder
     //% expandableArgumentMode="toggle"
     //% group="Mazes"
-    export function buildMaze(rows: number = 10, columns: number = 10, mazeType?: MazeType): Grid {
+    export function buildMaze(
+        rows: number = 10,
+        columns: number = 10,
+        mazeType?: MazeType
+    ): Grid {
         if (mazeType == null) {
             mazeType = DEFAULT_MAZE_TYPE
         }   // if (! mazeType)
@@ -1086,8 +1180,9 @@ namespace mazes {
     }   // buildMaze()
 
     //% blockId="mazes_buildMazeTilemap"
-    //% block="create maze tilemap with path tile as %pathTile and wall tile as %wallTile || with rows %rows and columns %columns of type %mazeType | with begin tile as %beginTile endTile as %endTile solution path tile as %solnTile | begin at col %beginCol row %beginRow end at col %endCol row %endRow"
+    //% block="create maze tilemap with path tile as %pathTile and wall tile as %wallTile || with path width %pathWidth | with rows %rows and columns %columns of type %mazeType | with begin tile as %beginTile endTile as %endTile solution path tile as %solnTile | begin at col %beginCol row %beginRow end at col %endCol row %endRow"
     //% blockSetVariable=mazeTileMap
+    //% pathWidth.defl=1 pathWidth.min=1
     //% rows.defl=10 rows.min=4 row.max=100
     //% columns.defl=10 cols.min=4 cols.max=100
     //% mazeType.defl=MazeType.SideWinder
@@ -1105,12 +1200,19 @@ namespace mazes {
     //% endTile.decompileIndirectFixedInstances=true
     //% solnTile.shadow=tileset_tile_picker
     //% solnTile.decompileIndirectFixedInstances=true
-    export function buildMazeTilemap(pathTile: Image, wallTile: Image,
+    export function buildMazeTilemap(
+        pathTile: Image, wallTile: Image,
+        pathWidth: number = 1,
         rows: number = 10, columns: number = 10,
         mazeType?: MazeType,
         beginTile?: Image, endTile?: Image, solnTile?: Image,
-        beginCol: number = 0, beginRow: number = 0, endCol: number = 9, endRow: number = 9
+        beginCol: number = 0, beginRow: number = 0,
+        endCol: number = 9, endRow: number = 9
     ): tiles.TileMapData {
-        return null
+        let maze: Grid = buildMaze(rows, columns, mazeType)
+        maze.setSolutionCells(beginRow, beginCol, endRow, endCol)
+        return maze.buildTileMap(
+            pathTile, wallTile, pathWidth, beginTile, endTile, solnTile
+        )
     }
 }   // namespace mazes
