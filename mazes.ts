@@ -1102,7 +1102,7 @@ namespace mazes {
         columns: number = 10,
         mazeType?: MazeType
     ): Grid {
-        if (mazeType == null) {
+        if (mazeType == null || isNaN(mazeType)) {
             mazeType = DEFAULT_MAZE_TYPE
         }   // if (! mazeType)
 
@@ -1143,12 +1143,8 @@ namespace mazes {
         beginCol: number = 0, beginRow: number = 0,
         endCol: number = 9, endRow: number = 9
     ): tiles.TileMapData {
-        if (mazeType == null || mazeType == MazeType.None) {
-            mazeType = MazeType.RecursiveBacktracker
-        }
         let maze: Grid = buildMaze(rows, columns, mazeType)
         maze.setSolutionCells(beginRow, beginCol, endRow, endCol)
-        maze.build()
         maze.solve()
         return maze.buildTileMap(
             pathTile, wallTile, pathWidth, beginTile, endTile, solnTile
