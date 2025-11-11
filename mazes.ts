@@ -608,14 +608,14 @@ namespace mazes {
          * Return a tile map with the maze in this grid.
          * @param {Image} pathTile - Tile image for pathways.
          * @param {Image} wallTile - Tile image for walls.
-         * @param {number} pathWidth - Width in tiles of the path.
          * @param {Image} beginTile - Tile image for the starting tile of the solution path.
          * @param {Image} endTile - Tile image for the finishing tile of the solution path.
          * @param {Image} solnTile - Tile image for the solution pathway.
+         * @param {number} pathWidth - Width in tiles of the path.
          * @return {TileMapData} Tile map of this maze.
          */
         //% blockId="mazes_Grid_buildMazeTilemap"
-        //% block="%myMaze|create tilemap with path tile as %pathTile and wall tile as %wallTile || with path width %pathWidth with begin tile as %beginTile end tile as %endTile solution path tile as %solnTile"
+        //% block="%myMaze|create tilemap with path tile as %pathTile and wall tile as %wallTile || with begin tile as %beginTile end tile as %endTile solution path tile as %solnTile path width %pathWidth"
         //% pathWidth.defl=1 pathWidth.min=1
         //% expandableArgumentMode="enabled"
         //% inlineInputMode=external
@@ -632,8 +632,8 @@ namespace mazes {
         //% solnTile.decompileIndirectFixedInstances=true
         public buildTileMap(
             pathTile: Image, wallTile: Image,
-            pathWidth: number = 1,
-            beginTile?: Image, endTile?: Image, solnTile?: Image
+            beginTile?: Image, endTile?: Image, solnTile?: Image,
+            pathWidth: number = 1
         ): tiles.TileMapData {
             if (pathTile == null || wallTile == null) {
                 throw 'buildTileMap(): Must set pathTile and wallTile'
@@ -1114,7 +1114,7 @@ namespace mazes {
     }   // buildMaze()
 
     //% blockId="mazes_buildMazeTilemap"
-    //% block="create maze tilemap with path tile as %pathTile and wall tile as %wallTile || with path width %pathWidth | with rows %rows and columns %columns of type %mazeType | with begin tile as %beginTile endTile as %endTile solution path tile as %solnTile | begin at col %beginCol row %beginRow end at col %endCol row %endRow"
+    //% block="create maze tilemap with path tile as %pathTile and wall tile as %wallTile || with begin tile as %beginTile endTile as %endTile solution path tile as %solnTile | with path width %pathWidth | with rows %rows and columns %columns of type %mazeType | begin at col %beginCol row %beginRow end at col %endCol row %endRow"
     //% blockSetVariable=mazeTileMap
     //% pathWidth.defl=1 pathWidth.min=1
     //% rows.defl=10 rows.min=4 row.max=100
@@ -1136,10 +1136,10 @@ namespace mazes {
     //% solnTile.decompileIndirectFixedInstances=true
     export function buildMazeTilemap(
         pathTile: Image, wallTile: Image,
+        beginTile?: Image, endTile?: Image, solnTile?: Image,
         pathWidth: number = 1,
         rows: number = 10, columns: number = 10,
-        mazeType?: MazeType,
-        beginTile?: Image, endTile?: Image, solnTile?: Image,
+        mazeType: MazeType = MazeType.Sidewinder,
         beginCol: number = 0, beginRow: number = 0,
         endCol: number = 9, endRow: number = 9
     ): tiles.TileMapData {
@@ -1147,7 +1147,7 @@ namespace mazes {
         maze.setSolutionCells(beginRow, beginCol, endRow, endCol)
         maze.solve()
         return maze.buildTileMap(
-            pathTile, wallTile, pathWidth, beginTile, endTile, solnTile
+            pathTile, wallTile, beginTile, endTile, solnTile, pathWidth
         )
     }
 }   // namespace mazes
