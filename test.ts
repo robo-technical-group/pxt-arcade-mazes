@@ -50,7 +50,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
             sprites.builtin.forestTiles0,
             2,
             sprites.dungeon.floorDarkDiamond,
-            sprites.dungeon.collectibleInsignia,
+            null, // sprites.dungeon.collectibleInsignia,
             sprites.dungeon.collectibleRedCrystal
         )
         mazeSpriteBuilt = false
@@ -126,7 +126,7 @@ tileMap = maze.buildTileMap(
     sprites.builtin.forestTiles0,
     2,
     sprites.dungeon.floorDarkDiamond,
-    sprites.dungeon.collectibleInsignia,
+    null, // sprites.dungeon.collectibleInsignia,
     sprites.dungeon.collectibleRedCrystal
 )
 showMainScreen()

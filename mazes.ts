@@ -679,14 +679,25 @@ namespace mazes {
 
             // Collect tile images into a collection.
             let images: Image[] = []
+            let imageIds: number[] = []
+            let currId: number = 0
             images.push(image.create(16, 16)) // Transparent image
+            imageIds.push(currId)
+            currId++
             images.push(pathTile)
+            imageIds.push(currId)
+            currId++
             images.push(wallTile)
+            imageIds.push(currId)
+            currId++
             for (let i of [beginTile, endTile, solnTile,]) {
                 if (i != null) {
                     images.push(i)
+                    imageIds.push(currId)
+                    currId++
                 } else {
-                    images.push(pathTile)
+                    // Missing tiles are replaced with pathTile
+                    imageIds.push(1)
                 }
             }
 
@@ -714,7 +725,7 @@ namespace mazes {
             for (let x: number = 0; x < img.width; x++) {
                 for (let y: number = 0; y < img.height; y++) {
                     let c: number = img.getPixel(x, y)
-                    toReturn.setTile(x, y, c)
+                    toReturn.setTile(x, y, imageIds[c])
                     toReturn.setWall(x, y, c == 2)
                 }
             }
