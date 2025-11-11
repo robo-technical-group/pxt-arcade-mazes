@@ -45,14 +45,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (gameMode !== GameMode.NotReady) {
         maze.build(currAlgo)
         maze.solve()
-        tileMap = maze.buildTileMap(
-            sprites.dungeon.floorLight0,
-            sprites.builtin.forestTiles0,
-            sprites.dungeon.floorDarkDiamond,
-            null, // sprites.dungeon.collectibleInsignia,
-            sprites.dungeon.collectibleRedCrystal,
-            2
-        )
+        buildTileMap()
         mazeSpriteBuilt = false
         mazeBuilt = true
         switch (gameMode) {
@@ -82,6 +75,17 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
 /**
  * Functions
  */
+function buildTileMap(): void {
+    tileMap = maze.buildTileMap(
+        sprites.dungeon.floorLight0,
+        sprites.builtin.forestTiles0,
+        sprites.dungeon.floorDarkDiamond,
+        sprites.dungeon.collectibleRedCrystal,
+        null, // sprites.dungeon.collectibleInsignia,
+        2
+    )
+}
+
 function showMainScreen(): void {
     gameMode = GameMode.NotReady
     mazeSprite.setPosition(0 - mazeSprite.width, 0 - mazeSprite.height)
@@ -121,13 +125,26 @@ maze.setSolutionCells(0, 0, GRID_HEIGHT - 1, GRID_WIDTH - 1)
 mazeImage = img`.`
 mazeSprite = sprites.create(mazeImage)
 player = sprites.create(sprites.duck.duck1, 0)
-tileMap = maze.buildTileMap(
-    sprites.dungeon.floorLight0,
-    sprites.builtin.forestTiles0,
-    sprites.dungeon.floorDarkDiamond,
-    null, // sprites.dungeon.collectibleInsignia,
-    sprites.dungeon.collectibleRedCrystal,
-    2
-)
+buildTileMap()
 showMainScreen()
 // showMazeSprite()
+/*
+*/
+/*
+let mazeTileMap = mazes.buildMazeTilemap(
+    sprites.castle.tilePath5,
+    sprites.swamp.swampTile1,
+    sprites.dungeon.floorDarkDiamond,
+    sprites.dungeon.chestClosed,
+    sprites.dungeon.collectibleInsignia,
+    2,
+    14, 18,
+    0, 0, 13, 17,
+    MazeType.RecursiveBacktracker
+)
+tiles.setCurrentTilemap(mazeTileMap)
+let mySprite = sprites.create(sprites.duck.duck3, SpriteKind.Player)
+controller.moveSprite(mySprite)
+scene.cameraFollowSprite(mySprite)
+tiles.placeOnTile(mySprite, tiles.getTileLocation(1, 1))
+*/

@@ -656,7 +656,7 @@ namespace mazes {
 
             /**
              * Draw the solution path if needed.
-             * Begin loc == 3, Solution path == 4, End loc == 5
+             * Begin loc == 3, End loc == 4, Solution path == 5
              */
             if (solnTile != null && this.distances != null) {
                 for (let row: number = 0; row < this._rows; row++) {
@@ -665,17 +665,17 @@ namespace mazes {
                         if (solution.getDistance(cell) > -1) {
                             img.setPixel(col * (pathWidth + 1) + 1,
                                 row * (pathWidth + 1) + 1,
-                                4)
+                                5)
                         }   // if (solution.getDistance(cell) > -1)
                     }   // for (col)
                 }   // for (row)
-                img.setPixel(this._path.begin.column * (pathWidth + 1) + 1,
-                    this._path.begin.row * (pathWidth + 1) + 1,
-                    3)
-                img.setPixel(this._path.end.column * (pathWidth + 1) + 1,
-                    this._path.end.row * (pathWidth + 1) + 1,
-                    5)
             }
+            img.setPixel(this._path.begin.column * (pathWidth + 1) + 1,
+                this._path.begin.row * (pathWidth + 1) + 1,
+                3)
+            img.setPixel(this._path.end.column * (pathWidth + 1) + 1,
+                this._path.end.row * (pathWidth + 1) + 1,
+                4)
 
             // Collect tile images into a collection.
             let images: Image[] = []
@@ -769,6 +769,18 @@ namespace mazes {
         //% beginRow.defl=0 beginColumn.defl=0 endRow.defl=9 endColumn.defl=0
         //% group="Mazes"
         public setSolutionCells(beginRow: number = 0, beginColumn: number = 0, endRow: number = 9, endColumn: number = 0): void {
+            if (
+                beginRow < 0 ||
+                beginRow >= this._rows ||
+                beginColumn < 0 ||
+                beginColumn >= this._cols ||
+                endRow < 0 ||
+                endRow >= this._rows ||
+                endColumn < 0 ||
+                endColumn >= this._cols
+            ) {
+                throw 'Solution cells out of range.'
+            }
             this._path = {
                 begin: this.getCell(beginRow, beginColumn),
                 end: this.getCell(endRow, endColumn)
@@ -1114,7 +1126,7 @@ namespace mazes {
     }   // buildMaze()
 
     //% blockId="mazes_buildMazeTilemap"
-    //% block="create maze tilemap with path tile as %pathTile and wall tile as %wallTile || with begin tile as %beginTile endTile as %endTile solution path tile as %solnTile | with path width %pathWidth | with rows %rows and columns %columns of type %mazeType | begin at col %beginCol row %beginRow end at col %endCol row %endRow"
+    //% block="create maze tilemap with path tile as %pathTile and wall tile as %wallTile || begin tile as %beginTile endTile as %endTile solution path tile as %solnTile | path width %pathWidth | rows %rows columns %columns | begin at row %beginRow col %beginCol end at row %endRow col %endCol | maze type %mazeType"
     //% blockSetVariable=mazeTileMap
     //% pathWidth.defl=1 pathWidth.min=1
     //% rows.defl=10 rows.min=4 row.max=100
@@ -1139,13 +1151,15 @@ namespace mazes {
         beginTile?: Image, endTile?: Image, solnTile?: Image,
         pathWidth: number = 1,
         rows: number = 10, columns: number = 10,
+        beginRow: number = 0, beginCol: number = 0,
+        endRow: number = 9, endCol: number = 9,
         mazeType: MazeType = MazeType.Sidewinder,
-        beginCol: number = 0, beginRow: number = 0,
-        endCol: number = 9, endRow: number = 9
     ): tiles.TileMapData {
         let maze: Grid = buildMaze(rows, columns, mazeType)
         maze.setSolutionCells(beginRow, beginCol, endRow, endCol)
-        maze.solve()
+        if (mazeType !== MazeType.None) {
+            maze.solve()
+        }
         return maze.buildTileMap(
             pathTile, wallTile, beginTile, endTile, solnTile, pathWidth
         )
