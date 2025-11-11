@@ -39,7 +39,7 @@ interface MazeGridPath {
 
 //% weight=0 color=#b8860b icon="\uf00a" block="Mazes"
 //% advanced=true
-//% groups=['others', 'Mazes', 'Images']
+//% groups=['others', 'Tilemaps', 'Mazes', 'Images']
 namespace mazes {
     /**
      * Constants
@@ -614,6 +614,22 @@ namespace mazes {
          * @param {Image} solnTile - Tile image for the solution pathway.
          * @return {TileMapData} Tile map of this maze.
          */
+        //% blockId="mazes_Grid_buildMazeTilemap"
+        //% block="%myMaze|create tilemap with path tile as %pathTile and wall tile as %wallTile || with path width %pathWidth with begin tile as %beginTile end tile as %endTile solution path tile as %solnTile"
+        //% pathWidth.defl=1 pathWidth.min=1
+        //% expandableArgumentMode="enabled"
+        //% inlineInputMode=external
+        //% group="Tilemaps"
+        //% pathTile.shadow=tileset_tile_picker
+        //% pathTile.decompileIndirectFixedInstances=true
+        //% wallTile.shadow=tileset_tile_picker
+        //% wallTile.decompileIndirectFixedInstances=true
+        //% beginTile.shadow=tileset_tile_picker
+        //% beginTile.decompileIndirectFixedInstances=true
+        //% endTile.shadow=tileset_tile_picker
+        //% endTile.decompileIndirectFixedInstances=true
+        //% solnTile.shadow=tileset_tile_picker
+        //% solnTile.decompileIndirectFixedInstances=true
         public buildTileMap(
             pathTile: Image, wallTile: Image,
             pathWidth: number = 1,
@@ -705,23 +721,6 @@ namespace mazes {
 
             return toReturn
         }
-
-        /**
-         * Return a tile map with the maze in this grid.
-         * @param {number} pathWidth - Width in tiles of the path.
-         * @return {Image} Tile map of this maze.
-         */
-        //% blockId="mazes_DistancesGrid_buildTileMapBlocks"
-        //% block="%myMaze|create tile map || with path width %pathWidth tiles"
-        //% pathWidth.defl=1
-        //% expandableArgumentMode="toggle"
-        //% group="Images"
-        //% hidden
-        /*
-        public buildTileMapBlocks(pathWidth: number = 1): Image {
-            return this.buildTileMap(pathWidth, Grid._img)
-        }   // buildTileMapBlocks()
-        */
 
         /**
          * @param {number} row - Row of requested cell.
@@ -1113,7 +1112,7 @@ namespace mazes {
     //% beginCol.defl=0 beginRow.defl=0 endCol.defl=9 endRow.defl=9
     //% expandableArgumentMode="enabled"
     //% inlineInputMode=external
-    //% group="Mazes"
+    //% group="Tilemaps"
     //% pathTile.shadow=tileset_tile_picker
     //% pathTile.decompileIndirectFixedInstances=true
     //% wallTile.shadow=tileset_tile_picker
