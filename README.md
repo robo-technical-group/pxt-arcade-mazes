@@ -2,6 +2,14 @@
 
 [![Build Status](https://travis-ci.com/robo-technical-group/pxt-arcade-mazes.svg?branch=master)](https://travis-ci.com/robo-technical-group/pxt-arcade-mazes)
 
+## Tutorial
+
+Want a tutorial on using this extension? We have them built into the extension. Give them a try!
+
+*   Blocks: <https://arcade.makecode.com/#tutorial:https://github.com/robo-technical-group/pxt-arcade-mazes/tutorial>
+
+JavaScript and Python coming soon!
+
 ## Note on upgrading
 
 If you have created a project using the version of this extension that is based on color-coded tilemaps
