@@ -721,7 +721,7 @@ the size of the maze.
 Have fun!
 
 ```package
-mazes=github:robo-technical-group/pxt-arcade-mazes#v3.2.1
+mazes=github:robo-technical-group/pxt-arcade-mazes
 minimap=github:microsoft/arcade-minimap#v0.6.1
 blockSettings=github:microsoft/pxt-settings-blocks#v1.0.0
 ```
